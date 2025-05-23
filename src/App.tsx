@@ -1,13 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Bot, Calendar, LineChart } from 'lucide-react';
 
 function App() {
+  const [splineError, setSplineError] = useState(false);
+
   useEffect(() => {
     const script = document.createElement('script');
     script.type = 'module';
     script.src = 'https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js';
     document.head.appendChild(script);
+
+    // Handle potential script loading errors
+    script.onerror = () => {
+      setSplineError(true);
+    };
 
     return () => {
       document.head.removeChild(script);
@@ -38,7 +45,14 @@ function App() {
       <section className="relative pt-32 pb-20 px-6 min-h-screen">
         {/* Spline Animation Container */}
         <div className="fixed top-0 left-0 w-full h-screen z-0">
-          <spline-viewer url="https://prod.spline.design/53ooFT0w27gEdjzf/scene.splinecode" />
+          {!splineError ? (
+            <spline-viewer
+              url="https://prod.spline.design/53ooFT0w27gEdjzf/scene.splinecode"
+              onError={() => setSplineError(true)}
+            />
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-blue-900/50 to-purple-900/50" />
+          )}
         </div>
 
         <div className="container mx-auto relative z-10">
