@@ -54,9 +54,9 @@ function App() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen">
-        {/* Spline Animation Container */}
-        <div className="absolute inset-0 h-screen flex items-center justify-center">
-          <div className="w-full h-full max-w-7xl mx-auto">
+        {/* Spline Animation Container - Moved to the right */}
+        <div className="absolute inset-0 h-screen flex items-center justify-end pr-[10%]">
+          <div className="w-[800px] h-[800px]">
             {!splineError ? (
               <spline-viewer
                 url="https://prod.spline.design/53ooFT0w27gEdjzf/scene.splinecode"
