@@ -4,6 +4,7 @@ import { Bot, Calendar, LineChart } from 'lucide-react';
 
 function App() {
   const [splineError, setSplineError] = useState(false);
+  const [splineLoaded, setSplineLoaded] = useState(false);
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -11,8 +12,8 @@ function App() {
     script.src = 'https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js';
     document.head.appendChild(script);
 
-    // Handle potential script loading errors
     script.onerror = () => {
+      console.error('Failed to load Spline viewer script');
       setSplineError(true);
     };
 
@@ -20,6 +21,16 @@ function App() {
       document.head.removeChild(script);
     };
   }, []);
+
+  const handleSplineError = (error) => {
+    console.error('Spline viewer error:', error);
+    setSplineError(true);
+  };
+
+  const handleSplineLoad = () => {
+    setSplineLoaded(true);
+    setSplineError(false);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
@@ -48,10 +59,15 @@ function App() {
           {!splineError ? (
             <spline-viewer
               url="https://prod.spline.design/53ooFT0w27gEdjzf/scene.splinecode"
-              onError={() => setSplineError(true)}
+              onError={handleSplineError}
+              onLoad={handleSplineLoad}
+              loading-anim
+              events-target="global"
             />
           ) : (
-            <div className="w-full h-full bg-gradient-to-br from-blue-900/50 to-purple-900/50" />
+            <div className="w-full h-full bg-gradient-to-br from-blue-900/50 to-purple-900/50 flex items-center justify-center">
+              <p className="text-gray-400">Interactive 3D visualization unavailable</p>
+            </div>
           )}
         </div>
 
