@@ -81,7 +81,7 @@ function App() {
               transition={{ duration: 0.8 }}
               className="w-1/3"
             >
-              <h2 className="text-5xl font-bold text-blue-400">
+              <h2 className="text-4xl font-bold text-blue-400">
                 Increasing Profit.
               </h2>
             </motion.div>
@@ -96,7 +96,7 @@ function App() {
               transition={{ duration: 0.8 }}
               className="w-1/3 text-right"
             >
-              <h2 className="text-5xl font-bold text-purple-400">
+              <h2 className="text-4xl font-bold text-purple-400">
                 Reducing Costs.
               </h2>
             </motion.div>
@@ -109,10 +109,10 @@ function App() {
             transition={{ duration: 0.8 }}
             className="text-center pb-20"
           >
-            <h2 className="text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-white mb-2">
               Powered by AI.
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-lg text-gray-300 mb-8">
               Discover tailored AI solutions that eliminate inefficiencies and drive business growth
             </p>
             <div className="flex justify-center gap-4">
