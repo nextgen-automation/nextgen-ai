@@ -53,7 +53,7 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center">
+      <section className="relative min-h-screen">
         {/* Spline Animation Container */}
         <div className="absolute inset-0">
           {!splineError ? (
@@ -71,17 +71,46 @@ function App() {
           )}
         </div>
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 relative z-10 min-h-screen flex flex-col">
+          {/* Text Container */}
+          <div className="flex-1 flex items-center">
+            {/* Left Text */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="w-1/3"
+            >
+              <h2 className="text-5xl font-bold text-blue-400">
+                Increasing Profit.
+              </h2>
+            </motion.div>
+
+            {/* Center Space for Animation */}
+            <div className="w-1/3" />
+
+            {/* Right Text */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="w-1/3 text-right"
+            >
+              <h2 className="text-5xl font-bold text-purple-400">
+                Reducing Costs.
+              </h2>
+            </motion.div>
+          </div>
+
+          {/* Bottom Content */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center bg-black/20 p-8 rounded-xl"
+            className="text-center pb-20"
           >
-            <h2 className="text-5xl font-bold mb-4">
-              <span className="text-blue-400">Increasing Profit.</span><br />
-              <span className="text-purple-400">Reducing Costs.</span><br />
-              <span className="text-white">Powered by AI.</span>
+            <h2 className="text-5xl font-bold text-white mb-4">
+              Powered by AI.
             </h2>
             <p className="text-xl text-gray-300 mb-8">
               Discover tailored AI solutions that eliminate inefficiencies and drive business growth
