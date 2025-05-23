@@ -53,7 +53,7 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-screen">
+      <section className="relative min-h-[120vh]">
         {/* Spline Animation Container */}
         <div className="absolute inset-0">
           {!splineError ? (
@@ -71,9 +71,9 @@ function App() {
           )}
         </div>
 
-        <div className="container mx-auto px-6 relative z-10 h-full flex flex-col justify-between pt-32">
+        <div className="container mx-auto px-6 relative z-10 h-full flex flex-col">
           {/* Top Text Container */}
-          <div className="flex justify-between items-start">
+          <div className="pt-32 flex justify-between items-start">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -97,8 +97,8 @@ function App() {
             </motion.div>
           </div>
 
-          {/* Bottom Content with Blur */}
-          <div className="mb-20">
+          {/* Bottom Content with Blur - Moved further down */}
+          <div className="mt-[60vh] mb-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
