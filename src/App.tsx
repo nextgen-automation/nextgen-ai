@@ -71,30 +71,25 @@ function App() {
           )}
         </div>
 
-        <div className="container mx-auto px-6 relative z-10 h-screen flex flex-col">
-          {/* Text Container */}
-          <div className="flex-1 flex items-center">
-            {/* Left Text */}
+        <div className="container mx-auto px-6 relative z-10 h-full flex flex-col justify-between pt-32">
+          {/* Top Text Container */}
+          <div className="flex justify-between items-start">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="w-1/3"
+              className="max-w-md"
             >
               <h2 className="text-5xl font-bold text-blue-400">
                 Increasing Profit.
               </h2>
             </motion.div>
 
-            {/* Center Space for Animation */}
-            <div className="w-1/3" />
-
-            {/* Right Text */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="w-1/3 text-right"
+              className="max-w-md text-right"
             >
               <h2 className="text-5xl font-bold text-purple-400">
                 Reducing Costs.
@@ -103,17 +98,17 @@ function App() {
           </div>
 
           {/* Bottom Content with Blur */}
-          <div className="bg-black/20 backdrop-blur-md rounded-lg p-8 mb-20">
+          <div className="mb-20">
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center"
+              className="bg-black/20 backdrop-blur-md rounded-lg p-8 max-w-4xl mx-auto"
             >
-              <h2 className="text-5xl font-bold text-white mb-4">
+              <h2 className="text-5xl font-bold text-white mb-4 text-center">
                 Powered by AI.
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
+              <p className="text-xl text-gray-300 mb-8 text-center">
                 Discover tailored AI solutions that eliminate inefficiencies and drive business growth
               </p>
               <div className="flex justify-center gap-4">
