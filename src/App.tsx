@@ -53,7 +53,7 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen">
+      <section className="relative h-screen">
         {/* Spline Animation Container */}
         <div className="absolute inset-0">
           {!splineError ? (
@@ -71,7 +71,7 @@ function App() {
           )}
         </div>
 
-        <div className="container mx-auto px-6 relative z-10 min-h-screen flex flex-col">
+        <div className="container mx-auto px-6 relative z-10 h-screen flex flex-col">
           {/* Text Container */}
           <div className="flex-1 flex items-center">
             {/* Left Text */}
@@ -102,28 +102,30 @@ function App() {
             </motion.div>
           </div>
 
-          {/* Bottom Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center pb-20"
-          >
-            <h2 className="text-5xl font-bold text-white mb-4">
-              Powered by AI.
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Discover tailored AI solutions that eliminate inefficiencies and drive business growth
-            </p>
-            <div className="flex justify-center gap-4">
-              <button className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full transition-colors flex items-center">
-                Get Started Now →
-              </button>
-              <button className="border border-gray-600 hover:border-gray-400 px-8 py-3 rounded-full transition-colors">
-                Watch Demo
-              </button>
-            </div>
-          </motion.div>
+          {/* Bottom Content with Blur */}
+          <div className="bg-black/20 backdrop-blur-md rounded-lg p-8 mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center"
+            >
+              <h2 className="text-5xl font-bold text-white mb-4">
+                Powered by AI.
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Discover tailored AI solutions that eliminate inefficiencies and drive business growth
+              </p>
+              <div className="flex justify-center gap-4">
+                <button className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full transition-colors flex items-center">
+                  Get Started Now →
+                </button>
+                <button className="border border-gray-600 hover:border-gray-400 px-8 py-3 rounded-full transition-colors">
+                  Watch Demo
+                </button>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
