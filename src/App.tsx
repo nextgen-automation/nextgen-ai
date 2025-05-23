@@ -55,20 +55,22 @@ function App() {
       {/* Hero Section */}
       <section className="relative min-h-screen">
         {/* Spline Animation Container */}
-        <div className="absolute inset-0 h-screen">
-          {!splineError ? (
-            <spline-viewer
-              url="https://prod.spline.design/53ooFT0w27gEdjzf/scene.splinecode"
-              onError={handleSplineError}
-              onLoad={handleSplineLoad}
-              loading-anim
-              events-target="global"
-            />
-          ) : (
-            <div className="w-full h-full bg-gradient-to-br from-blue-900/50 to-purple-900/50 flex items-center justify-center">
-              <p className="text-gray-400">Interactive 3D visualization unavailable</p>
-            </div>
-          )}
+        <div className="absolute inset-0 h-screen flex items-center justify-center">
+          <div className="w-full h-full max-w-7xl mx-auto">
+            {!splineError ? (
+              <spline-viewer
+                url="https://prod.spline.design/53ooFT0w27gEdjzf/scene.splinecode"
+                onError={handleSplineError}
+                onLoad={handleSplineLoad}
+                loading-anim
+                events-target="global"
+              />
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-blue-900/50 to-purple-900/50 flex items-center justify-center">
+                <p className="text-gray-400">Interactive 3D visualization unavailable</p>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10 h-full flex flex-col">
