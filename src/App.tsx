@@ -89,12 +89,12 @@ function App() {
             {/* Center Space for Animation */}
             <div className="w-1/3" />
 
-            {/* Right Text */}
+            {/* Right Text - Adjusted 60px to the left */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="w-1/3 text-right"
+              className="w-1/3 text-right -ml-[60px]"
             >
               <h2 className="text-5xl font-bold text-purple-400">
                 Reducing Costs.
@@ -102,24 +102,24 @@ function App() {
             </motion.div>
           </div>
 
-          {/* Bottom Content */}
+          {/* Bottom Content - Reduced font sizes */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center pb-20"
           >
-            <h2 className="text-5xl font-bold text-white mb-4">
+            <h2 className="text-[18px] font-bold text-white mb-4">
               Powered by AI.
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-[18px] text-gray-300 mb-8">
               Discover tailored AI solutions that eliminate inefficiencies and drive business growth
             </p>
             <div className="flex justify-center gap-4">
-              <button className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full transition-colors flex items-center">
+              <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-[18px] flex items-center">
                 Get Started Now →
               </button>
-              <button className="border border-gray-600 hover:border-gray-400 px-8 py-3 rounded-full transition-colors">
+              <button className="border border-gray-600 hover:border-gray-400 px-6 py-2 rounded-full transition-colors text-[18px]">
                 Watch Demo
               </button>
             </div>
