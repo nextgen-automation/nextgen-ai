@@ -53,9 +53,9 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-[120vh]">
+      <section className="relative min-h-screen">
         {/* Spline Animation Container */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 h-screen">
           {!splineError ? (
             <spline-viewer
               url="https://prod.spline.design/53ooFT0w27gEdjzf/scene.splinecode"
@@ -98,7 +98,7 @@ function App() {
           </div>
 
           {/* Bottom Content with Blur - Moved further down */}
-          <div className="mt-[60vh] mb-20">
+          <div className="mt-[80vh]">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
