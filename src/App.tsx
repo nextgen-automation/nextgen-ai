@@ -35,7 +35,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
       {/* Navigation */}
-      <nav className="bg-black/50 backdrop-blur-sm fixed w-full z-50">
+      <nav className="bg-black/30 backdrop-blur-sm fixed w-full z-50">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Bot className="w-8 h-8 text-blue-500" />
@@ -53,9 +53,9 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 min-h-screen">
+      <section className="relative min-h-screen flex items-center">
         {/* Spline Animation Container */}
-        <div className="fixed top-0 left-0 w-full h-screen z-0">
+        <div className="absolute inset-0">
           {!splineError ? (
             <spline-viewer
               url="https://prod.spline.design/53ooFT0w27gEdjzf/scene.splinecode"
@@ -71,12 +71,12 @@ function App() {
           )}
         </div>
 
-        <div className="container mx-auto relative z-10">
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center bg-black/30 backdrop-blur-sm p-8 rounded-xl"
+            className="max-w-4xl mx-auto text-center bg-black/20 backdrop-blur-[2px] p-8 rounded-xl"
           >
             <h2 className="text-5xl font-bold mb-4">
               <span className="text-blue-400">Increasing Profit.</span><br />
@@ -99,7 +99,7 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gray-900/50 relative z-10">
+      <section className="py-20 bg-gradient-to-br from-gray-900 to-black relative z-10">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
