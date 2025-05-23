@@ -76,7 +76,7 @@ function App() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center bg-black/20 backdrop-blur-[2px] p-8 rounded-xl"
+            className="max-w-4xl mx-auto text-center bg-black/30 backdrop-blur-sm p-8 rounded-xl"
           >
             <h2 className="text-5xl font-bold mb-4">
               <span className="text-blue-400">Increasing Profit.</span><br />
