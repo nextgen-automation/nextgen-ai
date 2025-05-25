@@ -71,9 +71,9 @@ function App() {
           )}
         </div>
 
-        <div className="container mx-auto px-6 relative z-10 min-h-screen flex flex-col">
-          {/* Text Container */}
-          <div className="flex-1 flex items-center">
+        <div className="container mx-auto px-6 relative z-10 min-h-screen">
+          {/* Text Container - Moved higher up */}
+          <div className="pt-32 flex items-start">
             {/* Left Text */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -89,7 +89,7 @@ function App() {
             {/* Center Space for Animation */}
             <div className="w-1/3" />
 
-            {/* Right Text - Adjusted 60px to the left */}
+            {/* Right Text */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -102,26 +102,28 @@ function App() {
             </motion.div>
           </div>
 
-          {/* Bottom Content - New Overlay Box */}
+          {/* Bottom Content - Refined Overlay Box */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="absolute bottom-0 left-0 right-0 bg-black/30 backdrop-blur-sm text-center py-12 px-6"
+            className="absolute bottom-12 left-1/2 -translate-x-1/2 bg-black/30 backdrop-blur-sm rounded-2xl overflow-hidden max-w-3xl w-full mx-auto"
           >
-            <h2 className="text-3xl font-bold text-white mb-6">
-              Powered by AI
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Discover tailored AI solutions that eliminate inefficiencies and drive business growth
-            </p>
-            <div className="flex justify-center gap-6">
-              <button className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full transition-colors text-lg font-medium">
-                Book a Meeting
-              </button>
-              <button className="border-2 border-gray-400 hover:border-white px-8 py-3 rounded-full transition-colors text-lg font-medium">
-                Watch Demo
-              </button>
+            <div className="px-12 py-8">
+              <h2 className="text-3xl font-bold text-white mb-4">
+                Powered by AI
+              </h2>
+              <p className="text-lg text-gray-300 mb-6">
+                Discover tailored AI solutions that eliminate inefficiencies and drive business growth
+              </p>
+              <div className="flex justify-center gap-4">
+                <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2.5 rounded-full transition-colors text-base font-medium">
+                  Book a Meeting
+                </button>
+                <button className="border border-gray-400 hover:border-white px-6 py-2.5 rounded-full transition-colors text-base font-medium">
+                  Watch Demo
+                </button>
+              </div>
             </div>
           </motion.div>
         </div>
