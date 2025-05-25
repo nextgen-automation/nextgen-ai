@@ -102,16 +102,27 @@ function App() {
             </motion.div>
           </div>
 
-          {/* Bottom Content - Only Powered by AI text */}
+          {/* Bottom Content - New Overlay Box */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center pb-32"
+            className="absolute bottom-0 left-0 right-0 bg-black/30 backdrop-blur-sm text-center py-12 px-6"
           >
-            <h2 className="text-xl font-medium text-[#4f9eff]">
-              Powered by AI.
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Powered by AI
             </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              Discover tailored AI solutions that eliminate inefficiencies and drive business growth
+            </p>
+            <div className="flex justify-center gap-6">
+              <button className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full transition-colors text-lg font-medium">
+                Book a Meeting
+              </button>
+              <button className="border-2 border-gray-400 hover:border-white px-8 py-3 rounded-full transition-colors text-lg font-medium">
+                Watch Demo
+              </button>
+            </div>
           </motion.div>
         </div>
       </section>
