@@ -49,7 +49,7 @@ function App() {
             <a href="#" onClick={scrollToTop} className="text-gray-300 hover:text-white transition-colors">Home</a>
             <a href="#services" className="text-gray-300 hover:text-white transition-colors">Our Services</a>
             <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors">
-              Get Started
+              Book a Free Meeting
             </button>
           </div>
         </div>
@@ -133,7 +133,7 @@ function App() {
               </p>
               <div className="flex justify-center gap-4">
                 <button className="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full transition-colors text-sm font-medium">
-                  Book a Meeting
+                  Book a Free Meeting
                 </button>
                 <button className="border border-gray-400 hover:border-white px-5 py-2 rounded-full transition-colors text-sm font-medium">
                   Watch Demo
