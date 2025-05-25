@@ -32,6 +32,10 @@ function App() {
     setSplineError(false);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
       {/* Navigation */}
@@ -39,12 +43,11 @@ function App() {
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Bot className="w-8 h-8 text-blue-500" />
-            <h1 className="text-2xl font-bold">BusinessAIdevs</h1>
+            <h1 className="text-2xl font-bold">NextGen-AI</h1>
           </div>
           <div className="flex items-center space-x-8">
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">Home</a>
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">Services</a>
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">Blog</a>
+            <a href="#" onClick={scrollToTop} className="text-gray-300 hover:text-white transition-colors">Home</a>
+            <a href="#services" className="text-gray-300 hover:text-white transition-colors">Our Services</a>
             <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors">
               Get Started
             </button>
@@ -142,7 +145,7 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 to-black relative z-10">
+      <section id="services" className="py-20 bg-gradient-to-br from-gray-900 to-black relative z-10">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
