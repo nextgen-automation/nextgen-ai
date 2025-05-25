@@ -78,7 +78,11 @@ function App() {
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ 
+                duration: 0.8,
+                delay: 0.5,
+                ease: "easeOut"
+              }}
               className="w-1/3"
             >
               <h2 className="text-5xl font-bold text-blue-400">
@@ -93,7 +97,11 @@ function App() {
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ 
+                duration: 0.8,
+                delay: 0.7,
+                ease: "easeOut"
+              }}
               className="w-1/3 text-right"
             >
               <h2 className="text-5xl font-bold text-purple-400">
@@ -106,7 +114,11 @@ function App() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ 
+              duration: 0.8,
+              delay: 1,
+              ease: "easeOut"
+            }}
             className="absolute bottom-12 left-0 right-0 mx-auto bg-black/30 backdrop-blur-sm rounded-2xl overflow-hidden max-w-xl"
           >
             <div className="px-8 py-6 text-center">
