@@ -107,9 +107,9 @@ function App() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center pb-20"
+            className="text-center pb-32"
           >
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-5xl font-bold text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.3)]">
               Powered by AI.
             </h2>
           </motion.div>
