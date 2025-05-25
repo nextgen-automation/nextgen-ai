@@ -102,27 +102,16 @@ function App() {
             </motion.div>
           </div>
 
-          {/* Bottom Content - Reduced font sizes */}
+          {/* Bottom Content - Only Powered by AI text */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center pb-20"
           >
-            <h2 className="text-[18px] font-bold text-white mb-4">
+            <h2 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Powered by AI.
             </h2>
-            <p className="text-[18px] text-gray-300 mb-8">
-              Discover tailored AI solutions that eliminate inefficiencies and drive business growth
-            </p>
-            <div className="flex justify-center gap-4">
-              <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-[18px] flex items-center">
-                Get Started Now →
-              </button>
-              <button className="border border-gray-600 hover:border-gray-400 px-6 py-2 rounded-full transition-colors text-[18px]">
-                Watch Demo
-              </button>
-            </div>
           </motion.div>
         </div>
       </section>
