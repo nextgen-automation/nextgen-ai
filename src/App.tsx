@@ -109,7 +109,7 @@ function App() {
             transition={{ duration: 0.8 }}
             className="text-center pb-32"
           >
-            <h2 className="text-5xl font-bold text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.3)]">
+            <h2 className="text-xl font-medium text-[#4f9eff]">
               Powered by AI.
             </h2>
           </motion.div>
