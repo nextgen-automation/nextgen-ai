@@ -107,20 +107,20 @@ function App() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="absolute bottom-12 left-0 right-0 mx-auto bg-black/30 backdrop-blur-sm rounded-2xl overflow-hidden max-w-2xl"
+            className="absolute bottom-12 left-0 right-0 mx-auto bg-black/30 backdrop-blur-sm rounded-2xl overflow-hidden max-w-xl"
           >
-            <div className="px-12 py-8 text-center">
-              <h2 className="text-3xl font-bold text-white mb-4">
+            <div className="px-8 py-6 text-center">
+              <h2 className="text-2xl font-bold text-white mb-3">
                 Powered by AI
               </h2>
-              <p className="text-lg text-gray-300 mb-6">
+              <p className="text-base text-gray-300 mb-5">
                 Discover tailored AI solutions that eliminate inefficiencies and drive business growth
               </p>
               <div className="flex justify-center gap-4">
-                <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2.5 rounded-full transition-colors text-base font-medium">
+                <button className="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full transition-colors text-sm font-medium">
                   Book a Meeting
                 </button>
-                <button className="border border-gray-400 hover:border-white px-6 py-2.5 rounded-full transition-colors text-base font-medium">
+                <button className="border border-gray-400 hover:border-white px-5 py-2 rounded-full transition-colors text-sm font-medium">
                   Watch Demo
                 </button>
               </div>
