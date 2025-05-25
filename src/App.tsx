@@ -58,7 +58,7 @@ function App() {
         <div className="absolute inset-0">
           {!splineError ? (
             <spline-viewer
-              url="https://prod.spline.design/53ooFT0w27gEdjzf/scene.splinecode"
+              url="https://prod.spline.design/kwId3fBFWvxHdNui/scene.splinecode"
               onError={handleSplineError}
               onLoad={handleSplineLoad}
               loading-anim
