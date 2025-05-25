@@ -107,9 +107,10 @@ function App() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center pb-32"
+            className="absolute bottom-[80px] left-0 right-0 text-center"
+            style={{ textShadow: '1px 1px 4px rgba(0, 0, 0, 0.6)' }}
           >
-            <h2 className="text-5xl font-bold text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.3)]">
+            <h2 className="text-5xl font-[500]" style={{ color: 'rgba(255, 255, 255, 0.85)' }}>
               Powered by AI.
             </h2>
           </motion.div>
