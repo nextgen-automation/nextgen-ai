@@ -122,7 +122,7 @@ function App() {
             className="absolute bottom-12 left-0 right-0 mx-auto bg-black/30 backdrop-blur-sm rounded-2xl overflow-hidden max-w-xl"
           >
             <div className="px-8 py-6 text-center">
-              <h2 className="text-2xl font-bold text-white mb-3">
+              <h2 className="text-5xl font-bold text-white mb-3">
                 Powered by AI
               </h2>
               <p className="text-base text-gray-300 mb-5">
