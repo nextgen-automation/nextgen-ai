@@ -94,7 +94,7 @@ function App() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="w-1/3 text-right -ml-[60px]"
+              className="w-1/3 text-right"
             >
               <h2 className="text-5xl font-bold text-purple-400">
                 Reducing Costs.
@@ -107,9 +107,9 @@ function App() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="absolute bottom-12 left-1/2 -translate-x-1/2 bg-black/30 backdrop-blur-sm rounded-2xl overflow-hidden max-w-3xl w-full mx-auto"
+            className="absolute bottom-12 left-0 right-0 mx-auto bg-black/30 backdrop-blur-sm rounded-2xl overflow-hidden max-w-2xl"
           >
-            <div className="px-12 py-8">
+            <div className="px-12 py-8 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">
                 Powered by AI
               </h2>
