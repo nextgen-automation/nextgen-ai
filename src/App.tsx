@@ -44,6 +44,11 @@ function App() {
     setSplineError(false);
   };
 
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services');
+    servicesSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -131,9 +136,12 @@ function App() {
                 Discover tailored AI solutions that eliminate inefficiencies and drive business growth
               </p>
               <div className="flex justify-center space-x-4">
-                <a href="#services" className="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full transition-colors text-sm font-medium">
+                <button 
+                  onClick={scrollToServices}
+                  className="bg-white hover:bg-gray-100 text-gray-900 px-5 py-2 rounded-full transition-colors text-sm font-medium"
+                >
                   Our Services
-                </a>
+                </button>
                 <button className="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full transition-colors text-sm font-medium">
                   Book a Free Meeting
                 </button>

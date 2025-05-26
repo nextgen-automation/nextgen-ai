@@ -1,9 +1,11 @@
 import React from 'react';
 import { Bot } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const isExamplesPage = location.pathname === '/examples';
 
   const scrollToServices = () => {
     const servicesSection = document.getElementById('services');
@@ -23,7 +25,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <nav className="bg-gray-900/30 backdrop-blur-sm fixed w-full z-50">
+    <nav className={`backdrop-blur-sm fixed w-full z-50 ${isExamplesPage ? 'bg-gray-900/50' : 'bg-gray-900/20'}`}>
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2 group">
           <Bot className="w-8 h-8 text-blue-500 group-hover:text-blue-400 transition-colors" />
