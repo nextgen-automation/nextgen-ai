@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Bot, Calendar, LineChart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 function App() {
   const [splineError, setSplineError] = useState(false);
@@ -48,7 +49,7 @@ function App() {
           <div className="flex items-center space-x-8">
             <a href="#" onClick={scrollToTop} className="text-white hover:text-white/80 transition-colors">Home</a>
             <a href="#services" className="text-white hover:text-white/80 transition-colors">Our Services</a>
-            <a href="#examples" className="text-white hover:text-white/80 transition-colors">Watch Examples of AI Integrations</a>
+            <Link to="/examples" className="text-white hover:text-white/80 transition-colors">Watch Examples of AI Integrations</Link>
             <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors">
               Book a Free Meeting
             </button>
@@ -167,9 +168,11 @@ function App() {
                   <li>• Instant Response Times</li>
                 </ul>
               </motion.div>
-              <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm">
-                Watch Examples Of AI Chat Agents
-              </button>
+              <Link to="/examples" className="block w-full">
+                <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm">
+                  Watch Examples Of AI Chat Agents
+                </button>
+              </Link>
             </div>
 
             <div className="space-y-4">
@@ -189,9 +192,11 @@ function App() {
                   <li>• Enhanced Analytics</li>
                 </ul>
               </motion.div>
-              <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm">
-                Watch Examples Of AI Caller Agents
-              </button>
+              <Link to="/examples" className="block w-full">
+                <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm">
+                  Watch Examples Of AI Caller Agents
+                </button>
+              </Link>
             </div>
 
             <div className="space-y-4">
@@ -211,9 +216,11 @@ function App() {
                   <li>• Smart Calendar Management</li>
                 </ul>
               </motion.div>
-              <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm">
-                Watch Examples Of AI Powered Automations
-              </button>
+              <Link to="/examples" className="block w-full">
+                <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm">
+                  Watch Examples Of AI Powered Automations
+                </button>
+              </Link>
             </div>
           </div>
         </div>
