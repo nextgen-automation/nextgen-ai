@@ -11,11 +11,11 @@ const ExOfAIIntegrations: React.FC = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="min-h-screen bg-white text-gray-900"
+      className="min-h-screen bg-white text-gray-900 pt-20"
     >
       <Header />
 
-      <div className="container mx-auto px-6 pt-32">
+      <div className="container mx-auto px-6 pt-12">
         <h1 className="text-4xl font-bold text-center mb-16">Examples of AI Integrations</h1>
         
         <div className="space-y-8">
