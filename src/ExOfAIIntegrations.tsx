@@ -9,7 +9,7 @@ const ExOfAIIntegrations: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-300 to-white">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-gray-800/30 backdrop-blur-sm fixed w-full z-50">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
