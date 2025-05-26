@@ -9,7 +9,7 @@ const ExOfAIIntegrations: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-950 via-blue-900/20 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-950 text-white">
       {/* Navigation */}
       <nav className="bg-black/30 backdrop-blur-sm fixed w-full z-50">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -37,7 +37,7 @@ const ExOfAIIntegrations: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="w-full py-8 px-4 bg-gray-800/50 backdrop-blur-sm hover:bg-gray-700 transition-all duration-300"
+            className="w-full py-8 px-4 bg-black/20 backdrop-blur-sm hover:bg-black/30 transition-all duration-300 rounded-xl border border-white/10"
           >
             <div className="flex flex-wrap items-center gap-8">
               <h2 className="text-2xl font-bold text-blue-400">AI Chat Agents</h2>
@@ -59,7 +59,7 @@ const ExOfAIIntegrations: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="w-full py-8 px-4 bg-gray-800/50 backdrop-blur-sm hover:bg-gray-700 transition-all duration-300"
+            className="w-full py-8 px-4 bg-black/20 backdrop-blur-sm hover:bg-black/30 transition-all duration-300 rounded-xl border border-white/10"
           >
             <div className="flex flex-wrap items-center gap-8">
               <h2 className="text-2xl font-bold text-purple-400">AI Caller Agents</h2>
@@ -81,7 +81,7 @@ const ExOfAIIntegrations: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="w-full py-8 px-4 bg-gray-800/50 backdrop-blur-sm hover:bg-gray-700 transition-all duration-300"
+            className="w-full py-8 px-4 bg-black/20 backdrop-blur-sm hover:bg-black/30 transition-all duration-300 rounded-xl border border-white/10"
           >
             <div className="flex flex-wrap items-center gap-8">
               <h2 className="text-2xl font-bold text-green-400">AI Powered Automations</h2>
