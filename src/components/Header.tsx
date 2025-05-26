@@ -24,7 +24,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <nav className="bg-white border-b border-[#E5E5E5] fixed w-full top-0 z-[1000]" style={{ padding: '1rem 2rem' }}>
+    <nav className="bg-white fixed w-full top-0 z-[1000] border-b border-[#E5E5E5]/50" style={{ padding: '1rem 2rem', borderBottomWidth: '0.5px' }}>
       <div className="container mx-auto flex justify-between items-center">
         <button onClick={scrollToTop} className="flex items-center space-x-2 group">
           <Bot className="w-8 h-8 text-blue-500" />
