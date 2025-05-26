@@ -24,28 +24,28 @@ const Header: React.FC = () => {
   };
 
   return (
-    <nav className="bg-white fixed w-full top-0 z-[1000] border-b border-[#E5E5E5]" style={{ padding: '1rem 2rem', borderBottomWidth: '1px' }}>
+    <nav className="bg-[#1F1F1F] fixed w-full top-0 z-[1000] border-b border-[#2D2D2D]" style={{ padding: '1rem 2rem', borderBottomWidth: '1px' }}>
       <div className="container mx-auto flex justify-between items-center">
         <button onClick={scrollToTop} className="flex items-center space-x-2 group">
           <Bot className="w-8 h-8 text-blue-500" />
-          <h1 className="text-2xl font-bold text-gray-900">NextGen-AI</h1>
+          <h1 className="text-2xl font-bold text-white">NextGen-AI</h1>
         </button>
         <div className="flex items-center space-x-8">
           <button 
             onClick={scrollToTop} 
-            className={`text-gray-700 hover:text-gray-900 transition-colors ${location.pathname === '/' ? 'text-gray-900' : ''}`}
+            className={`text-[#F0F0F0] hover:text-white transition-colors ${location.pathname === '/' ? 'text-white' : ''}`}
           >
             Home
           </button>
           <button 
             onClick={scrollToServices} 
-            className="text-gray-700 hover:text-gray-900 transition-colors"
+            className="text-[#F0F0F0] hover:text-white transition-colors"
           >
             Our Services
           </button>
           <Link 
             to="/examples" 
-            className={`text-gray-700 hover:text-gray-900 transition-colors ${location.pathname === '/examples' ? 'text-gray-900' : ''}`}
+            className={`text-[#F0F0F0] hover:text-white transition-colors ${location.pathname === '/examples' ? 'text-white' : ''}`}
           >
             Watch Examples of AI Integrations
           </Link>

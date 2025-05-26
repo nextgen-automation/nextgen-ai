@@ -55,7 +55,7 @@ function App() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white pt-20"
+      className="min-h-screen bg-[#1F1F1F] text-white"
     >
       <Header />
 
@@ -79,7 +79,7 @@ function App() {
         </div>
 
         <div className="container mx-auto px-6 relative z-10 min-h-screen">
-          {/* Text Container - Moved higher up */}
+          {/* Text Container */}
           <div className="pt-32 flex items-start">
             {/* Left Text */}
             <motion.div
@@ -117,7 +117,7 @@ function App() {
             </motion.div>
           </div>
 
-          {/* Bottom Content - Refined Overlay Box */}
+          {/* Bottom Content */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
