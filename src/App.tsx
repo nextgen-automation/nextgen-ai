@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Bot, Calendar, LineChart } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import Header from './components/Header';
 
 function App() {
   const [splineError, setSplineError] = useState(false);
@@ -28,7 +29,7 @@ function App() {
     if (location.state?.scrollToServices) {
       const servicesSection = document.getElementById('services');
       if (servicesSection) {
-        servicesSection.scrollIntoView({ behavior: 'smooth' });
+        servicesSection.scrollIntoView();
       }
     }
   }, [location]);
@@ -43,29 +44,9 @@ function App() {
     setSplineError(false);
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
-      {/* Navigation */}
-      <nav className="bg-black/30 backdrop-blur-sm fixed w-full z-50">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <Bot className="w-8 h-8 text-blue-500" />
-            <h1 className="text-2xl font-bold">NextGen-AI</h1>
-          </div>
-          <div className="flex items-center space-x-8">
-            <a href="#" onClick={scrollToTop} className="text-white hover:text-white/80 transition-colors">Home</a>
-            <a href="#services" className="text-white hover:text-white/80 transition-colors">Our Services</a>
-            <Link to="/examples" className="text-white hover:text-white/80 transition-colors">Watch Examples of AI Integrations</Link>
-            <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors">
-              Book a Free Meeting
-            </button>
-          </div>
-        </div>
-      </nav>
+      <Header />
 
       {/* Hero Section */}
       <section className="relative min-h-screen">
