@@ -46,8 +46,9 @@ function App() {
             <h1 className="text-2xl font-bold">NextGen-AI</h1>
           </div>
           <div className="flex items-center space-x-8">
-            <a href="#" onClick={scrollToTop} className="text-gray-300 hover:text-white transition-colors">Home</a>
-            <a href="#services" className="text-gray-300 hover:text-white transition-colors">Our Services</a>
+            <a href="#" onClick={scrollToTop} className="text-white hover:text-white/80 transition-colors">Home</a>
+            <a href="#services" className="text-white hover:text-white/80 transition-colors">Our Services</a>
+            <a href="#examples" className="text-white hover:text-white/80 transition-colors">Watch Examples of AI Integrations</a>
             <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors">
               Book a Free Meeting
             </button>
@@ -128,15 +129,12 @@ function App() {
               <h2 className="text-5xl font-bold text-white mb-3">
                 Powered by AI
               </h2>
-              <p className="text-base text-gray-300 mb-5">
+              <p className="text-white mb-5">
                 Discover tailored AI solutions that eliminate inefficiencies and drive business growth
               </p>
-              <div className="flex justify-center gap-4">
+              <div className="flex justify-center">
                 <button className="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full transition-colors text-sm font-medium">
                   Book a Free Meeting
-                </button>
-                <button className="border border-gray-400 hover:border-white px-5 py-2 rounded-full transition-colors text-sm font-medium">
-                  Watch Demo
                 </button>
               </div>
             </div>
