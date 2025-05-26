@@ -25,12 +25,12 @@ const Header: React.FC = () => {
   };
 
   return (
-    <nav className={`backdrop-blur-sm fixed w-full z-50 ${isExamplesPage ? 'bg-gray-900/50' : 'bg-gray-900/20'}`}>
+    <nav className={`backdrop-blur-sm fixed w-full z-50 ${isExamplesPage ? 'bg-gray-900/80' : 'bg-gray-900/20'}`}>
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <Link to="/" className="flex items-center space-x-2 group">
+        <button onClick={scrollToTop} className="flex items-center space-x-2 group">
           <Bot className="w-8 h-8 text-blue-500 group-hover:text-blue-400 transition-colors" />
           <h1 className="text-2xl font-bold text-white group-hover:text-white/90 transition-colors">NextGen-AI</h1>
-        </Link>
+        </button>
         <div className="flex items-center space-x-8">
           <button onClick={scrollToTop} className="text-white hover:text-white/80 transition-colors">Home</button>
           <button onClick={scrollToServices} className="text-white hover:text-white/80 transition-colors">Our Services</button>
