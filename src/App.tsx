@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Bot, Calendar, LineChart } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function App() {
   const [splineError, setSplineError] = useState(false);
   const [splineLoaded, setSplineLoaded] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -22,6 +23,15 @@ function App() {
       document.head.removeChild(script);
     };
   }, []);
+
+  useEffect(() => {
+    if (location.state?.scrollToServices) {
+      const servicesSection = document.getElementById('services');
+      if (servicesSection) {
+        servicesSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
 
   const handleSplineError = (error) => {
     console.error('Spline viewer error:', error);
