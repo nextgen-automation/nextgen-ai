@@ -8,18 +8,18 @@ const Header: React.FC = () => {
   const scrollToServices = () => {
     const servicesSection = document.getElementById('services');
     if (window.location.pathname === '/') {
-      servicesSection?.scrollIntoView();
+      servicesSection?.scrollIntoView({ behavior: 'smooth' });
     } else {
       navigate('/', { state: { scrollToServices: true } });
     }
   };
 
   const scrollToTop = () => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <nav className="bg-black fixed w-full z-50">
+    <nav className="bg-gray-900 fixed w-full z-50">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <Bot className="w-8 h-8 text-blue-500" />
