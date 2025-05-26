@@ -55,7 +55,7 @@ function App() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white pt-20"
+      className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white pt-16"
     >
       <Header />
 

@@ -11,7 +11,7 @@ const ExOfAIIntegrations: React.FC = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="min-h-screen bg-white text-gray-900 pt-20"
+      className="min-h-screen bg-white text-gray-900 pt-16"
     >
       <Header />
 
