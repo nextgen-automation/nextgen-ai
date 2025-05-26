@@ -45,7 +45,13 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white"
+    >
       <Header />
 
       {/* Hero Section */}
@@ -216,7 +222,7 @@ function App() {
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 }
 

@@ -6,7 +6,13 @@ import Header from './components/Header';
 
 const ExOfAIIntegrations: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      className="min-h-screen bg-white text-gray-900"
+    >
       <Header />
 
       <div className="container mx-auto px-6 pt-32">
@@ -19,19 +25,19 @@ const ExOfAIIntegrations: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="w-full py-8 px-6 bg-gray-800/50 backdrop-blur-sm hover:bg-gray-800/60 hover:shadow-xl transition-all duration-300 rounded-xl border border-gray-700 shadow-lg cursor-pointer group"
+              className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 shadow-lg cursor-pointer group"
             >
               <div className="flex items-center justify-between">
                 <div className="flex flex-wrap items-center gap-8">
-                  <h2 className="text-2xl font-bold text-blue-400">AI Chat Agents</h2>
+                  <h2 className="text-2xl font-bold text-blue-600">AI Chat Agents</h2>
                   <div className="flex items-center gap-8">
                     <div className="flex items-center gap-2">
                       <span className="text-blue-500">•</span>
-                      <p className="text-gray-300">p1 chat agents</p>
+                      <p className="text-gray-600">p1 chat agents</p>
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="text-blue-500">•</span>
-                      <p className="text-gray-300">p2 chat agents</p>
+                      <p className="text-gray-600">p2 chat agents</p>
                     </div>
                   </div>
                 </div>
@@ -46,19 +52,19 @@ const ExOfAIIntegrations: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-full py-8 px-6 bg-gray-800/50 backdrop-blur-sm hover:bg-gray-800/60 hover:shadow-xl transition-all duration-300 rounded-xl border border-gray-700 shadow-lg cursor-pointer group"
+              className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 shadow-lg cursor-pointer group"
             >
               <div className="flex items-center justify-between">
                 <div className="flex flex-wrap items-center gap-8">
-                  <h2 className="text-2xl font-bold text-purple-400">AI Caller Agents</h2>
+                  <h2 className="text-2xl font-bold text-purple-600">AI Caller Agents</h2>
                   <div className="flex items-center gap-8">
                     <div className="flex items-center gap-2">
                       <span className="text-purple-500">•</span>
-                      <p className="text-gray-300">p1 caller agents</p>
+                      <p className="text-gray-600">p1 caller agents</p>
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="text-purple-500">•</span>
-                      <p className="text-gray-300">p2 caller agents</p>
+                      <p className="text-gray-600">p2 caller agents</p>
                     </div>
                   </div>
                 </div>
@@ -73,19 +79,19 @@ const ExOfAIIntegrations: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="w-full py-8 px-6 bg-gray-800/50 backdrop-blur-sm hover:bg-gray-800/60 hover:shadow-xl transition-all duration-300 rounded-xl border border-gray-700 shadow-lg cursor-pointer group"
+              className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 shadow-lg cursor-pointer group"
             >
               <div className="flex items-center justify-between">
                 <div className="flex flex-wrap items-center gap-8">
-                  <h2 className="text-2xl font-bold text-green-400">AI Powered Automations</h2>
+                  <h2 className="text-2xl font-bold text-green-600">AI Powered Automations</h2>
                   <div className="flex items-center gap-8">
                     <div className="flex items-center gap-2">
                       <span className="text-green-500">•</span>
-                      <p className="text-gray-300">p1 Automations</p>
+                      <p className="text-gray-600">p1 Automations</p>
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="text-green-500">•</span>
-                      <p className="text-gray-300">p2 Automations</p>
+                      <p className="text-gray-600">p2 Automations</p>
                     </div>
                   </div>
                 </div>
@@ -95,7 +101,7 @@ const ExOfAIIntegrations: React.FC = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
