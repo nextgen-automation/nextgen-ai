@@ -49,6 +49,9 @@ function App() {
             <a href="#" onClick={scrollToTop} className="text-white hover:text-white/80 transition-colors">Home</a>
             <a href="#services" className="text-white hover:text-white/80 transition-colors">Our Services</a>
             <a href="#examples" className="text-white hover:text-white/80 transition-colors">Watch Examples of AI Integrations</a>
+            <a href="#services" className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors">
+              Our Services
+            </a>
             <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors">
               Book a Free Meeting
             </button>
@@ -147,56 +150,71 @@ function App() {
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
-            >
-              <Bot className="w-12 h-12 text-blue-500 mb-4" />
-              <h3 className="text-xl font-bold mb-4">AI Chatbots</h3>
-              <p className="text-gray-400 mb-4">
-                Intelligent conversational agents that handle customer inquiries 24/7, reducing response times and improving satisfaction.
-              </p>
-              <ul className="space-y-2 text-gray-300">
-                <li>• 24/7 Customer Support</li>
-                <li>• Instant Response Times</li>
-              </ul>
-            </motion.div>
+            <div className="space-y-4">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
+              >
+                <Bot className="w-12 h-12 text-blue-500 mb-4" />
+                <h3 className="text-xl font-bold mb-4">AI Chatbots</h3>
+                <p className="text-gray-400 mb-4">
+                  Intelligent conversational agents that handle customer inquiries 24/7, reducing response times and improving satisfaction.
+                </p>
+                <ul className="space-y-2 text-gray-300">
+                  <li>• 24/7 Customer Support</li>
+                  <li>• Instant Response Times</li>
+                </ul>
+              </motion.div>
+              <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm">
+                Watch Examples Of AI Chat Agents
+              </button>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
-            >
-              <LineChart className="w-12 h-12 text-blue-500 mb-4" />
-              <h3 className="text-xl font-bold mb-4">CRM Integration</h3>
-              <p className="text-gray-400 mb-4">
-                Seamlessly integrate AI with your existing CRM to automate data entry and enhance customer insights.
-              </p>
-              <ul className="space-y-2 text-gray-300">
-                <li>• Automated Data Entry</li>
-                <li>• Enhanced Analytics</li>
-              </ul>
-            </motion.div>
+            <div className="space-y-4">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
+              >
+                <LineChart className="w-12 h-12 text-blue-500 mb-4" />
+                <h3 className="text-xl font-bold mb-4">CRM Integration</h3>
+                <p className="text-gray-400 mb-4">
+                  Seamlessly integrate AI with your existing CRM to automate data entry and enhance customer insights.
+                </p>
+                <ul className="space-y-2 text-gray-300">
+                  <li>• Automated Data Entry</li>
+                  <li>• Enhanced Analytics</li>
+                </ul>
+              </motion.div>
+              <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm">
+                Watch Examples Of AI Caller Agents
+              </button>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
-            >
-              <Calendar className="w-12 h-12 text-blue-500 mb-4" />
-              <h3 className="text-xl font-bold mb-4">AI Appointment Schedulers</h3>
-              <p className="text-gray-400 mb-4">
-                Smart scheduling systems that eliminate double-bookings and optimize your calendar automatically.
-              </p>
-              <ul className="space-y-2 text-gray-300">
-                <li>• Automated Booking</li>
-                <li>• Smart Calendar Management</li>
-              </ul>
-            </motion.div>
+            <div className="space-y-4">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
+              >
+                <Calendar className="w-12 h-12 text-blue-500 mb-4" />
+                <h3 className="text-xl font-bold mb-4">AI Appointment Schedulers</h3>
+                <p className="text-gray-400 mb-4">
+                  Smart scheduling systems that eliminate double-bookings and optimize your calendar automatically.
+                </p>
+                <ul className="space-y-2 text-gray-300">
+                  <li>• Automated Booking</li>
+                  <li>• Smart Calendar Management</li>
+                </ul>
+              </motion.div>
+              <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm">
+                Watch Examples Of AI Powered Automations
+              </button>
+            </div>
           </div>
         </div>
       </section>
