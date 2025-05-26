@@ -49,9 +49,6 @@ function App() {
             <a href="#" onClick={scrollToTop} className="text-white hover:text-white/80 transition-colors">Home</a>
             <a href="#services" className="text-white hover:text-white/80 transition-colors">Our Services</a>
             <a href="#examples" className="text-white hover:text-white/80 transition-colors">Watch Examples of AI Integrations</a>
-            <a href="#services" className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors">
-              Our Services
-            </a>
             <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors">
               Book a Free Meeting
             </button>
@@ -135,7 +132,10 @@ function App() {
               <p className="text-white mb-5">
                 Discover tailored AI solutions that eliminate inefficiencies and drive business growth
               </p>
-              <div className="flex justify-center">
+              <div className="flex justify-center space-x-4">
+                <a href="#services" className="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full transition-colors text-sm font-medium">
+                  Our Services
+                </a>
                 <button className="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full transition-colors text-sm font-medium">
                   Book a Free Meeting
                 </button>
