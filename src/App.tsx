@@ -29,7 +29,7 @@ function App() {
     if (location.state?.scrollToServices) {
       const servicesSection = document.getElementById('services');
       if (servicesSection) {
-        servicesSection.scrollIntoView();
+        servicesSection.scrollIntoView({ behavior: 'smooth' });
       }
     }
   }, [location]);
