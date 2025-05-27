@@ -139,11 +139,11 @@ function App() {
               <div className="flex justify-center space-x-2">
                 <button 
                   onClick={scrollToServices}
-                  className="transform scale-85 bg-white hover:bg-gray-100 text-gray-900 px-5 py-2 rounded-full transition-colors text-sm font-medium"
+                  className="transform scale-80 bg-white hover:bg-gray-100 text-gray-900 px-5 py-2 rounded-full transition-colors text-sm font-medium"
                 >
                   Our Services
                 </button>
-                <span className="transform scale-85">
+                <span className="transform scale-80">
                   <BookMeetingButton />
                 </span>
               </div>
