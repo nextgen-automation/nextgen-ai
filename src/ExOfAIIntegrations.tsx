@@ -58,19 +58,19 @@ const ExOfAIIntegrations: React.FC = () => {
             >
               <div className="flex items-center justify-between">
                 <div className="flex flex-wrap items-center gap-8">
-                  <h2 className="text-2xl font-bold text-purple-600">AI Caller Agents</h2>
+                  <h2 className="text-2xl font-bold text-[#9333EA]">AI Caller Agents</h2>
                   <div className="flex items-center gap-8">
                     <div className="flex items-center gap-2">
-                      <span className="text-purple-500">•</span>
+                      <span className="text-[#9333EA]">•</span>
                       <p className="text-gray-600">p1 caller agents</p>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-purple-500">•</span>
+                      <span className="text-[#9333EA]">•</span>
                       <p className="text-gray-600">p2 caller agents</p>
                     </div>
                   </div>
                 </div>
-                <ChevronRight className="w-6 h-6 text-purple-500 transform transition-transform group-hover:translate-x-2" />
+                <ChevronRight className="w-6 h-6 text-[#9333EA] transform transition-transform group-hover:translate-x-2" />
               </div>
             </motion.div>
           </Link>

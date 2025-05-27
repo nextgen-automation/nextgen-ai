@@ -26,16 +26,16 @@ const ExamplesAIVoice: React.FC = () => {
             className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group"
           >
             <div className="flex items-center">
-              <ChevronLeft className="w-6 h-6 text-purple-500 transform transition-transform group-hover:-translate-x-2 mr-4" />
+              <ChevronLeft className="w-6 h-6 text-[#9333EA] transform transition-transform group-hover:-translate-x-2 mr-4" />
               <div className="flex flex-wrap items-center gap-8">
-                <h2 className="text-2xl font-bold text-purple-600">AI Caller Agents</h2>
+                <h2 className="text-2xl font-bold text-[#9333EA]">AI Caller Agents</h2>
                 <div className="flex items-center gap-8">
                   <div className="flex items-center gap-2">
-                    <span className="text-purple-500">•</span>
+                    <span className="text-[#9333EA]">•</span>
                     <p className="text-gray-600">p1 caller agents</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-purple-500">•</span>
+                    <span className="text-[#9333EA]">•</span>
                     <p className="text-gray-600">p2 caller agents</p>
                   </div>
                 </div>
@@ -54,8 +54,8 @@ const ExamplesAIVoice: React.FC = () => {
             {[1, 2, 3, 4, 5].map((num) => (
               <li key={num}>
                 <Link to="" className="flex items-center gap-2">
-                  <span className="text-purple-600 text-2xl">•</span>
-                  <span className="text-purple-600 text-lg">AI Voice Agent {num}</span>
+                  <span className="text-[#9333EA] text-2xl">•</span>
+                  <span className="text-[#9333EA] text-lg">AI Voice Agent {num}</span>
                 </Link>
               </li>
             ))}
