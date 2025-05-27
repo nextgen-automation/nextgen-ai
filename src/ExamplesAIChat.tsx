@@ -12,7 +12,7 @@ const ExamplesAIChat: React.FC = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="min-h-screen bg-white text-gray-900 pt-16 pb-24 relative"
+      className="min-h-screen bg-white text-gray-900 pt-16 pb-24"
     >
       <Header />
 
@@ -61,21 +61,22 @@ const ExamplesAIChat: React.FC = () => {
             ))}
           </ul>
 
-          <div className="mt-16 flex items-center justify-center gap-4">
-            <span className="text-gray-700">
-              Feeling excited to get your business a personal AI chat agent? →
-            </span>
-            <BookMeetingButton />
+          <div className="mt-16 pl-6">
+            <div className="flex items-center gap-4 mb-4">
+              <span className="text-gray-700">
+                Feeling excited to get your business a personal AI chat agent? →
+              </span>
+              <BookMeetingButton />
+            </div>
+            
+            <div className="flex items-center gap-2">
+              <span className="text-gray-700">Still in doubt? Talk to Nemo →</span>
+              <div className="w-12 h-12 bg-transparent">
+                {/* Space reserved for future chat widget */}
+              </div>
+            </div>
           </div>
         </motion.div>
-      </div>
-
-      {/* Fixed position for the chat widget prompt */}
-      <div className="fixed bottom-8 right-8 flex items-center gap-2">
-        <span className="text-gray-700">Still in doubt? Talk to Nemo →</span>
-        <div className="w-12 h-12 bg-transparent">
-          {/* Space reserved for future chat widget */}
-        </div>
       </div>
     </motion.div>
   );
