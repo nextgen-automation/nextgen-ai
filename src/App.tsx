@@ -130,20 +130,22 @@ function App() {
             className="absolute bottom-12 left-0 right-0 mx-auto bg-black/30 backdrop-blur-sm rounded-2xl overflow-hidden max-w-xl"
           >
             <div className="px-8 py-6 text-center">
-              <h2 className="text-5xl font-bold text-white mb-3">
+              <h2 className="text-4xl font-bold text-white mb-3">
                 Powered by AI
               </h2>
-              <p className="text-white mb-5">
+              <p className="text-white text-sm mb-5">
                 Discover tailored AI solutions that eliminate inefficiencies and drive business growth
               </p>
               <div className="flex justify-center space-x-4">
                 <button 
                   onClick={scrollToServices}
-                  className="bg-white hover:bg-gray-100 text-gray-900 px-5 py-2 rounded-full transition-colors text-sm font-medium"
+                  className="transform scale-75 bg-white hover:bg-gray-100 text-gray-900 px-5 py-2 rounded-full transition-colors text-sm font-medium"
                 >
                   Our Services
                 </button>
-                <BookMeetingButton />
+                <span className="transform scale-75">
+                  <BookMeetingButton />
+                </span>
               </div>
             </div>
           </motion.div>
