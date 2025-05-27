@@ -20,7 +20,7 @@ const ExOfAIIntegrations: React.FC = () => {
         
         <div className="space-y-8">
           {/* AI Chat Agents Section */}
-          <Link to="" className="block">
+          <Link to="/ai-chat-agents" className="block">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
