@@ -24,8 +24,8 @@ const ExamplesAIChat: React.FC = () => {
             transition={{ duration: 0.3 }}
             className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group"
           >
-            <div className="flex items-center justify-between">
-              <ChevronLeft className="w-6 h-6 text-blue-500 transform transition-transform group-hover:-translate-x-2" />
+            <div className="flex items-center">
+              <ChevronLeft className="w-6 h-6 text-blue-500 transform transition-transform group-hover:-translate-x-2 mr-4" />
               <div className="flex flex-wrap items-center gap-8">
                 <h2 className="text-2xl font-bold text-blue-600">AI Chat Agents</h2>
                 <div className="flex items-center gap-8">
@@ -47,7 +47,7 @@ const ExamplesAIChat: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.2 }}
-          className="mt-12"
+          className="mt-12 px-6"
         >
           <ul className="space-y-4">
             {[1, 2, 3, 4, 5].map((num) => (
