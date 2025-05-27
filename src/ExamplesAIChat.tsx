@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ChevronLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from './components/Header';
+import BookMeetingButton from './components/BookMeetingButton';
 
 const ExamplesAIChat: React.FC = () => {
   return (
@@ -51,12 +52,21 @@ const ExamplesAIChat: React.FC = () => {
         >
           <ul className="space-y-4">
             {[1, 2, 3, 4, 5].map((num) => (
-              <li key={num} className="flex items-center gap-2">
-                <span className="text-blue-600 text-2xl">•</span>
-                <span className="text-blue-600 text-lg">AI Chat Agent {num}</span>
+              <li key={num}>
+                <Link to="" className="flex items-center gap-2">
+                  <span className="text-blue-600 text-2xl">•</span>
+                  <span className="text-blue-600 text-lg">AI Chat Agent {num}</span>
+                </Link>
               </li>
             ))}
           </ul>
+
+          <div className="mt-16 flex items-center justify-center gap-4">
+            <span className="text-gray-700">
+              Feeling excited to get your business a personal AI chat agent? →
+            </span>
+            <BookMeetingButton />
+          </div>
         </motion.div>
       </div>
     </motion.div>
