@@ -62,17 +62,16 @@ const ExamplesAIChat: React.FC = () => {
           </ul>
 
           <div className="mt-16 pl-6">
-            <div className="flex items-center gap-4 mb-4">
+            <div className="flex items-center gap-4 flex-wrap">
               <span className="text-gray-700">
                 Feeling excited to get your business a personal AI chat agent? →
               </span>
               <BookMeetingButton />
-            </div>
-            
-            <div className="flex items-center gap-2">
-              <span className="text-gray-700">Still in doubt? Talk to Nemo →</span>
-              <div className="w-12 h-12 bg-transparent">
-                {/* Space reserved for future chat widget */}
+              <div className="flex items-center gap-2">
+                <span className="text-gray-700">Still in doubt? Talk to Nemo →</span>
+                <div className="w-12 h-12 bg-transparent">
+                  {/* Space reserved for future chat widget */}
+                </div>
               </div>
             </div>
           </div>
