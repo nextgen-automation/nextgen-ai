@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Bot, Calendar, LineChart } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import Header from './components/Header';
+import BookMeetingButton from './components/BookMeetingButton';
 
 function App() {
   const [splineError, setSplineError] = useState(false);
@@ -142,9 +143,7 @@ function App() {
                 >
                   Our Services
                 </button>
-                <button className="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full transition-colors text-sm font-medium">
-                  Book a Free Meeting
-                </button>
+                <BookMeetingButton />
               </div>
             </div>
           </motion.div>
