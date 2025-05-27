@@ -26,16 +26,16 @@ const ExamplesAIAutomations: React.FC = () => {
             className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group"
           >
             <div className="flex items-center">
-              <ChevronLeft className="w-6 h-6 text-green-500 transform transition-transform group-hover:-translate-x-2 mr-4" />
+              <ChevronLeft className="w-6 h-6 text-teal-500 transform transition-transform group-hover:-translate-x-2 mr-4" />
               <div className="flex flex-wrap items-center gap-8">
-                <h2 className="text-2xl font-bold text-green-600">AI Powered Automations</h2>
+                <h2 className="text-2xl font-bold text-teal-600">AI Powered Automations</h2>
                 <div className="flex items-center gap-8">
                   <div className="flex items-center gap-2">
-                    <span className="text-green-500">•</span>
+                    <span className="text-teal-500">•</span>
                     <p className="text-gray-600">p1 Automations</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-green-500">•</span>
+                    <span className="text-teal-500">•</span>
                     <p className="text-gray-600">p2 Automations</p>
                   </div>
                 </div>
@@ -54,8 +54,8 @@ const ExamplesAIAutomations: React.FC = () => {
             {[1, 2, 3, 4, 5].map((num) => (
               <li key={num}>
                 <Link to="" className="flex items-center gap-2">
-                  <span className="text-green-600 text-2xl">•</span>
-                  <span className="text-green-600 text-lg">AI Automation {num}</span>
+                  <span className="text-teal-600 text-2xl">•</span>
+                  <span className="text-teal-600 text-lg">AI Automation {num}</span>
                 </Link>
               </li>
             ))}
