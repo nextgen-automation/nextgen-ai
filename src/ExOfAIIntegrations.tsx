@@ -76,7 +76,7 @@ const ExOfAIIntegrations: React.FC = () => {
           </Link>
 
           {/* AI Powered Automations Section */}
-          <Link to="" className="block">
+          <Link to="/ai-powered-automations" className="block">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
