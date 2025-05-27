@@ -136,14 +136,14 @@ function App() {
               <p className="text-white text-sm mb-5">
                 Discover tailored AI solutions that eliminate inefficiencies and drive business growth
               </p>
-              <div className="flex justify-center space-x-4">
+              <div className="flex justify-center space-x-2">
                 <button 
                   onClick={scrollToServices}
-                  className="transform scale-75 bg-white hover:bg-gray-100 text-gray-900 px-5 py-2 rounded-full transition-colors text-sm font-medium"
+                  className="transform scale-85 bg-white hover:bg-gray-100 text-gray-900 px-5 py-2 rounded-full transition-colors text-sm font-medium"
                 >
                   Our Services
                 </button>
-                <span className="transform scale-75">
+                <span className="transform scale-85">
                   <BookMeetingButton />
                 </span>
               </div>
