@@ -12,7 +12,7 @@ const ExamplesAIChat: React.FC = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="min-h-screen bg-white text-gray-900 pt-16"
+      className="min-h-screen bg-white text-gray-900 pt-16 pb-24 relative"
     >
       <Header />
 
@@ -68,6 +68,14 @@ const ExamplesAIChat: React.FC = () => {
             <BookMeetingButton />
           </div>
         </motion.div>
+      </div>
+
+      {/* Fixed position for the chat widget prompt */}
+      <div className="fixed bottom-8 right-8 flex items-center gap-2">
+        <span className="text-gray-700">Still in doubt? Talk to Nemo →</span>
+        <div className="w-12 h-12 bg-transparent">
+          {/* Space reserved for future chat widget */}
+        </div>
       </div>
     </motion.div>
   );
