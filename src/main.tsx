@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import App from './App'
 import ExOfAIIntegrations from './ExOfAIIntegrations'
 import ExamplesAIChat from './ExamplesAIChat'
+import ExamplesAIVoice from './ExamplesAIVoice'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/" element={<App />} />
         <Route path="/examples" element={<ExOfAIIntegrations />} />
         <Route path="/ai-chat-agents" element={<ExamplesAIChat />} />
+        <Route path="/ai-voice-agents" element={<ExamplesAIVoice />} />
       </Routes>
     </Router>
   </React.StrictMode>,
