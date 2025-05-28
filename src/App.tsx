@@ -164,14 +164,16 @@ function App() {
                 transition={{ duration: 0.5 }}
                 className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
               >
-                <Bot className="w-12 h-12 text-blue-500 mb-4" />
-                <h3 className="text-xl font-bold mb-4">AI Chat Agents</h3>
-                <p className="text-gray-400 mb-4">
+                <div className="flex items-center gap-4">
+                  <Bot className="w-12 h-12 text-blue-500" />
+                  <h3 className="text-xl font-bold">AI Chat Agents</h3>
+                </div>
+                <p className="text-gray-400 mt-4 mb-4">
                   Engage website visitors instantly, answer FAQs, and qualify leads — all without lifting a finger.
                 </p>
                 <ul className="space-y-2 text-gray-300">
                   <li>• Your 24/7 AI Agent That Never Sleeps</li>
-                  <li>• Perfect for professionals who can't afford to miss an inquiry or delay a response</li>
+                  <li>• Never miss an inquiry—even outside business hours</li>
                 </ul>
               </motion.div>
               <Link to="/ai-chat-agents" className="block w-full">
@@ -188,14 +190,16 @@ function App() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
               >
-                <Phone className="w-12 h-12 text-blue-500 mb-4" />
-                <h3 className="text-xl font-bold mb-4">AI Voice Agents</h3>
-                <p className="text-gray-400 mb-4">
+                <div className="flex items-center gap-4">
+                  <Phone className="w-12 h-12 text-blue-500" />
+                  <h3 className="text-xl font-bold">AI Voice Agents</h3>
+                </div>
+                <p className="text-gray-400 mt-4 mb-4">
                   Let AI answer, make and route your business calls like a pro.
                 </p>
                 <ul className="space-y-2 text-gray-300">
                   <li>• Handle scheduling, appointment confirmations, and routine questions — all in natural conversation</li>
-                  <li>• AI voice models indistinguishable from a human voice</li>
+                  <li>• Natural-sounding voices that feel truly human</li>
                 </ul>
               </motion.div>
               <Link to="/ai-voice-agents" className="block w-full">
@@ -212,14 +216,16 @@ function App() {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
               >
-                <Zap className="w-12 h-12 text-blue-500 mb-4" />
-                <h3 className="text-xl font-bold mb-4">AI-Powered Automations</h3>
-                <p className="text-gray-400 mb-4">
+                <div className="flex items-center gap-4">
+                  <Zap className="w-12 h-12 text-blue-500" />
+                  <h3 className="text-xl font-bold">AI-Powered Automations</h3>
+                </div>
+                <p className="text-gray-400 mt-4 mb-4">
                   Automate the repetitive. Let AI handle it. Focus on what only you can do.
                 </p>
                 <ul className="space-y-2 text-gray-300">
-                  <li>• Free yourself from admin tasks with intelligent automations tailored to your workflow</li>
-                  <li>• From Filling up Forms automatically to keeping you calendar up to date</li>
+                  <li>• Automate admin tasks with intelligent automations tailored to your workflow</li>
+                  <li>• Automatically fill forms, update calendars, and more</li>
                 </ul>
               </motion.div>
               <Link to="/ai-powered-automations" className="block w-full">
