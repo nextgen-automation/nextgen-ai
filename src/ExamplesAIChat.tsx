@@ -6,6 +6,14 @@ import Header from './components/Header';
 import BookMeetingButton from './components/BookMeetingButton';
 
 const ExamplesAIChat: React.FC = () => {
+  const prototypeLinks = [
+    'https://creator.voiceflow.com/prototype/683656b828ea50513a429275',
+    'https://creator.voiceflow.com/prototype/683760e525f48f411e989f73',
+    'https://creator.voiceflow.com/prototype/683760c725f48f411e989f5b',
+    'https://creator.voiceflow.com/prototype/683761464e4dc0e4ff1c09b5',
+    'https://creator.voiceflow.com/prototype/683761354e4dc0e4ff1c09a3'
+  ];
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -49,12 +57,12 @@ const ExamplesAIChat: React.FC = () => {
           className="mt-12 px-6"
         >
           <ul className="space-y-4">
-            {[1, 2, 3, 4, 5].map((num) => (
-              <li key={num}>
-                <Link to="" className="flex items-center gap-2">
+            {prototypeLinks.map((link, index) => (
+              <li key={index}>
+                <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <span className="text-blue-600 text-2xl">•</span>
-                  <span className="text-blue-600 text-lg">AI Chat Agent {num}</span>
-                </Link>
+                  <span className="text-blue-600 text-lg">AI Chat Agent {index + 1}</span>
+                </a>
               </li>
             ))}
           </ul>
