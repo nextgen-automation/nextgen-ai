@@ -176,9 +176,9 @@ function App() {
                   <li>• Never miss an inquiry—even outside business hours</li>
                 </ul>
               </motion.div>
-              <Link to="/ai-chat-agents" className="block w-full">
+              <Link to="/examples" className="block w-full">
                 <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm">
-                  Watch Examples Of AI Chat Agents
+                  See AI Chat Agents in Action
                 </button>
               </Link>
             </div>
@@ -202,9 +202,9 @@ function App() {
                   <li>• Natural-sounding voices that feel truly human</li>
                 </ul>
               </motion.div>
-              <Link to="/ai-voice-agents" className="block w-full">
+              <Link to="/examples" className="block w-full">
                 <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm">
-                  Watch Examples Of AI Voice Agents
+                  See AI Voice Agents in Action
                 </button>
               </Link>
             </div>
@@ -221,16 +221,16 @@ function App() {
                   <h3 className="text-xl font-bold">AI-Powered Automations</h3>
                 </div>
                 <p className="text-gray-400 mt-4 mb-4">
-                  Automate the repetitive. Let AI handle it. Focus on what only you can do.
+                  Let AI handle the repetitive. Focus on what only you can do.
                 </p>
                 <ul className="space-y-2 text-gray-300">
                   <li>• Automate admin tasks with intelligent automations tailored to your workflow</li>
                   <li>• Automatically fill forms, update calendars, and more</li>
                 </ul>
               </motion.div>
-              <Link to="/ai-powered-automations" className="block w-full">
+              <Link to="/examples" className="block w-full">
                 <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm">
-                  Watch Examples Of AI Powered Automations
+                  Explore AI Powered Automations
                 </button>
               </Link>
             </div>
