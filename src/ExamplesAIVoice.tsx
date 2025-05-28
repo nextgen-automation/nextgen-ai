@@ -32,11 +32,11 @@ const ExamplesAIVoice: React.FC = () => {
                 <div className="flex items-center gap-8">
                   <div className="flex items-center gap-2">
                     <span className="text-purple-500">•</span>
-                    <p className="text-gray-600">p1 voice agents</p>
+                    <p className="text-gray-600">Answer calls even when you're unavailable</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-purple-500">•</span>
-                    <p className="text-gray-600">p2 voice agents</p>
+                    <p className="text-gray-600">No more stress over absent staff -- no unanswered clients</p>
                   </div>
                 </div>
               </div>

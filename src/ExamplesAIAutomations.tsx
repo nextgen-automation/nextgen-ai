@@ -32,11 +32,11 @@ const ExamplesAIAutomations: React.FC = () => {
                 <div className="flex items-center gap-8">
                   <div className="flex items-center gap-2">
                     <span className="text-teal-500">•</span>
-                    <p className="text-gray-600">p1 Automations</p>
+                    <p className="text-gray-600">Send confirmations, reminders, and follow-ups automatically</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-teal-500">•</span>
-                    <p className="text-gray-600">p2 Automations</p>
+                    <p className="text-gray-600">Auto-generate invoices or summaries after appointments</p>
                   </div>
                 </div>
               </div>

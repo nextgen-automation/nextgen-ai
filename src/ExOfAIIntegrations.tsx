@@ -34,11 +34,11 @@ const ExOfAIIntegrations: React.FC = () => {
                   <div className="flex items-center gap-8">
                     <div className="flex items-center gap-2">
                       <span className="text-blue-500">•</span>
-                      <p className="text-gray-600">p1 chat agents</p>
+                      <p className="text-gray-600">Capture leads while you focus on clients</p>
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="text-blue-500">•</span>
-                      <p className="text-gray-600">p2 chat agents</p>
+                      <p className="text-gray-600">Works when you're in court, in a meeting or asleep</p>
                     </div>
                   </div>
                 </div>
@@ -62,11 +62,11 @@ const ExOfAIIntegrations: React.FC = () => {
                   <div className="flex items-center gap-8">
                     <div className="flex items-center gap-2">
                       <span className="text-purple-500">•</span>
-                      <p className="text-gray-600">p1 voice agents</p>
+                      <p className="text-gray-600">Answer calls even when you're unavailable</p>
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="text-purple-500">•</span>
-                      <p className="text-gray-600">p2 voice agents</p>
+                      <p className="text-gray-600">No more stress over absent staff -- no unanswered clients</p>
                     </div>
                   </div>
                 </div>
@@ -90,11 +90,11 @@ const ExOfAIIntegrations: React.FC = () => {
                   <div className="flex items-center gap-8">
                     <div className="flex items-center gap-2">
                       <span className="text-teal-500">•</span>
-                      <p className="text-gray-600">p1 Automations</p>
+                      <p className="text-gray-600">Send confirmations, reminders, and follow-ups automatically</p>
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="text-teal-500">•</span>
-                      <p className="text-gray-600">p2 Automations</p>
+                      <p className="text-gray-600">Auto-generate invoices or summaries after appointments</p>
                     </div>
                   </div>
                 </div>

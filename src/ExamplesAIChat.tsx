@@ -32,11 +32,11 @@ const ExamplesAIChat: React.FC = () => {
                 <div className="flex items-center gap-8">
                   <div className="flex items-center gap-2">
                     <span className="text-blue-500">•</span>
-                    <p className="text-gray-600">p1 chat agents</p>
+                    <p className="text-gray-600">Capture leads while you focus on clients</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-blue-500">•</span>
-                    <p className="text-gray-600">p2 chat agents</p>
+                    <p className="text-gray-600">Works when you're in court, in a meeting or asleep</p>
                   </div>
                 </div>
               </div>
