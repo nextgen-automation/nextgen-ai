@@ -28,15 +28,15 @@ const ExamplesAIVoice: React.FC = () => {
             <div className="flex items-center">
               <ChevronLeft className="w-6 h-6 text-purple-500 transform transition-transform group-hover:-translate-x-2 mr-4" />
               <div className="flex flex-wrap items-center gap-8">
-                <h2 className="text-2xl font-bold text-purple-600">AI Caller Agents</h2>
+                <h2 className="text-2xl font-bold text-purple-600">AI Voice Agents</h2>
                 <div className="flex items-center gap-8">
                   <div className="flex items-center gap-2">
                     <span className="text-purple-500">•</span>
-                    <p className="text-gray-600">p1 caller agents</p>
+                    <p className="text-gray-600">p1 voice agents</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-purple-500">•</span>
-                    <p className="text-gray-600">p2 caller agents</p>
+                    <p className="text-gray-600">p2 voice agents</p>
                   </div>
                 </div>
               </div>
@@ -64,7 +64,7 @@ const ExamplesAIVoice: React.FC = () => {
           <div className="mt-16 pl-6">
             <div className="flex items-center gap-4 flex-wrap">
               <span className="text-gray-700">
-                Feeling excited to get your business a personal AI caller agent? →
+                Feeling excited to get your business a personal AI voice agent? →
               </span>
               <BookMeetingButton />
               <div className="flex items-center gap-2">

@@ -47,7 +47,7 @@ const ExOfAIIntegrations: React.FC = () => {
             </motion.div>
           </Link>
 
-          {/* AI Caller Agents Section */}
+          {/* AI Voice Agents Section */}
           <Link to="/ai-voice-agents" className="block">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -58,15 +58,15 @@ const ExOfAIIntegrations: React.FC = () => {
             >
               <div className="flex items-center justify-between">
                 <div className="flex flex-wrap items-center gap-8">
-                  <h2 className="text-2xl font-bold text-purple-600">AI Caller Agents</h2>
+                  <h2 className="text-2xl font-bold text-purple-600">AI Voice Agents</h2>
                   <div className="flex items-center gap-8">
                     <div className="flex items-center gap-2">
                       <span className="text-purple-500">•</span>
-                      <p className="text-gray-600">p1 caller agents</p>
+                      <p className="text-gray-600">p1 voice agents</p>
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="text-purple-500">•</span>
-                      <p className="text-gray-600">p2 caller agents</p>
+                      <p className="text-gray-600">p2 voice agents</p>
                     </div>
                   </div>
                 </div>

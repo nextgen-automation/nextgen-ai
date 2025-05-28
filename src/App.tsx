@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Bot, Calendar, LineChart } from 'lucide-react';
+import { Bot, Phone, Zap } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import BookMeetingButton from './components/BookMeetingButton';
@@ -165,16 +165,16 @@ function App() {
                 className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
               >
                 <Bot className="w-12 h-12 text-blue-500 mb-4" />
-                <h3 className="text-xl font-bold mb-4">AI Chatbots</h3>
+                <h3 className="text-xl font-bold mb-4">AI Chat Agents</h3>
                 <p className="text-gray-400 mb-4">
-                  Intelligent conversational agents that handle customer inquiries 24/7, reducing response times and improving satisfaction.
+                  Engage website visitors instantly, answer FAQs, and qualify leads — all without lifting a finger.
                 </p>
                 <ul className="space-y-2 text-gray-300">
-                  <li>• 24/7 Customer Support</li>
-                  <li>• Instant Response Times</li>
+                  <li>• Your 24/7 AI Agent That Never Sleeps</li>
+                  <li>• Perfect for professionals who can't afford to miss an inquiry or delay a response</li>
                 </ul>
               </motion.div>
-              <Link to="/examples" className="block w-full">
+              <Link to="/ai-chat-agents" className="block w-full">
                 <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm">
                   Watch Examples Of AI Chat Agents
                 </button>
@@ -188,19 +188,19 @@ function App() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
               >
-                <LineChart className="w-12 h-12 text-blue-500 mb-4" />
-                <h3 className="text-xl font-bold mb-4">CRM Integration</h3>
+                <Phone className="w-12 h-12 text-blue-500 mb-4" />
+                <h3 className="text-xl font-bold mb-4">AI Voice Agents</h3>
                 <p className="text-gray-400 mb-4">
-                  Seamlessly integrate AI with your existing CRM to automate data entry and enhance customer insights.
+                  Let AI answer, make and route your business calls like a pro.
                 </p>
                 <ul className="space-y-2 text-gray-300">
-                  <li>• Automated Data Entry</li>
-                  <li>• Enhanced Analytics</li>
+                  <li>• Handle scheduling, appointment confirmations, and routine questions — all in natural conversation</li>
+                  <li>• AI voice models indistinguishable from a human voice</li>
                 </ul>
               </motion.div>
-              <Link to="/examples" className="block w-full">
+              <Link to="/ai-voice-agents" className="block w-full">
                 <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm">
-                  Watch Examples Of AI Caller Agents
+                  Watch Examples Of AI Voice Agents
                 </button>
               </Link>
             </div>
@@ -212,17 +212,17 @@ function App() {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
               >
-                <Calendar className="w-12 h-12 text-blue-500 mb-4" />
-                <h3 className="text-xl font-bold mb-4">AI Appointment Schedulers</h3>
+                <Zap className="w-12 h-12 text-blue-500 mb-4" />
+                <h3 className="text-xl font-bold mb-4">AI-Powered Automations</h3>
                 <p className="text-gray-400 mb-4">
-                  Smart scheduling systems that eliminate double-bookings and optimize your calendar automatically.
+                  Automate the repetitive. Let AI handle it. Focus on what only you can do.
                 </p>
                 <ul className="space-y-2 text-gray-300">
-                  <li>• Automated Booking</li>
-                  <li>• Smart Calendar Management</li>
+                  <li>• Free yourself from admin tasks with intelligent automations tailored to your workflow</li>
+                  <li>• From Filling up Forms automatically to keeping you calendar up to date</li>
                 </ul>
               </motion.div>
-              <Link to="/examples" className="block w-full">
+              <Link to="/ai-powered-automations" className="block w-full">
                 <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm">
                   Watch Examples Of AI Powered Automations
                 </button>
