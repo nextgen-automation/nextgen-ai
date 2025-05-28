@@ -29,7 +29,7 @@ const ExamplesAIAutomations: React.FC = () => {
               <ChevronLeft className="w-6 h-6 text-teal-500 transform transition-transform group-hover:-translate-x-2 mr-4" />
               <h2 className="text-2xl font-bold text-teal-600">AI Powered Automations</h2>
             </div>
-            <div className="mt-4 ml-10 space-y-2">
+            <div className="mt-4 ml-10 flex items-center gap-x-8">
               <div className="flex items-center gap-2">
                 <span className="text-teal-500">•</span>
                 <p className="text-gray-600">Send confirmations, reminders, and follow-ups automatically</p>

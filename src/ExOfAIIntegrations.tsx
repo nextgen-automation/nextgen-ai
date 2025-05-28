@@ -36,7 +36,7 @@ const ExOfAIIntegrations: React.FC = () => {
                 <h2 className="text-2xl font-bold text-blue-600">AI Chat Agents</h2>
                 <ChevronRight className="w-6 h-6 text-blue-500 transform transition-transform group-hover:translate-x-2" />
               </div>
-              <div className="mt-4 space-y-2">
+              <div className="mt-4 flex items-center gap-x-8">
                 <div className="flex items-center gap-2">
                   <span className="text-blue-500">•</span>
                   <p className="text-gray-600">Capture leads while you focus on clients</p>
@@ -62,7 +62,7 @@ const ExOfAIIntegrations: React.FC = () => {
                 <h2 className="text-2xl font-bold text-purple-600">AI Voice Agents</h2>
                 <ChevronRight className="w-6 h-6 text-purple-500 transform transition-transform group-hover:translate-x-2" />
               </div>
-              <div className="mt-4 space-y-2">
+              <div className="mt-4 flex items-center gap-x-8">
                 <div className="flex items-center gap-2">
                   <span className="text-purple-500">•</span>
                   <p className="text-gray-600">Answer calls even when you're unavailable</p>
@@ -88,7 +88,7 @@ const ExOfAIIntegrations: React.FC = () => {
                 <h2 className="text-2xl font-bold text-teal-600">AI Powered Automations</h2>
                 <ChevronRight className="w-6 h-6 text-teal-500 transform transition-transform group-hover:translate-x-2" />
               </div>
-              <div className="mt-4 space-y-2">
+              <div className="mt-4 flex items-center gap-x-8">
                 <div className="flex items-center gap-2">
                   <span className="text-teal-500">•</span>
                   <p className="text-gray-600">Send confirmations, reminders, and follow-ups automatically</p>

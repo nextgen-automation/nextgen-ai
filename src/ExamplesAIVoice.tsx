@@ -29,7 +29,7 @@ const ExamplesAIVoice: React.FC = () => {
               <ChevronLeft className="w-6 h-6 text-purple-500 transform transition-transform group-hover:-translate-x-2 mr-4" />
               <h2 className="text-2xl font-bold text-purple-600">AI Voice Agents</h2>
             </div>
-            <div className="mt-4 ml-10 space-y-2">
+            <div className="mt-4 ml-10 flex items-center gap-x-8">
               <div className="flex items-center gap-2">
                 <span className="text-purple-500">•</span>
                 <p className="text-gray-600">Answer calls even when you're unavailable</p>
