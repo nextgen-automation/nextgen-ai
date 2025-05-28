@@ -27,18 +27,16 @@ const ExamplesAIChat: React.FC = () => {
           >
             <div className="flex items-center">
               <ChevronLeft className="w-6 h-6 text-blue-500 transform transition-transform group-hover:-translate-x-2 mr-4" />
-              <div className="flex flex-wrap items-center gap-8">
-                <h2 className="text-2xl font-bold text-blue-600">AI Chat Agents</h2>
-                <div className="flex items-center gap-8">
-                  <div className="flex items-center gap-2">
-                    <span className="text-blue-500">•</span>
-                    <p className="text-gray-600">Capture leads while you focus on clients</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-blue-500">•</span>
-                    <p className="text-gray-600">Works when you're in court, in a meeting or asleep</p>
-                  </div>
-                </div>
+              <h2 className="text-2xl font-bold text-blue-600">AI Chat Agents</h2>
+            </div>
+            <div className="mt-4 ml-10 space-y-2">
+              <div className="flex items-center gap-2">
+                <span className="text-blue-500">•</span>
+                <p className="text-gray-600">Capture leads while you focus on clients</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-blue-500">•</span>
+                <p className="text-gray-600">Works when you're in court, in a meeting or asleep</p>
               </div>
             </div>
           </motion.div>

@@ -27,18 +27,16 @@ const ExamplesAIVoice: React.FC = () => {
           >
             <div className="flex items-center">
               <ChevronLeft className="w-6 h-6 text-purple-500 transform transition-transform group-hover:-translate-x-2 mr-4" />
-              <div className="flex flex-wrap items-center gap-8">
-                <h2 className="text-2xl font-bold text-purple-600">AI Voice Agents</h2>
-                <div className="flex items-center gap-8">
-                  <div className="flex items-center gap-2">
-                    <span className="text-purple-500">•</span>
-                    <p className="text-gray-600">Answer calls even when you're unavailable</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-purple-500">•</span>
-                    <p className="text-gray-600">No more stress over absent staff -- no unanswered clients</p>
-                  </div>
-                </div>
+              <h2 className="text-2xl font-bold text-purple-600">AI Voice Agents</h2>
+            </div>
+            <div className="mt-4 ml-10 space-y-2">
+              <div className="flex items-center gap-2">
+                <span className="text-purple-500">•</span>
+                <p className="text-gray-600">Answer calls even when you're unavailable</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-purple-500">•</span>
+                <p className="text-gray-600">No more stress over absent staff -- no unanswered clients</p>
               </div>
             </div>
           </motion.div>

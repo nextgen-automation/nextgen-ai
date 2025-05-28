@@ -29,20 +29,18 @@ const ExOfAIIntegrations: React.FC = () => {
               className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group"
             >
               <div className="flex items-center justify-between">
-                <div className="flex flex-wrap items-center gap-8">
-                  <h2 className="text-2xl font-bold text-blue-600">AI Chat Agents</h2>
-                  <div className="flex items-center gap-8">
-                    <div className="flex items-center gap-2">
-                      <span className="text-blue-500">•</span>
-                      <p className="text-gray-600">Capture leads while you focus on clients</p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-blue-500">•</span>
-                      <p className="text-gray-600">Works when you're in court, in a meeting or asleep</p>
-                    </div>
-                  </div>
-                </div>
+                <h2 className="text-2xl font-bold text-blue-600">AI Chat Agents</h2>
                 <ChevronRight className="w-6 h-6 text-blue-500 transform transition-transform group-hover:translate-x-2" />
+              </div>
+              <div className="mt-4 space-y-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-blue-500">•</span>
+                  <p className="text-gray-600">Capture leads while you focus on clients</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-blue-500">•</span>
+                  <p className="text-gray-600">Works when you're in court, in a meeting or asleep</p>
+                </div>
               </div>
             </motion.div>
           </Link>
@@ -57,20 +55,18 @@ const ExOfAIIntegrations: React.FC = () => {
               className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group"
             >
               <div className="flex items-center justify-between">
-                <div className="flex flex-wrap items-center gap-8">
-                  <h2 className="text-2xl font-bold text-purple-600">AI Voice Agents</h2>
-                  <div className="flex items-center gap-8">
-                    <div className="flex items-center gap-2">
-                      <span className="text-purple-500">•</span>
-                      <p className="text-gray-600">Answer calls even when you're unavailable</p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-purple-500">•</span>
-                      <p className="text-gray-600">No more stress over absent staff -- no unanswered clients</p>
-                    </div>
-                  </div>
-                </div>
+                <h2 className="text-2xl font-bold text-purple-600">AI Voice Agents</h2>
                 <ChevronRight className="w-6 h-6 text-purple-500 transform transition-transform group-hover:translate-x-2" />
+              </div>
+              <div className="mt-4 space-y-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-purple-500">•</span>
+                  <p className="text-gray-600">Answer calls even when you're unavailable</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-purple-500">•</span>
+                  <p className="text-gray-600">No more stress over absent staff -- no unanswered clients</p>
+                </div>
               </div>
             </motion.div>
           </Link>
@@ -85,20 +81,18 @@ const ExOfAIIntegrations: React.FC = () => {
               className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group"
             >
               <div className="flex items-center justify-between">
-                <div className="flex flex-wrap items-center gap-8">
-                  <h2 className="text-2xl font-bold text-teal-600">AI Powered Automations</h2>
-                  <div className="flex items-center gap-8">
-                    <div className="flex items-center gap-2">
-                      <span className="text-teal-500">•</span>
-                      <p className="text-gray-600">Send confirmations, reminders, and follow-ups automatically</p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-teal-500">•</span>
-                      <p className="text-gray-600">Auto-generate invoices or summaries after appointments</p>
-                    </div>
-                  </div>
-                </div>
+                <h2 className="text-2xl font-bold text-teal-600">AI Powered Automations</h2>
                 <ChevronRight className="w-6 h-6 text-teal-500 transform transition-transform group-hover:translate-x-2" />
+              </div>
+              <div className="mt-4 space-y-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-teal-500">•</span>
+                  <p className="text-gray-600">Send confirmations, reminders, and follow-ups automatically</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-teal-500">•</span>
+                  <p className="text-gray-600">Auto-generate invoices or summaries after appointments</p>
+                </div>
               </div>
             </motion.div>
           </Link>
