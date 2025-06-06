@@ -14,6 +14,14 @@ const ExamplesAIChat: React.FC = () => {
     'https://creator.voiceflow.com/prototype/683761354e4dc0e4ff1c09a3'
   ];
 
+  const agentTitles = [
+    'Lead Generation Agent – Still hunting leads manually?',
+    'Customer Support Agent - Have a shopify store? [Demo under construction]',
+    'Appointment setter Agent - Still booking appointments yourself? [Demo under construction]',
+    'Shopping assistant Agent - Too many products, confused customers? Give them a shopping assistant. [Demo under construction]',
+    'Quote Generation - Still giving out estimations yourself? [Demo under construction]'
+  ];
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -61,7 +69,7 @@ const ExamplesAIChat: React.FC = () => {
               <li key={index}>
                 <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <span className="text-blue-600 text-2xl">•</span>
-                  <span className="text-blue-600 text-lg">AI Chat Agent {index + 1}</span>
+                  <span className="text-blue-600 text-lg">{agentTitles[index]}</span>
                 </a>
               </li>
             ))}
