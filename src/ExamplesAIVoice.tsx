@@ -29,8 +29,8 @@ const ExamplesAIVoice: React.FC = () => {
               <ChevronLeft className="w-6 h-6 text-purple-500 transform transition-transform group-hover:-translate-x-2 mr-4" />
               <h2 className="text-2xl font-bold text-purple-600 flex items-center gap-2">
                 AI Voice Agents
-                <Wrench className="w-5 h-5 text-orange-500" />
-                <span className="text-sm text-orange-500">[Under construction]</span>
+                <Wrench className="w-5 h-5 text-purple-600" />
+                <span className="text-sm text-purple-600">[Under construction]</span>
               </h2>
             </div>
             <div className="mt-4 ml-10 flex items-center gap-x-8">
