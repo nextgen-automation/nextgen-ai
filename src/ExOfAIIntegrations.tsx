@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from './components/Header';
 
@@ -59,7 +59,11 @@ const ExOfAIIntegrations: React.FC = () => {
               className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group"
             >
               <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-bold text-purple-600">AI Voice Agents</h2>
+                <h2 className="text-2xl font-bold text-purple-600 flex items-center gap-2">
+                  AI Voice Agents
+                  <Wrench className="w-5 h-5 text-orange-500" />
+                  <span className="text-sm text-orange-500">[Under construction]</span>
+                </h2>
                 <ChevronRight className="w-6 h-6 text-purple-500 transform transition-transform group-hover:translate-x-2" />
               </div>
               <div className="mt-4 flex items-center gap-x-8">
