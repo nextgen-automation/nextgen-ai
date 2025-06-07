@@ -8,21 +8,32 @@ import BookMeetingButton from './components/BookMeetingButton';
 function App() {
   const [splineError, setSplineError] = useState(false);
   const [splineLoaded, setSplineLoaded] = useState(false);
+  const [splineLoading, setSplineLoading] = useState(true);
   const location = useLocation();
 
   useEffect(() => {
     const script = document.createElement('script');
     script.type = 'module';
     script.src = 'https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js';
-    document.head.appendChild(script);
+    script.async = true;
+    
+    script.onload = () => {
+      console.log('Spline viewer script loaded successfully');
+      setSplineLoading(false);
+    };
 
     script.onerror = () => {
       console.error('Failed to load Spline viewer script');
       setSplineError(true);
+      setSplineLoading(false);
     };
 
+    document.head.appendChild(script);
+
     return () => {
-      document.head.removeChild(script);
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
     };
   }, []);
 
@@ -38,17 +49,22 @@ function App() {
   const handleSplineError = (error) => {
     console.error('Spline viewer error:', error);
     setSplineError(true);
+    setSplineLoading(false);
   };
 
   const handleSplineLoad = () => {
+    console.log('Spline scene loaded successfully');
     setSplineLoaded(true);
     setSplineError(false);
+    setSplineLoading(false);
   };
 
   const scrollToServices = () => {
     const servicesSection = document.getElementById('services');
     servicesSection?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const splineUrl = import.meta.env.VITE_SPLINE_URL || 'https://prod.spline.design/kwId3fBFWvxHdNui/scene.splinecode';
 
   return (
     <motion.div 
@@ -64,19 +80,35 @@ function App() {
       <section className="relative min-h-screen">
         {/* Spline Animation Container */}
         <div className="absolute inset-0">
-          {!splineError ? (
+          {splineLoading && !splineError && (
+            <div className="w-full h-full bg-gradient-to-br from-blue-900/30 to-purple-900/30 flex items-center justify-center">
+              <div className="text-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-400 mx-auto mb-4"></div>
+                <p className="text-gray-300">Loading 3D experience...</p>
+              </div>
+            </div>
+          )}
+          
+          {!splineError && !splineLoading ? (
             <spline-viewer
-              url="https://prod.spline.design/kwId3fBFWvxHdNui/scene.splinecode"
+              url={splineUrl}
               onError={handleSplineError}
               onLoad={handleSplineLoad}
               loading-anim
               events-target="global"
+              style={{ 
+                opacity: splineLoaded ? 1 : 0,
+                transition: 'opacity 0.5s ease-in-out'
+              }}
             />
-          ) : (
+          ) : splineError ? (
             <div className="w-full h-full bg-gradient-to-br from-blue-900/50 to-purple-900/50 flex items-center justify-center">
-              <p className="text-gray-400">Interactive 3D visualization unavailable</p>
+              <div className="text-center">
+                <p className="text-gray-400 mb-2">Interactive 3D visualization unavailable</p>
+                <p className="text-gray-500 text-sm">Continuing with standard experience</p>
+              </div>
             </div>
-          )}
+          ) : null}
         </div>
 
         <div className="container mx-auto px-6 relative z-10 min-h-screen">
