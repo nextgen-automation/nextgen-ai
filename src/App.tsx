@@ -93,7 +93,7 @@ function App() {
               }}
               className="w-full md:w-1/3 text-center md:text-left mb-4 md:mb-0"
             >
-              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-blue-cyan bg-clip-text text-transparent">
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
                 Increasing Profit.
               </h2>
             </motion.div>
@@ -109,7 +109,7 @@ function App() {
               }}
               className="w-full md:w-1/3 text-center md:text-right mt-4 md:mt-0"
             >
-              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-purple-pink bg-clip-text text-transparent">
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
                 Reducing Costs.
               </h2>
             </motion.div>
