@@ -110,7 +110,7 @@ function App() {
                 delay: 0.7,
                 ease: "easeOut"
               }}
-              className="absolute top-32 right-0 w-full md:static md:w-1/3 text-right md:text-right"
+              className="absolute top-48 right-0 w-full md:static md:w-1/3 text-right md:text-right"
             >
               <h2 className="text-3xl md:text-5xl font-bold text-purple-400">
                 Reducing Costs.
