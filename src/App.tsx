@@ -80,8 +80,8 @@ function App() {
         </div>
 
         <div className="container mx-auto px-6 relative z-10 min-h-screen">
-          {/* Text Container - Moved higher up */}
-          <div className="pt-32 flex items-start">
+          {/* Text Container - Responsive layout */}
+          <div className="pt-32 flex flex-col md:flex-row items-start">
             {/* Left Text */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -91,15 +91,15 @@ function App() {
                 delay: 0.5,
                 ease: "easeOut"
               }}
-              className="w-1/3"
+              className="w-full md:w-1/3 text-center md:text-left mb-8 md:mb-0"
             >
-              <h2 className="text-5xl font-bold text-blue-400">
+              <h2 className="text-3xl md:text-5xl font-bold text-blue-400">
                 Increasing Profit.
               </h2>
             </motion.div>
 
             {/* Center Space for Animation */}
-            <div className="w-1/3" />
+            <div className="w-full md:w-1/3 h-48 md:h-auto" />
 
             {/* Right Text */}
             <motion.div
@@ -110,15 +110,15 @@ function App() {
                 delay: 0.7,
                 ease: "easeOut"
               }}
-              className="w-1/3 text-right"
+              className="w-full md:w-1/3 text-center md:text-right"
             >
-              <h2 className="text-5xl font-bold text-purple-400">
+              <h2 className="text-3xl md:text-5xl font-bold text-purple-400">
                 Reducing Costs.
               </h2>
             </motion.div>
           </div>
 
-          {/* Bottom Content - Refined Overlay Box */}
+          {/* Bottom Content - Responsive overlay box */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -127,25 +127,23 @@ function App() {
               delay: 1,
               ease: "easeOut"
             }}
-            className="absolute bottom-12 left-0 right-0 mx-auto bg-black/30 backdrop-blur-sm rounded-2xl overflow-hidden max-w-xl"
+            className="absolute bottom-12 left-4 right-4 md:left-0 md:right-0 mx-auto bg-black/30 backdrop-blur-sm rounded-2xl overflow-hidden max-w-xl"
           >
-            <div className="px-8 py-6 text-center">
-              <h2 className="text-4xl font-bold text-white mb-3">
+            <div className="px-6 md:px-8 py-6 text-center">
+              <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">
                 Powered by AI
               </h2>
               <p className="text-white text-sm mb-5">
                 See how you can integrate the most powerful tool ever created — into your business. Now!
               </p>
-              <div className="flex justify-center space-x-2">
+              <div className="flex flex-col sm:flex-row justify-center gap-2 sm:space-x-2 sm:gap-0">
                 <button 
                   onClick={scrollToServices}
-                  className="transform scale-80 bg-white hover:bg-gray-100 text-gray-900 px-5 py-2 rounded-full transition-colors text-sm font-medium"
+                  className="bg-white hover:bg-gray-100 text-gray-900 px-5 py-2 rounded-full transition-colors text-sm font-medium"
                 >
                   Our Services
                 </button>
-                <span className="transform scale-80">
-                  <BookMeetingButton />
-                </span>
+                <BookMeetingButton />
               </div>
             </div>
           </motion.div>
@@ -155,7 +153,7 @@ function App() {
       {/* Services Section */}
       <section id="services" className="py-20 bg-gradient-to-br from-gray-900 to-black relative z-10">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16">Our Services</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="space-y-4">
               <motion.div
