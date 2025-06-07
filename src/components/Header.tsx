@@ -29,7 +29,7 @@ const Header: React.FC = () => {
     <nav 
       className={`fixed w-full top-0 z-[1000] ${
         isHomePage 
-          ? 'bg-black/30 backdrop-blur-sm border-b-0' 
+          ? 'bg-transparent backdrop-blur-sm border-b-0' 
           : 'bg-white border-b border-[#E5E5E5]'
       }`} 
       style={{ padding: '1rem 2rem', borderBottomWidth: isHomePage ? '0' : '1px' }}
