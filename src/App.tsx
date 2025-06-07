@@ -99,7 +99,7 @@ function App() {
             </motion.div>
 
             {/* Center Space for Animation */}
-            <div className="w-full md:w-1/3 h-48 md:h-auto" />
+            <div className="w-full md:w-1/3 h-0 md:h-auto" />
 
             {/* Right Text */}
             <motion.div
