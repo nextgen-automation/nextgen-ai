@@ -80,8 +80,8 @@ function App() {
         </div>
 
         <div className="container mx-auto px-6 relative z-10 min-h-screen">
-          {/* Text Container - Responsive positioning */}
-          <div className="pt-20 md:pt-32 flex flex-col md:flex-row items-center md:items-start justify-center md:justify-between w-full">
+          {/* Text Container - Mobile-specific positioning */}
+          <div className="relative h-48 md:h-auto md:pt-32 flex md:flex-row items-start">
             {/* Left Text */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -91,12 +91,15 @@ function App() {
                 delay: 0.5,
                 ease: "easeOut"
               }}
-              className="w-full md:w-1/3 text-center md:text-left mb-4 md:mb-0"
+              className="absolute top-[20px] left-0 w-full md:static md:w-1/3 text-left md:text-left"
             >
-              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-blue-cyan bg-clip-text text-transparent">
+              <h2 className="text-4xl md:text-5xl font-bold text-blue-400">
                 Increasing Profit.
               </h2>
             </motion.div>
+
+            {/* Center Space for Animation */}
+            <div className="w-full md:w-1/3 h-0 md:h-auto" />
 
             {/* Right Text */}
             <motion.div
@@ -107,9 +110,9 @@ function App() {
                 delay: 0.7,
                 ease: "easeOut"
               }}
-              className="w-full md:w-1/3 text-center md:text-right mt-4 md:mt-0"
+              className="absolute top-[196px] right-0 w-full md:static md:w-1/3 text-right md:text-right"
             >
-              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-purple-pink bg-clip-text text-transparent">
+              <h2 className="text-4xl md:text-5xl font-bold text-purple-400">
                 Reducing Costs.
               </h2>
             </motion.div>
