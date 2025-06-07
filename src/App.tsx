@@ -134,7 +134,7 @@ function App() {
                 Powered by AI
               </h2>
               <p className="text-white text-sm mb-5">
-                See how you can integrate the most powerful tool ever created into your business. Now!
+                See how you can integrate the most powerful tool ever created — into your business. Now!
               </p>
               <div className="flex justify-center space-x-2">
                 <button 
