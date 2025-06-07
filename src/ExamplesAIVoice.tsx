@@ -10,6 +10,14 @@ const ExamplesAIVoice: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const voiceAgentTitles = [
+    'Business Receptionist Agent - Spending a lot of money and time to manage your receptionist? What if we cut cost by 80%.',
+    'Outreach Agent - Need to call 1000s of leads?',
+    'Personal Assistant Agent - Need someone available 24/7 to consistently update your calendar?',
+    'Information Hotline Agent - Press "1" to hear about the houses close to your current address.',
+    'Appointment Reminders Via Call - Tired of no-shows?'
+  ];
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -57,11 +65,11 @@ const ExamplesAIVoice: React.FC = () => {
           className="mt-12 px-6"
         >
           <ul className="space-y-4">
-            {[1, 2, 3, 4, 5].map((num) => (
-              <li key={num}>
+            {voiceAgentTitles.map((title, index) => (
+              <li key={index}>
                 <Link to="" className="flex items-center gap-2">
                   <span className="text-purple-600 text-2xl">•</span>
-                  <span className="text-purple-600 text-lg">AI Voice Agent {num} [Demo under construction]</span>
+                  <span className="text-purple-600 text-lg">{title}</span>
                 </Link>
               </li>
             ))}

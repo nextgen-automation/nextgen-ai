@@ -10,6 +10,14 @@ const ExamplesAIAutomations: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const automationTitles = [
+    'AI Powered Lead Qualification - No need to qualify leads on your own. Set the criteria with AI.',
+    'PDF Forms Handler - Wasting multiple hours manually filing up the same forms?',
+    'Report Generator - Want to see how your business did without crunching numbers yourself?',
+    'Social Media Engagement - Want to post a picture everywhere? You don\'t even have to think of a caption - everything automated.',
+    'Personalized Thank-You Notes - Those sweet notes to your loyal customers based on their likes and history.'
+  ];
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -57,11 +65,11 @@ const ExamplesAIAutomations: React.FC = () => {
           className="mt-12 px-6"
         >
           <ul className="space-y-4">
-            {[1, 2, 3, 4, 5].map((num) => (
-              <li key={num}>
+            {automationTitles.map((title, index) => (
+              <li key={index}>
                 <Link to="" className="flex items-center gap-2">
                   <span className="text-teal-600 text-2xl">•</span>
-                  <span className="text-teal-600 text-lg">AI Automation {num} [Demo under construction]</span>
+                  <span className="text-teal-600 text-lg">{title}</span>
                 </Link>
               </li>
             ))}
