@@ -89,7 +89,7 @@ function App() {
               delay: 0.5,
               ease: "easeOut"
             }}
-            className="absolute top-32 left-8 bg-blue-900/70 rounded-2xl overflow-hidden max-w-lg"
+            className="absolute top-32 left-8 bg-black/70 rounded-2xl overflow-hidden max-w-lg"
           >
             <div className="px-6 md:px-8 py-6 text-left">
               {/* Increasing Profit */}
@@ -156,7 +156,7 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gradient-to-br from-gray-900 to-black relative z-10">
+      <section id="services" className="py-20 bg-gradient-to-br from-black to-black relative z-10">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

@@ -38,7 +38,7 @@ const Header: React.FC = () => {
     <nav 
       className={`fixed w-full top-0 z-[1000] border-b transition-all duration-300 ${
         isHomePage 
-          ? 'bg-gray-900 border-gray-700' 
+          ? 'bg-black border-gray-700' 
           : 'bg-white border-gray-200 shadow-sm'
       }`} 
       style={{ padding: '1rem 2rem', borderBottomWidth: '1px' }}
