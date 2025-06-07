@@ -133,10 +133,9 @@ function App() {
               <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">
                 Powered by AI
               </h2>
-              <p className="text-white text-sm mb-2">
+              <p className="text-white text-sm mb-5">
                 See how you can integrate the most powerful tools ever created. Right into your business.
-              </p>
-              <p className="text-white text-sm font-bold mb-5">
+                <br />
                 Now!
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-2 sm:space-x-2 sm:gap-0">
