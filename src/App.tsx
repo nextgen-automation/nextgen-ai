@@ -102,7 +102,7 @@ function App() {
                   ease: "easeOut"
                 }}
               >
-                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
+                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2 leading-relaxed">
                   Increasing Profit.
                 </h2>
               </motion.div>
@@ -117,7 +117,7 @@ function App() {
                   ease: "easeOut"
                 }}
               >
-                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-4">
+                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-4 leading-relaxed">
                   Reducing Costs.
                 </h2>
               </motion.div>
