@@ -101,9 +101,9 @@ function App() {
                   delay: 0.7,
                   ease: "easeOut"
                 }}
-                className="-mb-1 md:mb-1"
+                className="-mb-1 md:-mb-0.5"
               >
-                <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-tight md:leading-normal pb-1 md:pb-2">
+                <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-tight md:leading-normal pb-1 md:pb-1">
                   Increasing Profit.
                 </h2>
               </motion.div>
@@ -117,9 +117,9 @@ function App() {
                   delay: 0.9,
                   ease: "easeOut"
                 }}
-                className="mb-1 md:mb-2"
+                className="mb-1 md:mb-1.5"
               >
-                <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent leading-tight md:leading-normal pb-1 md:pb-2">
+                <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent leading-tight md:leading-normal pb-1 md:pb-1">
                   Reducing Costs.
                 </h2>
               </motion.div>
