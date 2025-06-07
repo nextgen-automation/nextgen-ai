@@ -91,9 +91,9 @@ function App() {
                 delay: 0.5,
                 ease: "easeOut"
               }}
-              className="absolute top-4 left-0 w-full md:static md:w-1/3 text-left md:text-left"
+              className="absolute top-[20px] left-0 w-full md:static md:w-1/3 text-left md:text-left"
             >
-              <h2 className="text-3xl md:text-5xl font-bold text-blue-400">
+              <h2 className="text-4xl md:text-5xl font-bold text-blue-400">
                 Increasing Profit.
               </h2>
             </motion.div>
@@ -110,9 +110,9 @@ function App() {
                 delay: 0.7,
                 ease: "easeOut"
               }}
-              className="absolute top-48 right-0 w-full md:static md:w-1/3 text-right md:text-right"
+              className="absolute top-[196px] right-0 w-full md:static md:w-1/3 text-right md:text-right"
             >
-              <h2 className="text-3xl md:text-5xl font-bold text-purple-400">
+              <h2 className="text-4xl md:text-5xl font-bold text-purple-400">
                 Reducing Costs.
               </h2>
             </motion.div>
