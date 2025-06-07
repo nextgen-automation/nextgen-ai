@@ -168,7 +168,7 @@ function App() {
                   <Bot className="w-12 h-12 text-blue-500" />
                   <h3 className="text-xl font-bold">AI Chat Agents</h3>
                 </div>
-                <p className="text-gray-300 mt-4 mb-4">
+                <p className="text-gray-200 mt-4 mb-4">
                   Engage website visitors instantly, answer FAQs, and qualify leads — all without lifting a finger.
                 </p>
                 <ul className="space-y-2 text-gray-400">
@@ -194,7 +194,7 @@ function App() {
                   <Phone className="w-12 h-12 text-blue-500" />
                   <h3 className="text-xl font-bold">AI Voice Agents</h3>
                 </div>
-                <p className="text-gray-300 mt-4 mb-4">
+                <p className="text-gray-200 mt-4 mb-4">
                   Let AI answer, make and route your business calls like a pro.
                 </p>
                 <ul className="space-y-2 text-gray-400">
@@ -220,7 +220,7 @@ function App() {
                   <Zap className="w-12 h-12 text-blue-500" />
                   <h3 className="text-xl font-bold">AI-Powered Automations</h3>
                 </div>
-                <p className="text-gray-300 mt-4 mb-4">
+                <p className="text-gray-200 mt-4 mb-4">
                   Let AI handle the repetitive. Focus on what only you can do.
                 </p>
                 <ul className="space-y-2 text-gray-400">
