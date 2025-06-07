@@ -80,25 +80,25 @@ function App() {
         </div>
 
         <div className="container mx-auto px-6 relative z-10 min-h-screen">
-          {/* Bottom Content - Refined Overlay Box with all text */}
+          {/* Top-Left Overlay Box with all text */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ 
               duration: 0.8,
-              delay: 1,
+              delay: 0.5,
               ease: "easeOut"
             }}
-            className="absolute bottom-12 left-4 right-4 md:left-0 md:right-0 mx-auto bg-black/30 backdrop-blur-sm rounded-2xl overflow-hidden max-w-xl"
+            className="absolute top-32 left-8 bg-blue-900/70 rounded-2xl overflow-hidden max-w-lg"
           >
-            <div className="px-6 md:px-8 py-6 text-center">
+            <div className="px-6 md:px-8 py-6 text-left">
               {/* Increasing Profit */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ 
                   duration: 0.8,
-                  delay: 1.2,
+                  delay: 0.7,
                   ease: "easeOut"
                 }}
               >
@@ -109,11 +109,11 @@ function App() {
 
               {/* Reducing Costs */}
               <motion.div
-                initial={{ opacity: 0, x: 50 }}
+                initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ 
                   duration: 0.8,
-                  delay: 1.4,
+                  delay: 0.9,
                   ease: "easeOut"
                 }}
               >
@@ -123,23 +123,33 @@ function App() {
               </motion.div>
 
               {/* Powered by AI */}
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">
-                Powered by AI
-              </h2>
-              <p className="text-white text-sm mb-5">
-                See how you can integrate the most powerful tools ever created. Right into your business.
-                <br />
-                Now!
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-2 sm:space-x-2 sm:gap-0">
-                <button 
-                  onClick={scrollToServices}
-                  className="bg-white hover:bg-gray-100 text-gray-900 px-5 py-2 rounded-full transition-colors text-sm font-medium"
-                >
-                  Our Services
-                </button>
-                <BookMeetingButton />
-              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ 
+                  duration: 0.8,
+                  delay: 1.1,
+                  ease: "easeOut"
+                }}
+              >
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">
+                  Powered by AI
+                </h2>
+                <p className="text-white text-sm mb-5">
+                  See how you can integrate the most powerful tools ever created. Right into your business.
+                  <br />
+                  Now!
+                </p>
+                <div className="flex flex-col sm:flex-row justify-start gap-2 sm:space-x-2 sm:gap-0">
+                  <button 
+                    onClick={scrollToServices}
+                    className="bg-white hover:bg-gray-100 text-gray-900 px-5 py-2 rounded-full transition-colors text-sm font-medium"
+                  >
+                    Our Services
+                  </button>
+                  <BookMeetingButton />
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
