@@ -91,7 +91,7 @@ function App() {
                 delay: 0.5,
                 ease: "easeOut"
               }}
-              className="w-full md:w-1/3 text-center md:text-left mb-8 md:mb-0"
+              className="w-full md:w-1/3 text-left md:text-left mb-8 md:mb-0"
             >
               <h2 className="text-3xl md:text-5xl font-bold text-blue-400">
                 Increasing Profit.
@@ -110,7 +110,7 @@ function App() {
                 delay: 0.7,
                 ease: "easeOut"
               }}
-              className="w-full md:w-1/3 text-center md:text-right"
+              className="w-full md:w-1/3 text-right md:text-right"
             >
               <h2 className="text-3xl md:text-5xl font-bold text-purple-400">
                 Reducing Costs.
