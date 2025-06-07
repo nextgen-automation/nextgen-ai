@@ -32,30 +32,30 @@ const Header: React.FC = () => {
   };
 
   return (
-    <nav className="bg-gray-900 fixed w-full top-0 z-[1000] border-b border-gray-700" style={{ padding: '1rem 2rem', borderBottomWidth: '1px' }}>
+    <nav className="bg-white fixed w-full top-0 z-[1000] border-b border-[#E5E5E5]" style={{ padding: '1rem 2rem', borderBottomWidth: '1px' }}>
       <div className="container mx-auto flex justify-between items-center">
         <button onClick={scrollToTop} className="flex items-center space-x-2 group">
-          <Bot className="w-8 h-8 text-blue-400" />
-          <h1 className="text-2xl font-bold text-white">NextGen-AI</h1>
+          <Bot className="w-8 h-8 text-blue-500" />
+          <h1 className="text-2xl font-bold text-gray-900">NextGen-AI</h1>
         </button>
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           <button 
             onClick={scrollToTop} 
-            className={`text-gray-300 hover:text-white transition-colors ${location.pathname === '/' ? 'text-white' : ''}`}
+            className={`text-gray-700 hover:text-gray-900 transition-colors ${location.pathname === '/' ? 'text-gray-900' : ''}`}
           >
             Home
           </button>
           <button 
             onClick={scrollToServices} 
-            className="text-gray-300 hover:text-white transition-colors"
+            className="text-gray-700 hover:text-gray-900 transition-colors"
           >
             Our Services
           </button>
           <Link 
             to="/examples" 
-            className={`text-gray-300 hover:text-white transition-colors ${location.pathname === '/examples' ? 'text-white' : ''}`}
+            className={`text-gray-700 hover:text-gray-900 transition-colors ${location.pathname === '/examples' ? 'text-gray-900' : ''}`}
           >
             Watch Examples of AI Integrations
           </Link>
@@ -65,7 +65,7 @@ const Header: React.FC = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="block md:hidden p-2 text-gray-300 hover:text-white transition-colors"
+          className="block md:hidden p-2 text-gray-700 hover:text-gray-900 transition-colors"
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -73,24 +73,24 @@ const Header: React.FC = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-gray-800 border-t border-gray-700 py-4">
+        <div className="md:hidden bg-white border-t border-gray-200 py-4">
           <div className="container mx-auto px-6 space-y-4">
             <button 
               onClick={scrollToTop} 
-              className={`block w-full text-left text-gray-300 hover:text-white transition-colors py-2 ${location.pathname === '/' ? 'text-white font-medium' : ''}`}
+              className={`block w-full text-left text-gray-700 hover:text-gray-900 transition-colors py-2 ${location.pathname === '/' ? 'text-gray-900 font-medium' : ''}`}
             >
               Home
             </button>
             <button 
               onClick={scrollToServices} 
-              className="block w-full text-left text-gray-300 hover:text-white transition-colors py-2"
+              className="block w-full text-left text-gray-700 hover:text-gray-900 transition-colors py-2"
             >
               Our Services
             </button>
             <Link 
               to="/examples" 
               onClick={handleExamplesClick}
-              className={`block w-full text-left text-gray-300 hover:text-white transition-colors py-2 ${location.pathname === '/examples' ? 'text-white font-medium' : ''}`}
+              className={`block w-full text-left text-gray-700 hover:text-gray-900 transition-colors py-2 ${location.pathname === '/examples' ? 'text-gray-900 font-medium' : ''}`}
             >
               Watch Examples of AI Integrations
             </Link>
