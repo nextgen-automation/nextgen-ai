@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft } from 'lucide-react';
+import { ChevronLeft, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from './components/Header';
 import BookMeetingButton from './components/BookMeetingButton';
@@ -27,7 +27,11 @@ const ExamplesAIAutomations: React.FC = () => {
           >
             <div className="flex items-center">
               <ChevronLeft className="w-6 h-6 text-teal-500 transform transition-transform group-hover:-translate-x-2 mr-4" />
-              <h2 className="text-2xl font-bold text-teal-600">AI Powered Automations</h2>
+              <h2 className="text-2xl font-bold text-teal-600 flex items-center gap-2">
+                AI Powered Automations
+                <Wrench className="w-5 h-5 text-teal-600" />
+                <span className="text-sm text-teal-600">[Under construction]</span>
+              </h2>
             </div>
             <div className="mt-4 ml-10 flex items-center gap-x-8">
               <div className="flex items-center gap-2">
@@ -53,7 +57,7 @@ const ExamplesAIAutomations: React.FC = () => {
               <li key={num}>
                 <Link to="" className="flex items-center gap-2">
                   <span className="text-teal-600 text-2xl">•</span>
-                  <span className="text-teal-600 text-lg">AI Automation {num}</span>
+                  <span className="text-teal-600 text-lg">AI Automation {num} [Demo under construction]</span>
                 </Link>
               </li>
             ))}

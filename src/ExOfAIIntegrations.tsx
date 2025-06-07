@@ -89,7 +89,11 @@ const ExOfAIIntegrations: React.FC = () => {
               className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group"
             >
               <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-bold text-teal-600">AI Powered Automations</h2>
+                <h2 className="text-2xl font-bold text-teal-600 flex items-center gap-2">
+                  AI Powered Automations
+                  <Wrench className="w-5 h-5 text-teal-600" />
+                  <span className="text-sm text-teal-600">[Under construction]</span>
+                </h2>
                 <ChevronRight className="w-6 h-6 text-teal-500 transform transition-transform group-hover:translate-x-2" />
               </div>
               <div className="mt-4 flex items-center gap-x-8">
