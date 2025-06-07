@@ -1,10 +1,8 @@
 import React from 'react';
 
 const BookMeetingButton: React.FC = () => {
-  const calendlyUrl = import.meta.env.VITE_CALENDLY_URL || 'https://calendly.com/nextgenai-automation/30min';
-  
   const handleClick = () => {
-    window.open(calendlyUrl, '_blank');
+    window.open('https://calendly.com/nextgenai-automation/30min', '_blank');
   };
 
   return (
