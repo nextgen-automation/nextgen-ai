@@ -91,7 +91,7 @@ function App() {
             }}
             className="absolute top-32 left-0 bg-black/70 rounded-2xl overflow-hidden max-w-lg"
           >
-            <div className="px-8 md:px-10 py-6 text-left">
+            <div className="px-8 md:px-10 py-8 text-left">
               {/* Increasing Profit */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -101,8 +101,9 @@ function App() {
                   delay: 0.7,
                   ease: "easeOut"
                 }}
+                className="mb-4"
               >
-                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2 leading-relaxed">
+                <h2 className="text-4xl md:text-5xl font-bold text-blue-400 leading-normal pb-2">
                   Increasing Profit.
                 </h2>
               </motion.div>
@@ -116,8 +117,9 @@ function App() {
                   delay: 0.9,
                   ease: "easeOut"
                 }}
+                className="mb-6"
               >
-                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-4 leading-relaxed">
+                <h2 className="text-4xl md:text-5xl font-bold text-purple-400 leading-normal pb-2">
                   Reducing Costs.
                 </h2>
               </motion.div>
@@ -132,10 +134,10 @@ function App() {
                   ease: "easeOut"
                 }}
               >
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-normal">
                   Powered by AI
                 </h2>
-                <p className="text-white text-sm mb-5">
+                <p className="text-white text-sm mb-6 leading-relaxed">
                   See how you can integrate the most powerful tools ever created. Right into your business.
                   <br />
                   Now!
