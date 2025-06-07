@@ -80,45 +80,7 @@ function App() {
         </div>
 
         <div className="container mx-auto px-6 relative z-10 min-h-screen">
-          {/* Text Container - Mobile-specific positioning */}
-          <div className="relative h-48 md:h-auto md:pt-32 flex md:flex-row items-start">
-            {/* Left Text */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ 
-                duration: 0.8,
-                delay: 0.5,
-                ease: "easeOut"
-              }}
-              className="absolute top-[20px] left-0 w-full md:static md:w-1/3 text-left md:text-left"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-blue-400">
-                Increasing Profit.
-              </h2>
-            </motion.div>
-
-            {/* Center Space for Animation */}
-            <div className="w-full md:w-1/3 h-0 md:h-auto" />
-
-            {/* Right Text */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ 
-                duration: 0.8,
-                delay: 0.7,
-                ease: "easeOut"
-              }}
-              className="absolute top-[196px] right-0 w-full md:static md:w-1/3 text-right md:text-right"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-purple-400">
-                Reducing Costs.
-              </h2>
-            </motion.div>
-          </div>
-
-          {/* Bottom Content - Responsive overlay box */}
+          {/* Bottom Content - Refined Overlay Box with all text */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -130,6 +92,37 @@ function App() {
             className="absolute bottom-12 left-4 right-4 md:left-0 md:right-0 mx-auto bg-black/30 backdrop-blur-sm rounded-2xl overflow-hidden max-w-xl"
           >
             <div className="px-6 md:px-8 py-6 text-center">
+              {/* Increasing Profit */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ 
+                  duration: 0.8,
+                  delay: 1.2,
+                  ease: "easeOut"
+                }}
+              >
+                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
+                  Increasing Profit.
+                </h2>
+              </motion.div>
+
+              {/* Reducing Costs */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ 
+                  duration: 0.8,
+                  delay: 1.4,
+                  ease: "easeOut"
+                }}
+              >
+                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-4">
+                  Reducing Costs.
+                </h2>
+              </motion.div>
+
+              {/* Powered by AI */}
               <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">
                 Powered by AI
               </h2>
