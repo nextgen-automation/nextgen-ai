@@ -101,9 +101,9 @@ function App() {
                   delay: 0.7,
                   ease: "easeOut"
                 }}
-                className="mb-4"
+                className="mb-2"
               >
-                <h2 className="text-4xl md:text-5xl font-bold text-blue-400 leading-normal pb-2">
+                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-normal pb-2">
                   Increasing Profit.
                 </h2>
               </motion.div>
@@ -117,9 +117,9 @@ function App() {
                   delay: 0.9,
                   ease: "easeOut"
                 }}
-                className="mb-6"
+                className="mb-4"
               >
-                <h2 className="text-4xl md:text-5xl font-bold text-purple-400 leading-normal pb-2">
+                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent leading-normal pb-2">
                   Reducing Costs.
                 </h2>
               </motion.div>
@@ -134,10 +134,10 @@ function App() {
                   ease: "easeOut"
                 }}
               >
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-normal">
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-2 leading-normal">
                   Powered by AI
                 </h2>
-                <p className="text-white text-sm mb-6 leading-relaxed">
+                <p className="text-white text-sm mb-4 leading-relaxed">
                   See how you can integrate the most powerful tools ever created. Right into your business.
                   <br />
                   Now!
