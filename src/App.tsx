@@ -168,10 +168,10 @@ function App() {
                   <Bot className="w-12 h-12 text-blue-500" />
                   <h3 className="text-xl font-bold">AI Chat Agents</h3>
                 </div>
-                <p className="text-gray-400 mt-4 mb-4">
+                <p className="text-gray-300 mt-4 mb-4">
                   Engage website visitors instantly, answer FAQs, and qualify leads — all without lifting a finger.
                 </p>
-                <ul className="space-y-2 text-gray-300">
+                <ul className="space-y-2 text-gray-400">
                   <li>• Your 24/7 AI Agent That Never Sleeps</li>
                   <li>• Never miss an inquiry—even outside business hours</li>
                 </ul>
@@ -194,10 +194,10 @@ function App() {
                   <Phone className="w-12 h-12 text-blue-500" />
                   <h3 className="text-xl font-bold">AI Voice Agents</h3>
                 </div>
-                <p className="text-gray-400 mt-4 mb-4">
+                <p className="text-gray-300 mt-4 mb-4">
                   Let AI answer, make and route your business calls like a pro.
                 </p>
-                <ul className="space-y-2 text-gray-300">
+                <ul className="space-y-2 text-gray-400">
                   <li>• Handle scheduling, appointment confirmations, and routine questions — all in natural conversation</li>
                   <li>• Natural-sounding voices that feel truly human</li>
                 </ul>
@@ -220,10 +220,10 @@ function App() {
                   <Zap className="w-12 h-12 text-blue-500" />
                   <h3 className="text-xl font-bold">AI-Powered Automations</h3>
                 </div>
-                <p className="text-gray-400 mt-4 mb-4">
+                <p className="text-gray-300 mt-4 mb-4">
                   Let AI handle the repetitive. Focus on what only you can do.
                 </p>
-                <ul className="space-y-2 text-gray-300">
+                <ul className="space-y-2 text-gray-400">
                   <li>• Automate admin tasks with intelligent automations tailored to your workflow</li>
                   <li>• Automatically fill forms, update calendars, and more</li>
                 </ul>
