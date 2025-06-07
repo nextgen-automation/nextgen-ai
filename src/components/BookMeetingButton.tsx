@@ -10,7 +10,7 @@ const BookMeetingButton: React.FC = () => {
       onClick={handleClick}
       className="bg-[#2D6BFF] text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors"
     >
-      Book a Free Meeting
+      Book a Free Consultation
     </button>
   );
 };
