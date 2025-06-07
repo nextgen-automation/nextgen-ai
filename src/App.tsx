@@ -80,8 +80,8 @@ function App() {
         </div>
 
         <div className="container mx-auto px-6 relative z-10 min-h-screen">
-          {/* Text Container - Responsive layout */}
-          <div className="pt-32 flex flex-col md:flex-row items-start">
+          {/* Text Container - Mobile-specific positioning */}
+          <div className="pt-20 md:pt-32 flex flex-col md:flex-row items-start">
             {/* Left Text */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
