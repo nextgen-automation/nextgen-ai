@@ -105,8 +105,8 @@ const Header: React.FC = () => {
       {isMobileMenuOpen && (
         <div className={`md:hidden border-t py-4 ${
           isHomePage 
-            ? 'bg-gray-800 border-gray-700'
-            : 'bg-gray-50 border-gray-200'
+            ? 'bg-black border-gray-700'
+            : 'bg-white border-gray-200'
         }`}>
           <div className="container mx-auto px-6 space-y-4">
             <button 
@@ -140,7 +140,7 @@ const Header: React.FC = () => {
             >
               Watch Examples of AI Integrations
             </Link>
-            <div className="pt-2">
+            <div className="pt-2 w-full">
               <BookMeetingButton />
             </div>
           </div>
