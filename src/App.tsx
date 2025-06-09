@@ -11,6 +11,17 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
+    // Fix viewport units on iOS
+    const setVh = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+    setVh();
+    window.addEventListener('resize', setVh);
+    return () => window.removeEventListener('resize', setVh);
+  }, []);
+
+  useEffect(() => {
     const script = document.createElement('script');
     script.type = 'module';
     script.src = 'https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js';
@@ -71,6 +82,11 @@ function App() {
               onLoad={handleSplineLoad}
               loading-anim
               events-target="global"
+              style={{
+                position: 'fixed',
+                WebkitTransform: 'translate3d(0,0,0)',
+                transform: 'translateZ(0)'
+              }}
             />
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-blue-900/50 to-purple-900/50 flex items-center justify-center">
@@ -89,7 +105,7 @@ function App() {
               delay: 0.5,
               ease: "easeOut"
             }}
-            className="absolute top-60 md:top-32 left-0 bg-black/70 rounded-2xl overflow-hidden max-w-md"
+            className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] md:top-32 md:left-0 md:translate-x-0 md:translate-y-0 w-[90vw] max-w-md bg-black/70 rounded-2xl overflow-hidden"
           >
             <div className="px-8 md:px-10 py-10 text-left">
               {/* Increasing Profit */}
