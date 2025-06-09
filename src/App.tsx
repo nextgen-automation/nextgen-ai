@@ -89,9 +89,9 @@ function App() {
               delay: 0.5,
               ease: "easeOut"
             }}
-            className="absolute top-56 md:top-32 left-0 bg-black/70 rounded-2xl overflow-hidden max-w-md"
+            className="absolute top-80 md:top-32 left-0 bg-black/70 rounded-2xl overflow-hidden max-w-md"
           >
-            <div className="px-8 md:px-10 py-6 text-left">
+            <div className="px-8 md:px-10 py-10 text-left">
               {/* Increasing Profit */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
