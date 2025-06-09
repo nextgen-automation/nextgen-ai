@@ -24,7 +24,7 @@ const ExamplesAIVoice: React.FC = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="min-h-screen bg-white text-gray-900 pt-16 pb-24"
+      className="min-h-screen bg-white text-gray-900 pt-16 pb-24 flicker-fix"
     >
       <Header />
 
@@ -35,7 +35,7 @@ const ExamplesAIVoice: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
-            className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group"
+            className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group flicker-fix"
           >
             <div className="flex items-center">
               <ChevronLeft className="w-6 h-6 text-purple-500 transform transition-transform group-hover:-translate-x-2 mr-4" />
