@@ -3,21 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NextGen-AI - AI Solutions for Business Growth</title>
     
     <!-- Performance optimization for Spline viewer -->
     <link rel="preload" href="https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js" as="script">
-    
-    <!-- WebKit Rendering Engine Patch for Apple devices -->
-    <script>
-      // Force layout recalibration on WebKit
-      document.addEventListener('DOMContentLoaded', function() {
-        if (navigator.userAgent.match(/Macintosh|iPhone|iPad/)) {
-          document.documentElement.style.webkitTransform = 'translateZ(0)';
-        }
-      });
-    </script>
   </head>
   <body>
     <div id="root"></div>
