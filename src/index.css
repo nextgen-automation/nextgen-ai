@@ -1,18 +1,36 @@
+/* ===== START APPLE FIXES ===== */
+/* Apple Rendering Engine Patch */
+@supports (-webkit-touch-callout: none) {
+  body, html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+  * {
+    -webkit-transform: translate3d(0,0,0);
+    backface-visibility: hidden;
+  }
+}
+
+/* Dynamic Viewport Units */
+:root {
+  --vh: 1vh;
+}
+.min-h-screen {
+  min-height: calc(var(--vh, 1vh) * 100) !important;
+}
+
+/* Animation Stability */
+spline-viewer, .absolute, .fixed, .motion-div {
+  transform: translateZ(0);
+  will-change: transform;
+}
+/* ===== END APPLE FIXES ===== */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Flicker Fix for Safari and Apple Devices */
-.flicker-fix {
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  perspective: 1000px;
-  will-change: transform, opacity;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 /* Global reset to prevent browser default margins/padding */
 html, body {

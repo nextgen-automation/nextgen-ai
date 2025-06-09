@@ -67,7 +67,7 @@ function App() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white pt-16 flicker-fix"
+      className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white pt-16"
     >
       <Header />
 
@@ -105,7 +105,7 @@ function App() {
               delay: 0.5,
               ease: "easeOut"
             }}
-            className="absolute top-[40%] inset-x-0 mx-auto w-[90vw] max-w-md bg-black/70 rounded-2xl overflow-hidden md:top-32 md:left-0 md:inset-x-auto md:mx-0 md:w-auto flicker-fix"
+            className="absolute top-[40%] inset-x-0 mx-auto w-[90vw] max-w-md bg-black/70 rounded-2xl overflow-hidden md:top-32 md:left-0 md:inset-x-auto md:mx-0 md:w-auto"
           >
             <div className="px-8 md:px-10 py-6 text-left">
               {/* Increasing Profit */}
@@ -183,7 +183,7 @@ function App() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm flicker-fix"
+                className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
               >
                 <div className="flex items-center gap-4">
                   <Bot className="w-12 h-12 text-blue-500" />
@@ -209,7 +209,7 @@ function App() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm flicker-fix"
+                className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
               >
                 <div className="flex items-center gap-4">
                   <Phone className="w-12 h-12 text-blue-500" />
@@ -235,7 +235,7 @@ function App() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm flicker-fix"
+                className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
               >
                 <div className="flex items-center gap-4">
                   <Zap className="w-12 h-12 text-blue-500" />

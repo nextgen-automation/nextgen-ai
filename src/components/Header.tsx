@@ -103,7 +103,7 @@ const Header: React.FC = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className={`md:hidden border-t py-4 flicker-fix ${
+        <div className={`md:hidden border-t py-4 ${
           isHomePage 
             ? 'bg-black border-gray-700'
             : 'bg-white border-gray-200'
