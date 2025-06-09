@@ -16,25 +16,17 @@ const NotFound: React.FC = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      style={{ 
-        transform: 'translateZ(0)',
-        WebkitTransform: 'translate3d(0,0,0)'
-      }}
       className="min-h-screen bg-white text-gray-900 pt-16"
     >
       <Header />
 
-      <div className="w-full max-w-screen-2xl mx-auto px-6 2xl:px-16 3xl:px-24 pt-20 pb-24">
+      <div className="container mx-auto px-6 pt-20 pb-24">
         <div className="max-w-2xl mx-auto text-center">
           {/* 404 Number */}
           <motion.div
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            style={{ 
-              transform: 'translateZ(0)',
-              WebkitTransform: 'translate3d(0,0,0)'
-            }}
             className="mb-8"
           >
             <h1 className="text-8xl md:text-9xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
@@ -47,10 +39,6 @@ const NotFound: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            style={{ 
-              transform: 'translateZ(0)',
-              WebkitTransform: 'translate3d(0,0,0)'
-            }}
             className="mb-8"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -69,10 +57,6 @@ const NotFound: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            style={{ 
-              transform: 'translateZ(0)',
-              WebkitTransform: 'translate3d(0,0,0)'
-            }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
             <Link 
@@ -97,10 +81,6 @@ const NotFound: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            style={{ 
-              transform: 'translateZ(0)',
-              WebkitTransform: 'translate3d(0,0,0)'
-            }}
             className="bg-gray-50 rounded-xl p-8 border border-gray-200"
           >
             <h3 className="text-xl font-bold text-gray-900 mb-4">
@@ -126,10 +106,6 @@ const NotFound: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 1.0 }}
-            style={{ 
-              transform: 'translateZ(0)',
-              WebkitTransform: 'translate3d(0,0,0)'
-            }}
             className="mt-8"
           >
             <button 

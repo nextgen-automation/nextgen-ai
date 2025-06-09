@@ -43,7 +43,7 @@ const Header: React.FC = () => {
       }`} 
       style={{ padding: '1rem 2rem', borderBottomWidth: '1px' }}
     >
-      <div className="w-full max-w-screen-2xl mx-auto 2xl:px-16 3xl:px-24 flex justify-between items-center">
+      <div className="container mx-auto flex justify-between items-center">
         <button onClick={scrollToTop} className="flex items-center space-x-2 group">
           <Bot className="w-8 h-8 text-blue-500" />
           <h1 className={`text-2xl font-bold transition-colors ${
@@ -108,7 +108,7 @@ const Header: React.FC = () => {
             ? 'bg-black border-gray-700'
             : 'bg-white border-gray-200'
         }`}>
-          <div className="w-full max-w-screen-2xl mx-auto px-6 2xl:px-16 3xl:px-24 space-y-4">
+          <div className="container mx-auto px-6 space-y-4">
             <button 
               onClick={scrollToTop} 
               className={`block w-full text-left transition-colors py-2 ${

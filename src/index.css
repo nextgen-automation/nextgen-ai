@@ -26,22 +26,6 @@ spline-viewer, .absolute, .fixed, .motion-div {
   transform: translateZ(0);
   will-change: transform;
 }
-
-/* ===== ANTI-FLICKER FIX ===== */
-*, *::before, *::after {
-  -webkit-backface-visibility: hidden !important;
-  backface-visibility: hidden !important;
-  -webkit-perspective: 1000px !important;
-  perspective: 1000px !important;
-  transform-style: preserve-3d !important;
-}
-
-@supports (-webkit-touch-callout: none) {
-  body, html {
-    -webkit-transform: translate3d(0,0,0);
-    transform: translateZ(0);
-  }
-}
 /* ===== END APPLE FIXES ===== */
 
 @tailwind base;

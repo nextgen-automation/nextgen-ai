@@ -67,10 +67,6 @@ function App() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      style={{ 
-        transform: 'translateZ(0)',
-        WebkitTransform: 'translate3d(0,0,0)'
-      }}
       className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white pt-16"
     >
       <Header />
@@ -99,7 +95,7 @@ function App() {
           )}
         </div>
 
-        <div className="w-full max-w-screen-2xl mx-auto px-6 2xl:px-16 3xl:px-24 relative z-10 min-h-screen">
+        <div className="container mx-auto px-6 relative z-10 min-h-screen">
           {/* Top-Left Overlay Box with all text */}
           <motion.div
             initial={{ opacity: 0, y: -50 }}
@@ -108,10 +104,6 @@ function App() {
               duration: 0.8,
               delay: 0.5,
               ease: "easeOut"
-            }}
-            style={{ 
-              transform: 'translateZ(0)',
-              WebkitTransform: 'translate3d(0,0,0)'
             }}
             className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] md:top-32 md:left-0 md:translate-x-0 md:translate-y-0 w-[90vw] max-w-md bg-black/70 rounded-2xl overflow-hidden"
           >
@@ -124,10 +116,6 @@ function App() {
                   duration: 0.8,
                   delay: 0.7,
                   ease: "easeOut"
-                }}
-                style={{ 
-                  transform: 'translateZ(0)',
-                  WebkitTransform: 'translate3d(0,0,0)'
                 }}
                 className="-mb-1 md:-mb-2"
               >
@@ -145,10 +133,6 @@ function App() {
                   delay: 0.9,
                   ease: "easeOut"
                 }}
-                style={{ 
-                  transform: 'translateZ(0)',
-                  WebkitTransform: 'translate3d(0,0,0)'
-                }}
                 className="mb-1 md:-mb-1"
               >
                 <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent leading-tight md:leading-normal pb-1 md:pb-1">
@@ -164,10 +148,6 @@ function App() {
                   duration: 0.8,
                   delay: 1.1,
                   ease: "easeOut"
-                }}
-                style={{ 
-                  transform: 'translateZ(0)',
-                  WebkitTransform: 'translate3d(0,0,0)'
                 }}
               >
                 <h2 className="text-lg md:text-2xl font-bold text-white mb-1 leading-tight md:leading-normal">
@@ -195,7 +175,7 @@ function App() {
 
       {/* Services Section */}
       <section id="services" className="py-20 bg-gradient-to-br from-black to-black relative z-10">
-        <div className="w-full max-w-screen-2xl mx-auto px-6 2xl:px-16 3xl:px-24">
+        <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="space-y-4">
@@ -203,10 +183,6 @@ function App() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                style={{ 
-                  transform: 'translateZ(0)',
-                  WebkitTransform: 'translate3d(0,0,0)'
-                }}
                 className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
               >
                 <div className="flex items-center gap-4">
@@ -233,10 +209,6 @@ function App() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                style={{ 
-                  transform: 'translateZ(0)',
-                  WebkitTransform: 'translate3d(0,0,0)'
-                }}
                 className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
               >
                 <div className="flex items-center gap-4">
@@ -263,10 +235,6 @@ function App() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                style={{ 
-                  transform: 'translateZ(0)',
-                  WebkitTransform: 'translate3d(0,0,0)'
-                }}
                 className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
               >
                 <div className="flex items-center gap-4">
