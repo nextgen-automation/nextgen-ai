@@ -1,0 +1,13 @@
+/* Force GPU acceleration for framer-motion */
+[data-framer-name] {
+  transform: translate3d(0,0,0) !important;
+  isolation: isolate !important;
+}
+
+/* Fix page transition flicker */
+.next-page-transition {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
