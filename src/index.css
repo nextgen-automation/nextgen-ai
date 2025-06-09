@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global reset to prevent browser default margins/padding */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 spline-viewer {
   width: 100%;
   height: 100%;
