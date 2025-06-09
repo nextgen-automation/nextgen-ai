@@ -105,7 +105,7 @@ function App() {
               delay: 0.5,
               ease: "easeOut"
             }}
-            className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] md:top-32 md:left-0 md:translate-x-0 md:translate-y-0 w-[90vw] max-w-md bg-black/70 rounded-2xl overflow-hidden"
+            className="absolute top-[20%] inset-x-0 mx-auto w-[90vw] max-w-md bg-black/70 rounded-2xl overflow-hidden md:top-32 md:left-0 md:translate-x-0 md:translate-y-0"
           >
             <div className="px-8 md:px-10 py-10 text-left">
               {/* Increasing Profit */}
