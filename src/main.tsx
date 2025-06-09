@@ -7,6 +7,7 @@ import ExOfAIIntegrations from './ExOfAIIntegrations'
 import ExamplesAIChat from './ExamplesAIChat'
 import ExamplesAIVoice from './ExamplesAIVoice'
 import ExamplesAIAutomations from './ExamplesAIAutomations'
+import NotFound from './NotFound'
 import './index.css'
 
 function AnimatedRoutes() {
@@ -20,6 +21,7 @@ function AnimatedRoutes() {
         <Route path="/ai-chat-agents" element={<ExamplesAIChat />} />
         <Route path="/ai-voice-agents" element={<ExamplesAIVoice />} />
         <Route path="/ai-powered-automations" element={<ExamplesAIAutomations />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
   );
