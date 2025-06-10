@@ -25,10 +25,25 @@
   min-height: calc(var(--vh, 1vh) * 100) !important;
 }
 
-/* Animation Stability */
+/* Animation Stability - Enhanced for Apple devices */
 spline-viewer, .absolute, .fixed, .motion-div {
   transform: translateZ(0);
-  will-change: transform;
+  will-change: transform, opacity;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Framer Motion optimization for Apple devices */
+[data-framer-component] {
+  will-change: transform, opacity;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translateZ(0);
+}
+
+/* Smooth scrolling optimization */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 /* ===== END APPLE FIXES ===== */
 
