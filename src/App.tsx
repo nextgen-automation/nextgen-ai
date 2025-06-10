@@ -98,7 +98,7 @@ function App() {
                 delay: 0.5,
                 ease: "easeOut"
               }}
-              className="absolute top-[40%] inset-x-0 mx-auto w-[90vw] max-w-md bg-black/70 rounded-2xl overflow-hidden md:top-32 md:left-0 md:inset-x-auto md:mx-0 md:w-auto"
+              className="absolute top-20 sm:top-[40%] inset-x-0 mx-auto w-[90vw] max-w-md bg-black/70 rounded-2xl overflow-hidden md:top-32 md:left-0 md:inset-x-auto md:mx-0 md:w-auto"
             >
               <div className="px-8 md:px-10 py-6 text-left">
                 {/* Increasing Profit */}
