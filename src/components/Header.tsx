@@ -103,7 +103,7 @@ const Header: React.FC = () => {
           aria-expanded={isMobileMenuOpen}
           aria-controls="mobile-menu"
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
+          {isMobileMenuOpen ? <X className="w-6 h-6\" aria-hidden="true" /> : <Menu className="w-6 h-6\" aria-hidden="true" />}
         </button>
       </nav>
 
