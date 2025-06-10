@@ -12,7 +12,7 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script type="text/javascript" defer>
+    <script type="module" async>
       (function(d, t) {
           var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
           v.onload = function() {
@@ -25,7 +25,10 @@
               }
             });
           }
-          v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+          v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
+          v.type = "module"; 
+          v.async = true;
+          s.parentNode.insertBefore(v, s);
       })(document, 'script');
     </script>
   </body>
