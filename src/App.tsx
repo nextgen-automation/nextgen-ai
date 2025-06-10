@@ -65,7 +65,7 @@ function App() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative min-h-screen" aria-label="Hero section">
+        <section className="relative min-h-screen pb-20" aria-label="Hero section">
           {/* Spline Animation Container */}
           <div className="absolute inset-0" aria-hidden="true">
             {!splineError ? (
