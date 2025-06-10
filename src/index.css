@@ -25,27 +25,170 @@
   min-height: calc(var(--vh, 1vh) * 100) !important;
 }
 
-/* Animation Stability - Enhanced for Apple devices */
-spline-viewer, .absolute, .fixed, .motion-div {
-  transform: translateZ(0);
-  will-change: transform, opacity;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+/* ===== CSS ANIMATION FEATURE DETECTION ===== */
+
+/* Basic CSS Transitions - Apply only if supported */
+@supports (transition: opacity 0.3s ease) {
+  /* Transition classes for buttons and interactive elements */
+  .transition-colors {
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  }
+  
+  .transition-all {
+    transition: all 0.3s ease;
+  }
+  
+  /* Header transitions */
+  header {
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  /* Button hover transitions */
+  button {
+    transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  }
+  
+  /* Link hover transitions */
+  a {
+    transition: color 0.15s ease;
+  }
 }
 
-/* Framer Motion optimization for Apple devices */
-[data-framer-component] {
-  will-change: transform, opacity;
-  -webkit-transform: translate3d(0,0,0);
-  transform: translateZ(0);
+/* CSS Transforms - Apply only if 2D transforms are supported */
+@supports (transform: scale(1)) {
+  /* Hover scale effects */
+  .hover\:scale-105:hover {
+    transform: scale(1.05);
+  }
+  
+  .group:hover .group-hover\:translate-x-2 {
+    transform: translateX(0.5rem);
+  }
+  
+  .group:hover .group-hover\:-translate-x-2 {
+    transform: translateX(-0.5rem);
+  }
 }
 
-/* Smooth scrolling optimization */
-html {
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
+/* 3D Transforms and Hardware Acceleration - Apply only if 3D transforms are supported */
+@supports (transform: translateZ(0)) {
+  /* Animation Stability - Enhanced for Apple devices */
+  spline-viewer, .absolute, .fixed, .motion-div {
+    transform: translateZ(0);
+    will-change: transform, opacity;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  /* Framer Motion optimization for Apple devices */
+  [data-framer-component] {
+    will-change: transform, opacity;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translateZ(0);
+  }
+  
+  /* Hardware acceleration for animated elements */
+  .motion-div {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translateZ(0);
+  }
 }
-/* ===== END APPLE FIXES ===== */
+
+/* CSS Animations (keyframes) - Apply only if animations are supported */
+@supports (animation: fadeIn 1s ease) {
+  /* Loading animation for Spline viewer */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Apply animations only if supported */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideInUp 0.6s ease-out;
+  }
+}
+
+/* Advanced CSS Properties - Apply only if will-change is supported */
+@supports (will-change: transform) {
+  /* Performance optimizations */
+  .will-change-transform {
+    will-change: transform;
+  }
+  
+  .will-change-opacity {
+    will-change: opacity;
+  }
+  
+  /* Remove will-change after animation completes */
+  .animation-complete {
+    will-change: auto;
+  }
+}
+
+/* Backdrop Filter - Apply only if supported */
+@supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+}
+
+/* CSS Grid - Fallback for older browsers */
+@supports not (display: grid) {
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .grid-cols-1 > * {
+    width: 100%;
+  }
+  
+  .md\:grid-cols-3 > * {
+    width: calc(33.333% - 1rem);
+    margin: 0.5rem;
+  }
+}
+
+/* Flexbox Gap - Fallback for older browsers */
+@supports not (gap: 1rem) {
+  .gap-2 > * + * {
+    margin-left: 0.5rem;
+  }
+  
+  .gap-4 > * + * {
+    margin-left: 1rem;
+  }
+  
+  .gap-8 > * + * {
+    margin-left: 2rem;
+  }
+  
+  .space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+  
+  .space-y-8 > * + * {
+    margin-top: 2rem;
+  }
+}
+
+/* ===== END FEATURE DETECTION ===== */
 
 @tailwind base;
 @tailwind components;
@@ -57,7 +200,34 @@ html, body {
   padding: 0;
 }
 
+/* Smooth scrolling optimization */
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Fallback for browsers without smooth scrolling */
+@supports not (scroll-behavior: smooth) {
+  html {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 spline-viewer {
   width: 100%;
   height: 100%;
+}
+
+/* Reduced motion preferences - Respect user accessibility settings */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
