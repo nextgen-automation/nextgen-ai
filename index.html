@@ -35,7 +35,7 @@
     <script type="module" src="/src/main.tsx"></script>
     <script type="text/javascript">
       (function(d, t) {
-          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+          var v = d.createElement(t);
           v.onload = function() {
             window.voiceflow.chat.load({
               verify: { projectID: '6835f01106ddb99ff491f24d' },
@@ -46,7 +46,12 @@
               }
             });
           }
-          v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+          v.onerror = function() {
+            console.warn('Voiceflow widget failed to load');
+          }
+          v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
+          v.type = "text/javascript"; 
+          d.body.appendChild(v);
       })(document, 'script');
     </script>
   </body>
