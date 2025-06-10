@@ -4,6 +4,7 @@ import { Bot, Phone, Zap } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import BookMeetingButton from './components/BookMeetingButton';
+import { setupViewportFix, scrollToElement } from './utils/scrollUtils';
 
 function App() {
   const [splineError, setSplineError] = useState(false);
@@ -12,13 +13,8 @@ function App() {
 
   useEffect(() => {
     // Fix viewport units on iOS
-    const setVh = () => {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    };
-    setVh();
-    window.addEventListener('resize', setVh);
-    return () => window.removeEventListener('resize', setVh);
+    const cleanup = setupViewportFix();
+    return cleanup;
   }, []);
 
   useEffect(() => {
@@ -39,10 +35,7 @@ function App() {
 
   useEffect(() => {
     if (location.state?.scrollToServices) {
-      const servicesSection = document.getElementById('services');
-      if (servicesSection) {
-        servicesSection.scrollIntoView({ behavior: 'smooth' });
-      }
+      scrollToElement('services');
     }
   }, [location]);
 
@@ -57,8 +50,7 @@ function App() {
   };
 
   const scrollToServices = () => {
-    const servicesSection = document.getElementById('services');
-    servicesSection?.scrollIntoView({ behavior: 'smooth' });
+    scrollToElement('services');
   };
 
   return (
@@ -71,193 +63,196 @@ function App() {
     >
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen">
-        {/* Spline Animation Container */}
-        <div className="absolute inset-0">
-          {!splineError ? (
-            <spline-viewer
-              url="https://prod.spline.design/kwId3fBFWvxHdNui/scene.splinecode"
-              onError={handleSplineError}
-              onLoad={handleSplineLoad}
-              loading-anim
-              events-target="global"
-              style={{
-                position: 'fixed',
-                WebkitTransform: 'translate3d(0,0,0)',
-                transform: 'translateZ(0)'
+      <main>
+        {/* Hero Section */}
+        <section className="relative min-h-screen" aria-label="Hero section">
+          {/* Spline Animation Container */}
+          <div className="absolute inset-0" aria-hidden="true">
+            {!splineError ? (
+              <spline-viewer
+                url="https://prod.spline.design/kwId3fBFWvxHdNui/scene.splinecode"
+                onError={handleSplineError}
+                onLoad={handleSplineLoad}
+                loading-anim
+                events-target="global"
+                style={{
+                  position: 'fixed',
+                  WebkitTransform: 'translate3d(0,0,0)',
+                  transform: 'translateZ(0)'
+                }}
+              />
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-blue-900/50 to-purple-900/50 flex items-center justify-center">
+                <p className="text-gray-400">Interactive 3D visualization unavailable</p>
+              </div>
+            )}
+          </div>
+
+          <div className="container mx-auto px-6 relative z-10 min-h-screen">
+            {/* Top-Left Overlay Box with all text */}
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 0.8,
+                delay: 0.5,
+                ease: "easeOut"
               }}
-            />
-          ) : (
-            <div className="w-full h-full bg-gradient-to-br from-blue-900/50 to-purple-900/50 flex items-center justify-center">
-              <p className="text-gray-400">Interactive 3D visualization unavailable</p>
-            </div>
-          )}
-        </div>
+              className="absolute top-[40%] inset-x-0 mx-auto w-[90vw] max-w-md bg-black/70 rounded-2xl overflow-hidden md:top-32 md:left-0 md:inset-x-auto md:mx-0 md:w-auto"
+            >
+              <div className="px-8 md:px-10 py-6 text-left">
+                {/* Increasing Profit */}
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ 
+                    duration: 0.8,
+                    delay: 0.7,
+                    ease: "easeOut"
+                  }}
+                  className="-mb-1 md:-mb-2"
+                >
+                  <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-tight md:leading-normal pb-1 md:pb-1">
+                    Increasing Profit.
+                  </h1>
+                </motion.div>
 
-        <div className="container mx-auto px-6 relative z-10 min-h-screen">
-          {/* Top-Left Overlay Box with all text */}
-          <motion.div
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 0.8,
-              delay: 0.5,
-              ease: "easeOut"
-            }}
-            className="absolute top-[40%] inset-x-0 mx-auto w-[90vw] max-w-md bg-black/70 rounded-2xl overflow-hidden md:top-32 md:left-0 md:inset-x-auto md:mx-0 md:w-auto"
-          >
-            <div className="px-8 md:px-10 py-6 text-left">
-              {/* Increasing Profit */}
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ 
-                  duration: 0.8,
-                  delay: 0.7,
-                  ease: "easeOut"
-                }}
-                className="-mb-1 md:-mb-2"
-              >
-                <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-tight md:leading-normal pb-1 md:pb-1">
-                  Increasing Profit.
-                </h2>
-              </motion.div>
+                {/* Reducing Costs */}
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ 
+                    duration: 0.8,
+                    delay: 0.9,
+                    ease: "easeOut"
+                  }}
+                  className="mb-1 md:-mb-1"
+                >
+                  <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent leading-tight md:leading-normal pb-1 md:pb-1">
+                    Reducing Costs.
+                  </h2>
+                </motion.div>
 
-              {/* Reducing Costs */}
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ 
-                  duration: 0.8,
-                  delay: 0.9,
-                  ease: "easeOut"
-                }}
-                className="mb-1 md:-mb-1"
-              >
-                <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent leading-tight md:leading-normal pb-1 md:pb-1">
-                  Reducing Costs.
-                </h2>
-              </motion.div>
+                {/* Powered by AI */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ 
+                    duration: 0.8,
+                    delay: 1.1,
+                    ease: "easeOut"
+                  }}
+                >
+                  <h2 className="text-lg md:text-2xl font-bold text-white mb-1 leading-tight md:leading-normal">
+                    Powered by AI
+                  </h2>
+                  <p className="text-white text-sm mb-4 leading-relaxed">
+                    See how you can integrate the most powerful tools ever created. Right into your business.
+                    <br />
+                    Now!
+                  </p>
+                  <div className="flex flex-col sm:flex-row justify-start gap-2 sm:space-x-2 sm:gap-0">
+                    <button 
+                      onClick={scrollToServices}
+                      className="bg-white hover:bg-gray-100 text-gray-900 px-5 py-2 rounded-full transition-colors text-sm font-medium"
+                      aria-label="View our AI services"
+                    >
+                      Our Services
+                    </button>
+                    <BookMeetingButton />
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
-              {/* Powered by AI */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: 0.8,
-                  delay: 1.1,
-                  ease: "easeOut"
-                }}
-              >
-                <h2 className="text-lg md:text-2xl font-bold text-white mb-1 leading-tight md:leading-normal">
-                  Powered by AI
-                </h2>
-                <p className="text-white text-sm mb-4 leading-relaxed">
-                  See how you can integrate the most powerful tools ever created. Right into your business.
-                  <br />
-                  Now!
-                </p>
-                <div className="flex flex-col sm:flex-row justify-start gap-2 sm:space-x-2 sm:gap-0">
-                  <button 
-                    onClick={scrollToServices}
-                    className="bg-white hover:bg-gray-100 text-gray-900 px-5 py-2 rounded-full transition-colors text-sm font-medium"
-                  >
-                    Our Services
+        {/* Services Section */}
+        <section id="services" className="py-20 bg-gradient-to-br from-black to-black relative z-10" aria-label="Our AI services">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Our Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <article className="space-y-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
+                >
+                  <div className="flex items-center gap-4">
+                    <Bot className="w-12 h-12 text-blue-500" aria-hidden="true" />
+                    <h3 className="text-xl font-bold">AI Chat Agents</h3>
+                  </div>
+                  <p className="text-gray-200 mt-4 mb-4">
+                    Engage website visitors instantly, answer FAQs, and qualify leads — all without lifting a finger.
+                  </p>
+                  <ul className="space-y-2 text-gray-400">
+                    <li>• Your 24/7 AI Agent That Never Sleeps</li>
+                    <li>• Never miss an inquiry—even outside business hours</li>
+                  </ul>
+                </motion.div>
+                <Link to="/examples" className="block w-full">
+                  <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm" aria-label="See AI Chat Agents examples">
+                    See AI Chat Agents in Action
                   </button>
-                  <BookMeetingButton />
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+                </Link>
+              </article>
 
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-gradient-to-br from-black to-black relative z-10">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="space-y-4">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
-              >
-                <div className="flex items-center gap-4">
-                  <Bot className="w-12 h-12 text-blue-500" />
-                  <h3 className="text-xl font-bold">AI Chat Agents</h3>
-                </div>
-                <p className="text-gray-200 mt-4 mb-4">
-                  Engage website visitors instantly, answer FAQs, and qualify leads — all without lifting a finger.
-                </p>
-                <ul className="space-y-2 text-gray-400">
-                  <li>• Your 24/7 AI Agent That Never Sleeps</li>
-                  <li>• Never miss an inquiry—even outside business hours</li>
-                </ul>
-              </motion.div>
-              <Link to="/examples" className="block w-full">
-                <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm">
-                  See AI Chat Agents in Action
-                </button>
-              </Link>
-            </div>
+              <article className="space-y-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
+                >
+                  <div className="flex items-center gap-4">
+                    <Phone className="w-12 h-12 text-blue-500" aria-hidden="true" />
+                    <h3 className="text-xl font-bold">AI Voice Agents</h3>
+                  </div>
+                  <p className="text-gray-200 mt-4 mb-4">
+                    Let AI answer, make and route your business calls like a pro.
+                  </p>
+                  <ul className="space-y-2 text-gray-400">
+                    <li>• Handle scheduling, appointment confirmations, and routine questions — all in natural conversation</li>
+                    <li>• Natural-sounding voices that feel truly human</li>
+                  </ul>
+                </motion.div>
+                <Link to="/examples" className="block w-full">
+                  <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm" aria-label="See AI Voice Agents examples">
+                    See AI Voice Agents in Action
+                  </button>
+                </Link>
+              </article>
 
-            <div className="space-y-4">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
-              >
-                <div className="flex items-center gap-4">
-                  <Phone className="w-12 h-12 text-blue-500" />
-                  <h3 className="text-xl font-bold">AI Voice Agents</h3>
-                </div>
-                <p className="text-gray-200 mt-4 mb-4">
-                  Let AI answer, make and route your business calls like a pro.
-                </p>
-                <ul className="space-y-2 text-gray-400">
-                  <li>• Handle scheduling, appointment confirmations, and routine questions — all in natural conversation</li>
-                  <li>• Natural-sounding voices that feel truly human</li>
-                </ul>
-              </motion.div>
-              <Link to="/examples" className="block w-full">
-                <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm">
-                  See AI Voice Agents in Action
-                </button>
-              </Link>
-            </div>
-
-            <div className="space-y-4">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
-              >
-                <div className="flex items-center gap-4">
-                  <Zap className="w-12 h-12 text-blue-500" />
-                  <h3 className="text-xl font-bold">AI-Powered Automations</h3>
-                </div>
-                <p className="text-gray-200 mt-4 mb-4">
-                  Let AI handle the repetitive. Focus on what only you can do.
-                </p>
-                <ul className="space-y-2 text-gray-400">
-                  <li>• Automate admin tasks with intelligent automations tailored to your workflow</li>
-                  <li>• Automatically fill forms, update calendars, and more</li>
-                </ul>
-              </motion.div>
-              <Link to="/examples" className="block w-full">
-                <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm">
-                  Explore AI Powered Automations
-                </button>
-              </Link>
+              <article className="space-y-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
+                >
+                  <div className="flex items-center gap-4">
+                    <Zap className="w-12 h-12 text-blue-500" aria-hidden="true" />
+                    <h3 className="text-xl font-bold">AI-Powered Automations</h3>
+                  </div>
+                  <p className="text-gray-200 mt-4 mb-4">
+                    Let AI handle the repetitive. Focus on what only you can do.
+                  </p>
+                  <ul className="space-y-2 text-gray-400">
+                    <li>• Automate admin tasks with intelligent automations tailored to your workflow</li>
+                    <li>• Automatically fill forms, update calendars, and more</li>
+                  </ul>
+                </motion.div>
+                <Link to="/examples" className="block w-full">
+                  <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm" aria-label="Explore AI Powered Automations examples">
+                    Explore AI Powered Automations
+                  </button>
+                </Link>
+              </article>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
     </motion.div>
   );
 }

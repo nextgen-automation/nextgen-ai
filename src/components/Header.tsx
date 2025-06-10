@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Bot, Menu, X } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import BookMeetingButton from './BookMeetingButton';
+import { scrollToServices, scrollToTop } from '../utils/scrollUtils';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -11,19 +12,14 @@ const Header: React.FC = () => {
   // Determine if we're on the homepage
   const isHomePage = location.pathname === '/';
 
-  const scrollToServices = () => {
-    const servicesSection = document.getElementById('services');
-    if (window.location.pathname === '/') {
-      servicesSection?.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      navigate('/', { state: { scrollToServices: true } });
-    }
+  const handleScrollToServices = () => {
+    scrollToServices(navigate, location.pathname);
     setIsMobileMenuOpen(false);
   };
 
-  const scrollToTop = () => {
-    if (window.location.pathname === '/') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+  const handleScrollToTop = () => {
+    if (location.pathname === '/') {
+      scrollToTop();
     } else {
       navigate('/');
     }
@@ -35,7 +31,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <nav 
+    <header 
       className={`fixed w-full top-0 z-[1000] border-b transition-all duration-300 ${
         isHomePage 
           ? 'bg-black border-gray-700' 
@@ -43,9 +39,13 @@ const Header: React.FC = () => {
       }`} 
       style={{ padding: '1rem 2rem', borderBottomWidth: '1px' }}
     >
-      <div className="container mx-auto flex justify-between items-center">
-        <button onClick={scrollToTop} className="flex items-center space-x-2 group">
-          <Bot className="w-8 h-8 text-blue-500" />
+      <nav className="container mx-auto flex justify-between items-center">
+        <button 
+          onClick={handleScrollToTop} 
+          className="flex items-center space-x-2 group"
+          aria-label="Go to homepage"
+        >
+          <Bot className="w-8 h-8 text-blue-500" aria-hidden="true" />
           <h1 className={`text-2xl font-bold transition-colors ${
             isHomePage ? 'text-white' : 'text-gray-900'
           }`}>
@@ -56,22 +56,24 @@ const Header: React.FC = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           <button 
-            onClick={scrollToTop} 
+            onClick={handleScrollToTop} 
             className={`transition-colors ${
               isHomePage 
                 ? `text-gray-300 hover:text-white ${location.pathname === '/' ? 'text-white font-medium' : ''}`
                 : `text-gray-700 hover:text-gray-900 ${location.pathname === '/' ? 'text-gray-900 font-medium' : ''}`
             }`}
+            aria-label="Navigate to home page"
           >
             Home
           </button>
           <button 
-            onClick={scrollToServices} 
+            onClick={handleScrollToServices} 
             className={`transition-colors ${
               isHomePage 
                 ? 'text-gray-300 hover:text-white'
                 : 'text-gray-700 hover:text-gray-900'
             }`}
+            aria-label="Navigate to our services section"
           >
             Our Services
           </button>
@@ -82,6 +84,7 @@ const Header: React.FC = () => {
                 ? `text-gray-300 hover:text-white ${location.pathname === '/examples' ? 'text-white font-medium' : ''}`
                 : `text-gray-700 hover:text-gray-900 ${location.pathname === '/examples' ? 'text-gray-900 font-medium' : ''}`
             }`}
+            aria-label="View examples of AI integrations"
           >
             Watch Examples of AI Integrations
           </Link>
@@ -96,36 +99,46 @@ const Header: React.FC = () => {
               ? 'text-gray-300 hover:text-white'
               : 'text-gray-700 hover:text-gray-900'
           }`}
+          aria-label={isMobileMenuOpen ? 'Close mobile menu' : 'Open mobile menu'}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu"
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMobileMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
         </button>
-      </div>
+      </nav>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className={`md:hidden border-t py-4 ${
-          isHomePage 
-            ? 'bg-black border-gray-700'
-            : 'bg-white border-gray-200'
-        }`}>
+        <div 
+          id="mobile-menu"
+          className={`md:hidden border-t py-4 ${
+            isHomePage 
+              ? 'bg-black border-gray-700'
+              : 'bg-white border-gray-200'
+          }`}
+          role="navigation"
+          aria-label="Mobile navigation menu"
+        >
           <div className="container mx-auto px-6 space-y-4">
             <button 
-              onClick={scrollToTop} 
+              onClick={handleScrollToTop} 
               className={`block w-full text-left transition-colors py-2 ${
                 isHomePage 
                   ? `text-gray-300 hover:text-white ${location.pathname === '/' ? 'text-white font-medium' : ''}`
                   : `text-gray-700 hover:text-gray-900 ${location.pathname === '/' ? 'text-gray-900 font-medium' : ''}`
               }`}
+              aria-label="Navigate to home page"
             >
               Home
             </button>
             <button 
-              onClick={scrollToServices} 
+              onClick={handleScrollToServices} 
               className={`block w-full text-left transition-colors py-2 ${
                 isHomePage 
                   ? 'text-gray-300 hover:text-white'
                   : 'text-gray-700 hover:text-gray-900'
               }`}
+              aria-label="Navigate to our services section"
             >
               Our Services
             </button>
@@ -137,6 +150,7 @@ const Header: React.FC = () => {
                   ? `text-gray-300 hover:text-white ${location.pathname === '/examples' ? 'text-white font-medium' : ''}`
                   : `text-gray-700 hover:text-gray-900 ${location.pathname === '/examples' ? 'text-gray-900 font-medium' : ''}`
               }`}
+              aria-label="View examples of AI integrations"
             >
               Watch Examples of AI Integrations
             </Link>
@@ -146,7 +160,7 @@ const Header: React.FC = () => {
           </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 };
 

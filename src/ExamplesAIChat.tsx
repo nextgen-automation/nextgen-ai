@@ -36,7 +36,7 @@ const ExamplesAIChat: React.FC = () => {
     >
       <Header />
 
-      <div className="container mx-auto px-6 pt-12">
+      <main className="container mx-auto px-6 pt-12">
         <Link to="/examples" className="block">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -46,33 +46,40 @@ const ExamplesAIChat: React.FC = () => {
             className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group"
           >
             <div className="flex items-center">
-              <ChevronLeft className="w-6 h-6 text-blue-500 transform transition-transform group-hover:-translate-x-2 mr-4" />
-              <h2 className="text-2xl font-bold text-blue-600">AI Chat Agents</h2>
+              <ChevronLeft className="w-6 h-6 text-blue-500 transform transition-transform group-hover:-translate-x-2 mr-4" aria-hidden="true" />
+              <h1 className="text-2xl font-bold text-blue-600">AI Chat Agents</h1>
             </div>
             <div className="mt-4 ml-10 flex items-center gap-x-8">
               <div className="flex items-center gap-2">
-                <span className="text-blue-500">•</span>
+                <span className="text-blue-500" aria-hidden="true">•</span>
                 <p className="text-gray-600">Capture leads while you focus on clients</p>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-blue-500">•</span>
+                <span className="text-blue-500" aria-hidden="true">•</span>
                 <p className="text-gray-600">Works when you're in court, in a meeting or asleep</p>
               </div>
             </div>
           </motion.div>
         </Link>
 
-        <motion.div
+        <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.2 }}
           className="mt-12 px-6"
+          aria-label="AI Chat Agent examples"
         >
           <ul className="space-y-4">
             {prototypeLinks.map((link, index) => (
               <li key={index}>
-                <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                  <span className="text-blue-600 text-2xl">•</span>
+                <a 
+                  href={link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center gap-2"
+                  aria-label={`View ${agentTitles[index]} demo`}
+                >
+                  <span className="text-blue-600 text-2xl" aria-hidden="true">•</span>
                   <span className="text-blue-600 text-lg">{agentTitles[index]}</span>
                 </a>
               </li>
@@ -93,8 +100,8 @@ const ExamplesAIChat: React.FC = () => {
               </div>
             </div>
           </div>
-        </motion.div>
-      </div>
+        </motion.section>
+      </main>
     </motion.div>
   );
 };

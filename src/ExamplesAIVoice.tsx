@@ -28,7 +28,7 @@ const ExamplesAIVoice: React.FC = () => {
     >
       <Header />
 
-      <div className="container mx-auto px-6 pt-12">
+      <main className="container mx-auto px-6 pt-12">
         <Link to="/examples" className="block">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -38,37 +38,42 @@ const ExamplesAIVoice: React.FC = () => {
             className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group"
           >
             <div className="flex items-center">
-              <ChevronLeft className="w-6 h-6 text-purple-500 transform transition-transform group-hover:-translate-x-2 mr-4" />
-              <h2 className="text-2xl font-bold text-purple-600 flex items-center gap-2">
+              <ChevronLeft className="w-6 h-6 text-purple-500 transform transition-transform group-hover:-translate-x-2 mr-4" aria-hidden="true" />
+              <h1 className="text-2xl font-bold text-purple-600 flex items-center gap-2">
                 AI Voice Agents
-                <Wrench className="w-5 h-5 text-purple-600" />
+                <Wrench className="w-5 h-5 text-purple-600" aria-hidden="true" />
                 <span className="text-sm text-purple-600">[Under construction]</span>
-              </h2>
+              </h1>
             </div>
             <div className="mt-4 ml-10 flex items-center gap-x-8">
               <div className="flex items-center gap-2">
-                <span className="text-purple-500">•</span>
+                <span className="text-purple-500" aria-hidden="true">•</span>
                 <p className="text-gray-600">Answer calls even when you're unavailable</p>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-purple-500">•</span>
+                <span className="text-purple-500" aria-hidden="true">•</span>
                 <p className="text-gray-600">No more stress over absent staff -- no unanswered clients</p>
               </div>
             </div>
           </motion.div>
         </Link>
 
-        <motion.div
+        <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.2 }}
           className="mt-12 px-6"
+          aria-label="AI Voice Agent examples"
         >
           <ul className="space-y-4">
             {voiceAgentTitles.map((title, index) => (
               <li key={index}>
-                <Link to="" className="flex items-center gap-2">
-                  <span className="text-purple-600 text-2xl">•</span>
+                <Link 
+                  to="" 
+                  className="flex items-center gap-2"
+                  aria-label={`Learn about ${title}`}
+                >
+                  <span className="text-purple-600 text-2xl" aria-hidden="true">•</span>
                   <span className="text-purple-600 text-lg">{title}</span>
                 </Link>
               </li>
@@ -89,8 +94,8 @@ const ExamplesAIVoice: React.FC = () => {
               </div>
             </div>
           </div>
-        </motion.div>
-      </div>
+        </motion.section>
+      </main>
     </motion.div>
   );
 };

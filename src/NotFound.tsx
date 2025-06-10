@@ -20,7 +20,7 @@ const NotFound: React.FC = () => {
     >
       <Header />
 
-      <div className="container mx-auto px-6 pt-20 pb-24">
+      <main className="container mx-auto px-6 pt-20 pb-24">
         <div className="max-w-2xl mx-auto text-center">
           {/* 404 Number */}
           <motion.div
@@ -62,26 +62,29 @@ const NotFound: React.FC = () => {
             <Link 
               to="/"
               className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full transition-colors font-medium"
+              aria-label="Go to homepage"
             >
-              <Home className="w-5 h-5" />
+              <Home className="w-5 h-5" aria-hidden="true" />
               Go to Homepage
             </Link>
             
             <Link 
               to="/examples"
               className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-900 px-6 py-3 rounded-full transition-colors font-medium"
+              aria-label="Explore our AI services"
             >
-              <Search className="w-5 h-5" />
+              <Search className="w-5 h-5" aria-hidden="true" />
               Explore Our Services
             </Link>
           </motion.div>
 
           {/* Additional Help Section */}
-          <motion.div
+          <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
             className="bg-gray-50 rounded-xl p-8 border border-gray-200"
+            aria-label="Need help section"
           >
             <h3 className="text-xl font-bold text-gray-900 mb-4">
               Need Help Finding What You're Looking For?
@@ -99,7 +102,7 @@ const NotFound: React.FC = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </motion.section>
 
           {/* Back Button */}
           <motion.div
@@ -111,13 +114,14 @@ const NotFound: React.FC = () => {
             <button 
               onClick={() => window.history.back()}
               className="flex items-center gap-2 text-gray-500 hover:text-gray-700 transition-colors mx-auto"
+              aria-label="Go back to previous page"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <ArrowLeft className="w-4 h-4" aria-hidden="true" />
               Go back to previous page
             </button>
           </motion.div>
         </div>
-      </div>
+      </main>
     </motion.div>
   );
 };
