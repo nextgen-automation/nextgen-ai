@@ -4,18 +4,12 @@ import { Bot, Phone, Zap } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import BookMeetingButton from './components/BookMeetingButton';
-import { setupViewportFix, scrollToElement } from './utils/scrollUtils';
+import { scrollToElement } from './utils/scrollUtils';
 
 function App() {
   const [splineError, setSplineError] = useState(false);
   const [splineLoaded, setSplineLoaded] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    // Fix viewport units on iOS
-    const cleanup = setupViewportFix();
-    return cleanup;
-  }, []);
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -76,9 +70,7 @@ function App() {
                 loading-anim
                 events-target="global"
                 style={{
-                  position: 'fixed',
-                  WebkitTransform: 'translate3d(0,0,0)',
-                  transform: 'translateZ(0)'
+                  position: 'fixed'
                 }}
               />
             ) : (

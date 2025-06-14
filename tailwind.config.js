@@ -15,9 +15,6 @@ export default {
       },
       minHeight: {
         screen: ['100vh', '100dvh'],
-      },
-      screens: {
-        'ios': 'only screen and (max-width: 812px) and (-webkit-min-device-pixel-ratio: 2)',
       }
     },
   },

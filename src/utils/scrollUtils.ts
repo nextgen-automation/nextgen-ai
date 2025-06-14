@@ -42,19 +42,3 @@ export const scrollToServices = (navigate?: (path: string, options?: any) => voi
     navigate('/', { state: { scrollToServices: true } });
   }
 };
-
-/**
- * Sets up viewport height fix for iOS devices
- */
-export const setupViewportFix = (): (() => void) => {
-  const setVh = () => {
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-  };
-  
-  setVh();
-  window.addEventListener('resize', setVh);
-  
-  // Return cleanup function
-  return () => window.removeEventListener('resize', setVh);
-};

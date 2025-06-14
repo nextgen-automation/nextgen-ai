@@ -1,30 +1,3 @@
-/* ===== START APPLE FIXES ===== */
-/* Apple Rendering Engine Patch */
-@supports (-webkit-touch-callout: none) {
-  body, html {
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-  }
-  * {
-    -webkit-transform: translate3d(0,0,0);
-    -webkit-transform-style: preserve-3d;
-    backface-visibility: hidden;
-  }
-  body {
-    perspective: 1000px;
-  }
-}
-
-/* Dynamic Viewport Units */
-:root {
-  --vh: 1vh;
-}
-.min-h-screen {
-  min-height: calc(var(--vh, 1vh) * 100) !important;
-}
-
 /* ===== CSS ANIMATION FEATURE DETECTION ===== */
 
 /* Basic CSS Transitions - Apply only if supported */
@@ -72,24 +45,21 @@
 
 /* 3D Transforms and Hardware Acceleration - Apply only if 3D transforms are supported */
 @supports (transform: translateZ(0)) {
-  /* Animation Stability - Enhanced for Apple devices */
+  /* Animation Stability */
   spline-viewer, .absolute, .fixed, .motion-div {
     transform: translateZ(0);
     will-change: transform, opacity;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
 
-  /* Framer Motion optimization for Apple devices */
+  /* Framer Motion optimization */
   [data-framer-component] {
     will-change: transform, opacity;
-    -webkit-transform: translate3d(0,0,0);
     transform: translateZ(0);
   }
   
   /* Hardware acceleration for animated elements */
   .motion-div {
-    -webkit-transform: translate3d(0,0,0);
     transform: translateZ(0);
   }
 }
@@ -188,8 +158,6 @@
   }
 }
 
-/* ===== END FEATURE DETECTION ===== */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -204,14 +172,6 @@ html, body {
 @supports (scroll-behavior: smooth) {
   html {
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-  }
-}
-
-/* Fallback for browsers without smooth scrolling */
-@supports not (scroll-behavior: smooth) {
-  html {
-    -webkit-overflow-scrolling: touch;
   }
 }
 
