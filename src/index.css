@@ -64,6 +64,15 @@
   }
 }
 
+/* Apple/WebKit-specific Spline viewer acceleration */
+@supports (-webkit-touch-callout: none) {
+  spline-viewer {
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+  }
+}
+
 /* CSS Animations (keyframes) - Apply only if animations are supported */
 @supports (animation: fadeIn 1s ease) {
   /* Loading animation for Spline viewer */
