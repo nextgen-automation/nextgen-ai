@@ -7,13 +7,11 @@
     max-width: 100vw !important;
     overflow-x: hidden !important;
   }
-  /* COMMENTED OUT - These 3D transforms may interfere with Voiceflow widget
   * {
     -webkit-transform: translate3d(0,0,0);
     -webkit-transform-style: preserve-3d;
     backface-visibility: hidden;
   }
-  */
   body {
     perspective: 1000px;
   }
@@ -74,14 +72,13 @@
 
 /* 3D Transforms and Hardware Acceleration - Apply only if 3D transforms are supported */
 @supports (transform: translateZ(0)) {
-  /* COMMENTED OUT - These properties may interfere with Voiceflow widget
+  /* Animation Stability - Enhanced for Apple devices */
   spline-viewer, .absolute, .fixed, .motion-div {
     transform: translateZ(0);
     will-change: transform, opacity;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
-  */
 
   /* Framer Motion optimization for Apple devices */
   [data-framer-component] {
