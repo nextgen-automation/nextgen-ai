@@ -17,21 +17,22 @@ function App() {
     return cleanup;
   }, []);
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'module';
-    script.src = 'https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js';
-    document.head.appendChild(script);
+  // COMMENTED OUT FOR SAFARI WIDGET TESTING
+  // useEffect(() => {
+  //   const script = document.createElement('script');
+  //   script.type = 'module';
+  //   script.src = 'https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js';
+  //   document.head.appendChild(script);
 
-    script.onerror = () => {
-      console.error('Failed to load Spline viewer script');
-      setSplineError(true);
-    };
+  //   script.onerror = () => {
+  //     console.error('Failed to load Spline viewer script');
+  //     setSplineError(true);
+  //   };
 
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
+  //   return () => {
+  //     document.head.removeChild(script);
+  //   };
+  // }, []);
 
   useEffect(() => {
     if (location.state?.scrollToServices) {
@@ -66,9 +67,9 @@ function App() {
       <main>
         {/* Hero Section */}
         <section className="relative min-h-screen pb-20" aria-label="Hero section">
-          {/* Spline Animation Container */}
+          {/* Spline Animation Container - COMMENTED OUT FOR SAFARI WIDGET TESTING */}
           <div className="absolute inset-0" aria-hidden="true">
-            {!splineError ? (
+            {/* {!splineError ? (
               <spline-viewer
                 url="https://prod.spline.design/kwId3fBFWvxHdNui/scene.splinecode"
                 onError={handleSplineError}
@@ -81,11 +82,11 @@ function App() {
                   transform: 'translateZ(0)'
                 }}
               />
-            ) : (
+            ) : ( */}
               <div className="w-full h-full bg-gradient-to-br from-blue-900/50 to-purple-900/50 flex items-center justify-center">
-                <p className="text-gray-400">Interactive 3D visualization unavailable</p>
+                <p className="text-gray-400">Interactive 3D visualization temporarily disabled for testing</p>
               </div>
-            )}
+            {/* )} */}
           </div>
 
           <div className="container mx-auto px-6 relative z-10 min-h-screen">
