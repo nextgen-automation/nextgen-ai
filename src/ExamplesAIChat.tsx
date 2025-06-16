@@ -12,18 +12,18 @@ const ExamplesAIChat: React.FC = () => {
 
   const prototypeLinks = [
     'https://creator.voiceflow.com/prototype/683656b828ea50513a429275',
-    'https://creator.voiceflow.com/prototype/683760e525f48f411e989f73',
-    'https://creator.voiceflow.com/prototype/683760c725f48f411e989f5b',
-    'https://creator.voiceflow.com/prototype/683761464e4dc0e4ff1c09b5',
-    'https://creator.voiceflow.com/prototype/683761354e4dc0e4ff1c09a3'
+    '', // Customer Support Agent - no link
+    '', // Appointment setter Agent - no link
+    '', // Shopping assistant Agent - no link
+    ''  // Quote Generation - no link
   ];
 
   const agentTitles = [
     'Lead Generation Agent – Still hunting leads manually?',
-    'Customer Support Agent - Have a shopify store? [Demo under construction]',
-    'Appointment setter Agent - Still booking appointments yourself? [Demo under construction]',
-    'Shopping assistant Agent - Too many products, confused customers? Give them a shopping assistant. [Demo under construction]',
-    'Quote Generation - Still giving out estimations yourself? [Demo under construction]'
+    'Customer Support Agent - Have a shopify store?',
+    'Appointment setter Agent - Still booking appointments yourself?',
+    'Shopping assistant Agent - Too many products, confused customers? Give them a shopping assistant.',
+    'Quote Generation - Still giving out estimations yourself?'
   ];
 
   return (
@@ -70,18 +70,31 @@ const ExamplesAIChat: React.FC = () => {
           aria-label="AI Chat Agent examples"
         >
           <ul className="space-y-4">
-            {prototypeLinks.map((link, index) => (
+            {agentTitles.map((title, index) => (
               <li key={index}>
-                <a 
-                  href={link} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="flex items-center gap-2"
-                  aria-label={`View ${agentTitles[index]} demo`}
-                >
-                  <span className="text-blue-600 text-2xl" aria-hidden="true">•</span>
-                  <span className="text-blue-600 text-lg">{agentTitles[index]}</span>
-                </a>
+                {index === 0 ? (
+                  // First item (Lead Generation Agent) - external link
+                  <a 
+                    href={prototypeLinks[index]} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center gap-2"
+                    aria-label={`View ${title} demo`}
+                  >
+                    <span className="text-blue-600 text-2xl" aria-hidden="true">•</span>
+                    <span className="text-blue-600 text-lg">{title}</span>
+                  </a>
+                ) : (
+                  // Other items - clickable but no navigation
+                  <Link 
+                    to="" 
+                    className="flex items-center gap-2"
+                    aria-label={`Learn about ${title}`}
+                  >
+                    <span className="text-blue-600 text-2xl" aria-hidden="true">•</span>
+                    <span className="text-blue-600 text-lg">{title}</span>
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
