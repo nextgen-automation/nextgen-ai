@@ -12,7 +12,7 @@ const ExamplesAIChat: React.FC = () => {
 
   const prototypeLinks = [
     'https://creator.voiceflow.com/prototype/683656b828ea50513a429275',
-    '', // Customer Support Agent - no link
+    'https://creator.voiceflow.com/prototype/683760e525f48f411e989f73', // Customer Support Agent
     '', // Appointment setter Agent - no link
     '', // Shopping assistant Agent - no link
     ''  // Quote Generation - no link
@@ -21,9 +21,9 @@ const ExamplesAIChat: React.FC = () => {
   const agentTitles = [
     'Lead Generation Agent – Still hunting leads manually?',
     'Customer Support Agent - Have a shopify store?',
-    'Appointment setter Agent - Still booking appointments yourself?',
-    'Shopping assistant Agent - Too many products, confused customers? Give them a shopping assistant.',
-    'Quote Generation - Still giving out estimations yourself?'
+    'Appointment setter Agent - Still booking appointments yourself? [Demo under construction]',
+    'Shopping assistant Agent - Too many products, confused customers? Give them a shopping assistant. [Demo under construction]',
+    'Quote Generation - Still giving out estimations yourself? [Demo under construction]'
   ];
 
   return (
@@ -72,8 +72,8 @@ const ExamplesAIChat: React.FC = () => {
           <ul className="space-y-4">
             {agentTitles.map((title, index) => (
               <li key={index}>
-                {index === 0 ? (
-                  // First item (Lead Generation Agent) - external link
+                {(index === 0 || index === 1) ? (
+                  // First two items (Lead Generation Agent and Customer Support Agent) - external links
                   <a 
                     href={prototypeLinks[index]} 
                     target="_blank" 
