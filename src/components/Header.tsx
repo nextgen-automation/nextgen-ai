@@ -26,7 +26,7 @@ const Header: React.FC = () => {
     setIsMobileMenuOpen(false);
   };
 
-  const handleExamplesClick = () => {
+  const handleFAQsContactClick = () => {
     setIsMobileMenuOpen(false);
   };
 
@@ -78,15 +78,15 @@ const Header: React.FC = () => {
             Our Services
           </button>
           <Link 
-            to="/examples" 
+            to="/faqs-contact-us" 
             className={`transition-colors ${
               isHomePage 
-                ? `text-gray-300 hover:text-white ${location.pathname === '/examples' ? 'text-white font-medium' : ''}`
-                : `text-gray-700 hover:text-gray-900 ${location.pathname === '/examples' ? 'text-gray-900 font-medium' : ''}`
+                ? `text-gray-300 hover:text-white ${location.pathname === '/faqs-contact-us' ? 'text-white font-medium' : ''}`
+                : `text-gray-700 hover:text-gray-900 ${location.pathname === '/faqs-contact-us' ? 'text-gray-900 font-medium' : ''}`
             }`}
-            aria-label="View examples of AI integrations"
+            aria-label="View FAQs and contact information"
           >
-            Watch Examples of AI Integrations
+            FAQs/Contact Us
           </Link>
           <BookMeetingButton />
         </div>
@@ -143,16 +143,16 @@ const Header: React.FC = () => {
               Our Services
             </button>
             <Link 
-              to="/examples" 
-              onClick={handleExamplesClick}
+              to="/faqs-contact-us" 
+              onClick={handleFAQsContactClick}
               className={`block w-full text-left transition-colors py-2 ${
                 isHomePage 
-                  ? `text-gray-300 hover:text-white ${location.pathname === '/examples' ? 'text-white font-medium' : ''}`
-                  : `text-gray-700 hover:text-gray-900 ${location.pathname === '/examples' ? 'text-gray-900 font-medium' : ''}`
+                  ? `text-gray-300 hover:text-white ${location.pathname === '/faqs-contact-us' ? 'text-white font-medium' : ''}`
+                  : `text-gray-700 hover:text-gray-900 ${location.pathname === '/faqs-contact-us' ? 'text-gray-900 font-medium' : ''}`
               }`}
-              aria-label="View examples of AI integrations"
+              aria-label="View FAQs and contact information"
             >
-              Watch Examples of AI Integrations
+              FAQs/Contact Us
             </Link>
             <div className="pt-2 w-full">
               <BookMeetingButton />
