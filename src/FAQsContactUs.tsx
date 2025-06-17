@@ -124,7 +124,7 @@ const FAQsContactUs: React.FC = () => {
             FAQs / 
             <button 
               onClick={scrollToContactForm}
-              className="text-blue-600 hover:text-blue-700 transition-colors ml-2"
+              className="text-blue-600 hover:text-blue-700 transition-colors ml-2 underline decoration-2 underline-offset-4"
               aria-label="Scroll to contact form"
             >
               Contact Us
@@ -203,8 +203,8 @@ const FAQsContactUs: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Contact Form - Now on the left with vertical separator */}
-              <div className="lg:border-r lg:border-gray-200 lg:pr-12">
+              {/* Contact Form - Now on the left */}
+              <div>
                 <form className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
