@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
-    <loc>https://nextgen-ai.com/</loc>
+    <loc>https://nextgen-ai.ca/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -10,7 +10,7 @@
   
   <!-- Examples/Demos Page -->
   <url>
-    <loc>https://nextgen-ai.com/examples</loc>
+    <loc>https://nextgen-ai.ca/examples</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -18,7 +18,7 @@
   
   <!-- AI Chat Agents Demos -->
   <url>
-    <loc>https://nextgen-ai.com/ai-chat-agents</loc>
+    <loc>https://nextgen-ai.ca/ai-chat-agents</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -26,7 +26,7 @@
   
   <!-- AI Voice Agents Demos -->
   <url>
-    <loc>https://nextgen-ai.com/ai-voice-agents</loc>
+    <loc>https://nextgen-ai.ca/ai-voice-agents</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -34,7 +34,7 @@
   
   <!-- AI Powered Automations Demos -->
   <url>
-    <loc>https://nextgen-ai.com/ai-powered-automations</loc>
+    <loc>https://nextgen-ai.ca/ai-powered-automations</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -42,7 +42,7 @@
   
   <!-- FAQs/Contact Us -->
   <url>
-    <loc>https://nextgen-ai.com/faqs-contact-us</loc>
+    <loc>https://nextgen-ai.ca/faqs-contact-us</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
