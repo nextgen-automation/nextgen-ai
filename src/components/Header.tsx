@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Bot, Menu, X } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import BookMeetingButton from './BookMeetingButton';
 import { scrollToServices, scrollToTop } from '../utils/scrollUtils';
 
 const Header: React.FC = () => {
@@ -57,7 +56,7 @@ const Header: React.FC = () => {
         </button>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-6">
           <button 
             onClick={handleScrollToTop} 
             className={`transition-colors ${
@@ -92,7 +91,6 @@ const Header: React.FC = () => {
           >
             FAQs/Contact Us
           </Link>
-          <BookMeetingButton />
         </div>
 
         {/* Mobile Menu Button */}
@@ -158,9 +156,6 @@ const Header: React.FC = () => {
             >
               FAQs/Contact Us
             </Link>
-            <div className="pt-2 w-full">
-              <BookMeetingButton />
-            </div>
           </div>
         </div>
       )}
