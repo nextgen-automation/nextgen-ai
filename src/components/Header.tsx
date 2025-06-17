@@ -32,6 +32,10 @@ const Header: React.FC = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const handleDemosClick = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <header 
       className={`fixed w-full top-0 z-[1000] border-b transition-all duration-300 ${
@@ -79,6 +83,18 @@ const Header: React.FC = () => {
           >
             Our Services
           </button>
+          <Link 
+            to="/examples" 
+            onClick={handleDemosClick}
+            className={`transition-colors ${
+              isHomePage 
+                ? `text-gray-300 hover:text-white ${location.pathname === '/examples' || location.pathname.startsWith('/ai-') ? 'text-white font-medium' : ''}`
+                : `text-gray-700 hover:text-gray-900 ${location.pathname === '/examples' || location.pathname.startsWith('/ai-') ? 'text-gray-900 font-medium' : ''}`
+            }`}
+            aria-label="View AI solution demos"
+          >
+            Demos
+          </Link>
           <Link 
             to="/faqs-contact-us" 
             onClick={handleFAQsContactClick}
@@ -144,6 +160,18 @@ const Header: React.FC = () => {
             >
               Our Services
             </button>
+            <Link 
+              to="/examples" 
+              onClick={handleDemosClick}
+              className={`block w-full text-left transition-colors py-2 ${
+                isHomePage 
+                  ? `text-gray-300 hover:text-white ${location.pathname === '/examples' || location.pathname.startsWith('/ai-') ? 'text-white font-medium' : ''}`
+                  : `text-gray-700 hover:text-gray-900 ${location.pathname === '/examples' || location.pathname.startsWith('/ai-') ? 'text-gray-900 font-medium' : ''}`
+              }`}
+              aria-label="View AI solution demos"
+            >
+              Demos
+            </Link>
             <Link 
               to="/faqs-contact-us" 
               onClick={handleFAQsContactClick}
