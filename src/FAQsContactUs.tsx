@@ -4,6 +4,7 @@ import { ChevronDown, Mail, Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from './components/Header';
 import BookMeetingButton from './components/BookMeetingButton';
+import { scrollToElement } from './utils/scrollUtils';
 
 const FAQsContactUs: React.FC = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
@@ -13,10 +14,7 @@ const FAQsContactUs: React.FC = () => {
   }, []);
 
   const scrollToContactForm = () => {
-    const element = document.getElementById('contact-form');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    scrollToElement('contact-form', 90);
   };
 
   const toggleFAQ = (index: number) => {
@@ -34,7 +32,7 @@ const FAQsContactUs: React.FC = () => {
     },
     {
       question: "What is an automation system?",
-      answer: "A digital process that is created to automatically complete a simple-to-medium difficulty recurring business task without human intervention."
+      answer: "A digital process created to automatically complete a simple-to-medium difficulty recurring business task with little or no human intervention."
     },
     {
       question: "What is an AI-Powered automation system?",
@@ -88,11 +86,11 @@ const FAQsContactUs: React.FC = () => {
     },
     {
       question: "What kind of support do you provide after implementation?",
-      answer: "We provide comprehensive ongoing support including regular maintenance, updates, performance monitoring, and 24/7 technical assistance to ensure your AI solutions continue to perform optimally."
+      answer: "We provide comprehensive ongoing support including regular maintenance, updates, performance monitoring, and technical assistance to ensure your AI solutions continue to perform optimally."
     },
     {
       question: "How much do your AI solutions cost?",
-      answer: "Our pricing is customized based on your specific needs and requirements. Contact us for a personalized quote."
+      answer: "Our pricing is customized based on your specific needs and requirements. Contact us for a free personalized quote."
     },
     {
       question: "What industries do you work with?",
@@ -126,7 +124,7 @@ const FAQsContactUs: React.FC = () => {
             FAQs / 
             <button 
               onClick={scrollToContactForm}
-              className="text-blue-600 hover:text-blue-700 transition-colors ml-2"
+              className="text-blue-600 hover:text-blue-700 transition-colors ml-2 underline decoration-2 underline-offset-4"
               aria-label="Scroll to contact form"
             >
               Contact Us
@@ -205,40 +203,7 @@ const FAQsContactUs: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Contact Information */}
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-6">
-                    Get in Touch
-                  </h3>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <Mail className="w-5 h-5 text-blue-600" aria-hidden="true" />
-                      <span className="text-gray-700">info@nextgen-ai.com</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-blue-600" aria-hidden="true" />
-                      <span className="text-gray-700">+1 (555) 123-4567</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <MapPin className="w-5 h-5 text-blue-600" aria-hidden="true" />
-                      <span className="text-gray-700">San Francisco, CA</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-6">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">
-                    Prefer to Schedule a Call?
-                  </h4>
-                  <p className="text-gray-600 mb-4">
-                    Book a free consultation to discuss your AI needs directly with our experts.
-                  </p>
-                  <BookMeetingButton />
-                </div>
-              </div>
-
-              {/* Contact Form */}
+              {/* Contact Form - Now on the left */}
               <div>
                 <form className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -341,6 +306,19 @@ const FAQsContactUs: React.FC = () => {
                     * Required fields. We'll get back to you within 24 hours.
                   </p>
                 </form>
+              </div>
+
+              {/* Prefer to Schedule a Call - Now on the right */}
+              <div className="space-y-8">
+                <div className="pt-6">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                    Prefer to Schedule a Call?
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    Book a free consultation to discuss your AI needs directly with our experts.
+                  </p>
+                  <BookMeetingButton />
+                </div>
               </div>
             </div>
           </div>
