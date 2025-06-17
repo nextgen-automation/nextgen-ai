@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Bot, Menu, X } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import BookMeetingButton from './BookMeetingButton';
 import { scrollToServices, scrollToTop } from '../utils/scrollUtils';
 
 const Header: React.FC = () => {
@@ -53,8 +52,8 @@ const Header: React.FC = () => {
           </h1>
         </button>
         
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        {/* Desktop Navigation - Moved to the right with more spacing */}
+        <div className="hidden md:flex items-center space-x-12">
           <button 
             onClick={handleScrollToTop} 
             className={`transition-colors ${
@@ -88,7 +87,6 @@ const Header: React.FC = () => {
           >
             FAQs/Contact Us
           </Link>
-          <BookMeetingButton />
         </div>
 
         {/* Mobile Menu Button */}
@@ -103,7 +101,7 @@ const Header: React.FC = () => {
           aria-expanded={isMobileMenuOpen}
           aria-controls="mobile-menu"
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6\" aria-hidden="true" /> : <Menu className="w-6 h-6\" aria-hidden="true" />}
+          {isMobileMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
         </button>
       </nav>
 
@@ -154,9 +152,6 @@ const Header: React.FC = () => {
             >
               FAQs/Contact Us
             </Link>
-            <div className="pt-2 w-full">
-              <BookMeetingButton />
-            </div>
           </div>
         </div>
       )}

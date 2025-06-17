@@ -87,7 +87,7 @@ const FAQsContactUs: React.FC = () => {
             FAQs / 
             <button 
               onClick={scrollToContactForm}
-              className="text-blue-600 hover:text-blue-700 transition-colors ml-2 underline decoration-2 underline-offset-4"
+              className="text-blue-600 hover:text-blue-700 transition-colors ml-2"
               aria-label="Scroll to contact form"
             >
               Contact Us
