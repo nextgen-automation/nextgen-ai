@@ -26,7 +26,7 @@ const FAQsContactUs: React.FC = () => {
   const faqs = [
     {
       question: "What does NextGen-AI do/What types of Solutions do you offer?",
-      answer: "We create bespoke artificial intelligence(Chat and Voice) and automation systems for businesses."
+      answer: "We create bespoke artificial intelligence systems for companies. We equally specialize in crafting customized automation systems."
     },
     {
       question: "What is a bespoke/custom artificial intelligence system?",
@@ -34,7 +34,7 @@ const FAQsContactUs: React.FC = () => {
     },
     {
       question: "What is an automation system?",
-      answer: "A digital process that is created to automatically complete a simple-to-medium difficulty recurring task without human intervention."
+      answer: "A digital process that is created to automatically complete a simple-to-medium difficulty recurring business task without human intervention."
     },
     {
       question: "What is an AI-Powered automation system?",
@@ -60,33 +60,31 @@ const FAQsContactUs: React.FC = () => {
       answer: (
         <>
           To move forward, we'll need to speak with you directly to analyze your business needs and then recommend the best possible ROI-driven systems for you. You can send us an email or book a consultation with us{' '}
-          <a 
-            href={import.meta.env.VITE_CALENDLY_URL || 'https://calendly.com/nextgenai-automation/30min'}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button 
+            onClick={scrollToContactForm}
             className="text-blue-600 hover:text-blue-700 underline"
           >
             here
-          </a>.
+          </button>.
           <br />— It's completely free.
         </>
       )
     },
     {
       question: "What types of AI solutions do you offer?",
-      answer: "We specialize in AI Chat Agents, AI Voice Agents, and AI-Powered Automations. Our solutions are designed to increase profit and reduce costs for businesses of all sizes."
+      answer: "We specialize in AI Chat Agents, AI Voice Agents, and AI-Powered Automations. Our solutions are designed to increase profit and reduce costs."
     },
     {
       question: "How long does it take to implement an AI solution?",
-      answer: "Implementation time varies depending on the complexity of your requirements. Simple chat agents can be deployed within 1-2 weeks, while more complex automations may take 3-4 weeks."
+      answer: "Implementation time varies greatly depending on the complexity of the implementation(s). For context, a simple automation can take as little as 1–2 days, whereas implementing a highly intelligent AI receptionist for your business can take up to 4–5 weeks."
     },
     {
       question: "Do I need technical knowledge to use your AI solutions?",
-      answer: "Not at all! Our AI solutions are designed to be user-friendly and require no technical expertise. We provide full training and ongoing support to ensure you get the most out of your AI investment."
+      answer: "Not at all! Our AI solutions require no technical expertise to use. In fact, 90% of them won't even require human intervention."
     },
     {
       question: "Can your AI agents integrate with my existing systems?",
-      answer: "Yes, our AI solutions are built to integrate seamlessly with most popular business tools and platforms including CRM systems, calendars, email platforms, and more."
+      answer: "Because we're not bound to any specific platform — whether it's a CRM, email service, calendar system, or anything else — we offer 100% compatibility with whatever tools your business uses."
     },
     {
       question: "What kind of support do you provide after implementation?",
@@ -94,11 +92,7 @@ const FAQsContactUs: React.FC = () => {
     },
     {
       question: "How much do your AI solutions cost?",
-      answer: "Our pricing is customized based on your specific needs and requirements. We offer flexible pricing models including one-time setup fees and monthly subscriptions. Contact us for a personalized quote."
-    },
-    {
-      question: "Can I try your AI solutions before committing?",
-      answer: "Absolutely! We offer demos and proof-of-concept implementations so you can see exactly how our AI solutions will work for your business before making a commitment."
+      answer: "Our pricing is customized based on your specific needs and requirements. Contact us for a personalized quote."
     },
     {
       question: "What industries do you work with?",
@@ -106,11 +100,7 @@ const FAQsContactUs: React.FC = () => {
     },
     {
       question: "How secure are your AI solutions?",
-      answer: "Security is our top priority. All our AI solutions use enterprise-grade encryption, secure data handling practices, and comply with industry standards including GDPR and other privacy regulations."
-    },
-    {
-      question: "What makes your AI solutions different from others?",
-      answer: "Our AI solutions are specifically designed for business growth with a focus on increasing profit and reducing costs. We provide personalized implementation, ongoing optimization, and dedicated support to ensure maximum ROI."
+      answer: "Security is our top priority. All our AI solutions use enterprise-grade encryption, secure data handling practices, and comply with industry standards."
     }
   ];
 
