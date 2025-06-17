@@ -47,7 +47,7 @@ const ExamplesAIChat: React.FC = () => {
           >
             <div className="flex items-center">
               <ChevronLeft className="w-6 h-6 text-blue-500 transform transition-transform group-hover:-translate-x-2 mr-4" aria-hidden="true" />
-              <h1 className="text-2xl font-bold text-blue-600">AI Chat Agents</h1>
+              <h1 className="text-2xl font-bold text-blue-600">AI Chat Agents Demos</h1>
             </div>
             <div className="mt-4 ml-10 flex items-center gap-x-8">
               <div className="flex items-center gap-2">

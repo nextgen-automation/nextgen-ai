@@ -40,7 +40,7 @@ const ExamplesAIAutomations: React.FC = () => {
             <div className="flex items-center">
               <ChevronLeft className="w-6 h-6 text-teal-500 transform transition-transform group-hover:-translate-x-2 mr-4" aria-hidden="true" />
               <h1 className="text-2xl font-bold text-teal-600 flex items-center gap-2">
-                AI Powered Automations
+                AI Powered Automations Demos
                 <Wrench className="w-5 h-5 text-teal-600" aria-hidden="true" />
                 <span className="text-sm text-teal-600">[Under construction]</span>
               </h1>

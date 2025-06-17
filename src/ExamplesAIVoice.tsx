@@ -40,7 +40,7 @@ const ExamplesAIVoice: React.FC = () => {
             <div className="flex items-center">
               <ChevronLeft className="w-6 h-6 text-purple-500 transform transition-transform group-hover:-translate-x-2 mr-4" aria-hidden="true" />
               <h1 className="text-2xl font-bold text-purple-600 flex items-center gap-2">
-                AI Voice Agents
+                AI Voice Agents Demos
                 <Wrench className="w-5 h-5 text-purple-600" aria-hidden="true" />
                 <span className="text-sm text-purple-600">[Under construction]</span>
               </h1>
