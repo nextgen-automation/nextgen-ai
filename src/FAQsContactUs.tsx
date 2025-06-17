@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Mail, Phone, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Header from './components/Header';
 import BookMeetingButton from './components/BookMeetingButton';
 
@@ -23,6 +24,54 @@ const FAQsContactUs: React.FC = () => {
   };
 
   const faqs = [
+    {
+      question: "What does NextGen-AI do/What types of Solutions do you offer?",
+      answer: "We create bespoke artificial intelligence(Chat and Voice) and automation systems for businesses."
+    },
+    {
+      question: "What is a bespoke/custom artificial intelligence system?",
+      answer: "Think of it as a super-powerful robot employee, trained to do specific business tasks for your business. It never takes a break, never gets tired, never sleeps, doesn't take a vacation, doesn't even get sick, works 24/7 for you — all while being 100% accurate at doing the tasks that are given to it and costing only a fraction of what a human would cost. — That's crazy."
+    },
+    {
+      question: "What is an automation system?",
+      answer: "A digital process that is created to automatically complete a simple-to-medium difficulty recurring task without human intervention."
+    },
+    {
+      question: "What is an AI-Powered automation system?",
+      answer: "Before AI, automating complex recurring tasks in a business was nearly impossible. Now? — It is cheaper and faster to let AI handle it rather than doing it yourself for free."
+    },
+    {
+      question: "What are some examples of your solutions?",
+      answer: (
+        <>
+          <div className="space-y-2">
+            <div>- See some examples of chat agents <Link to="/ai-chat-agents" className="text-blue-600 hover:text-blue-700 underline">here</Link>.</div>
+            <div>- See some examples of AI voice agents <Link to="/ai-voice-agents" className="text-blue-600 hover:text-blue-700 underline">here</Link>.</div>
+            <div>- See some examples of AI-powered automations <Link to="/ai-powered-automations" className="text-blue-600 hover:text-blue-700 underline">here</Link>.</div>
+          </div>
+          <div className="mt-4 text-sm text-gray-600 italic">
+            These examples are only demos and do not represent production-level functionality.
+          </div>
+        </>
+      )
+    },
+    {
+      question: "I see what AI and automation can do for me. What now?",
+      answer: (
+        <>
+          To move forward, we'll need to speak with you directly to analyze your business needs and then recommend the best possible ROI-driven systems for you. You can send us an email or book a consultation with us{' '}
+          <a 
+            href={import.meta.env.VITE_CALENDLY_URL || 'https://calendly.com/nextgenai-automation/30min'}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-700 underline"
+          >
+            here
+          </a>.
+          <br />— It's completely free.
+        </>
+      )
+    },
     {
       question: "What types of AI solutions do you offer?",
       answer: "We specialize in AI Chat Agents, AI Voice Agents, and AI-Powered Automations. Our solutions are designed to increase profit and reduce costs for businesses of all sizes."
@@ -136,9 +185,9 @@ const FAQsContactUs: React.FC = () => {
                   className="overflow-hidden"
                 >
                   <div className="px-6 py-4 bg-white border-t border-gray-100">
-                    <p className="text-gray-700 leading-relaxed">
-                      {faq.answer}
-                    </p>
+                    <div className="text-gray-700 leading-relaxed">
+                      {typeof faq.answer === 'string' ? faq.answer : faq.answer}
+                    </div>
                   </div>
                 </motion.div>
               </div>
