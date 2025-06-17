@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Bot, Menu, X } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import BookMeetingButton from './BookMeetingButton';
 import { scrollToServices, scrollToTop } from '../utils/scrollUtils';
 
 const Header: React.FC = () => {
@@ -26,6 +27,9 @@ const Header: React.FC = () => {
   };
 
   const handleFAQsContactClick = () => {
+    if (location.pathname === '/faqs-contact-us') {
+      scrollToTop();
+    }
     setIsMobileMenuOpen(false);
   };
 
@@ -52,8 +56,8 @@ const Header: React.FC = () => {
           </h1>
         </button>
         
-        {/* Desktop Navigation - Moved to the right with more spacing */}
-        <div className="hidden md:flex items-center space-x-12">
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center space-x-8">
           <button 
             onClick={handleScrollToTop} 
             className={`transition-colors ${
@@ -78,6 +82,7 @@ const Header: React.FC = () => {
           </button>
           <Link 
             to="/faqs-contact-us" 
+            onClick={handleFAQsContactClick}
             className={`transition-colors ${
               isHomePage 
                 ? `text-gray-300 hover:text-white ${location.pathname === '/faqs-contact-us' ? 'text-white font-medium' : ''}`
@@ -87,6 +92,7 @@ const Header: React.FC = () => {
           >
             FAQs/Contact Us
           </Link>
+          <BookMeetingButton />
         </div>
 
         {/* Mobile Menu Button */}
@@ -152,6 +158,9 @@ const Header: React.FC = () => {
             >
               FAQs/Contact Us
             </Link>
+            <div className="pt-2 w-full">
+              <BookMeetingButton />
+            </div>
           </div>
         </div>
       )}

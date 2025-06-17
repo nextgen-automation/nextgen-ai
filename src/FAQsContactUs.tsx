@@ -124,7 +124,7 @@ const FAQsContactUs: React.FC = () => {
             FAQs / 
             <button 
               onClick={scrollToContactForm}
-              className="text-blue-600 hover:text-blue-700 transition-colors ml-2 underline decoration-2 underline-offset-4"
+              className="text-blue-600 hover:text-blue-700 transition-colors ml-2"
               aria-label="Scroll to contact form"
             >
               Contact Us
@@ -202,8 +202,8 @@ const FAQsContactUs: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Contact Form - Now on the left */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 relative">
+              {/* Contact Form - Left side */}
               <div>
                 <form className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -308,7 +308,10 @@ const FAQsContactUs: React.FC = () => {
                 </form>
               </div>
 
-              {/* Prefer to Schedule a Call - Now on the right */}
+              {/* Vertical separator line - only visible on large screens */}
+              <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-300 transform -translate-x-1/2"></div>
+
+              {/* Prefer to Schedule a Call - Right side */}
               <div className="space-y-8">
                 <div className="pt-6">
                   <h4 className="text-lg font-semibold text-gray-900 mb-4">
