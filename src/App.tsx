@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Bot, Phone, Zap } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import Header from './components/Header';
-import BookMeetingButton from './components/BookMeetingButton';
+import ContactUsButton from './components/ContactUsButton';
 import { scrollToElement } from './utils/scrollUtils';
 
 function App() {
@@ -151,7 +151,7 @@ function App() {
                     >
                       Our Services
                     </button>
-                    <BookMeetingButton />
+                    <ContactUsButton scrollToForm={false} />
                   </div>
                 </motion.div>
               </div>
