@@ -10,7 +10,11 @@ const FAQsContactUs: React.FC = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (location.state?.scrollToContactForm) {
+      scrollToElement('contact-form', 90);
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   const scrollToContactForm = () => {
