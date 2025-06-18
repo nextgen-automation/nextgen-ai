@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Home, Search, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from './components/Header';
-import BookMeetingButton from './components/BookMeetingButton';
+import ContactUsButton from './components/ContactUsButton';
 
 const NotFound: React.FC = () => {
   useEffect(() => {
@@ -94,7 +94,7 @@ const NotFound: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <BookMeetingButton />
+              <ContactUsButton scrollToForm={true} />
               <div className="flex items-center gap-2 text-gray-600">
                 <span>or talk to our AI assistant Nemo</span>
                 <div className="w-8 h-8 bg-transparent">
