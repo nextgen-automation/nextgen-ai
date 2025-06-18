@@ -8,6 +8,7 @@ import ExamplesAIChat from './ExamplesAIChat'
 import ExamplesAIVoice from './ExamplesAIVoice'
 import ExamplesAIAutomations from './ExamplesAIAutomations'
 import FAQsContactUs from './FAQsContactUs'
+import FormSuccess from './FormSuccess'
 import NotFound from './NotFound'
 import './index.css'
 
@@ -23,6 +24,7 @@ function AnimatedRoutes() {
         <Route path="/ai-voice-agents" element={<ExamplesAIVoice />} />
         <Route path="/ai-powered-automations" element={<ExamplesAIAutomations />} />
         <Route path="/faqs-contact-us" element={<FAQsContactUs />} />
+        <Route path="/success" element={<FormSuccess />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>

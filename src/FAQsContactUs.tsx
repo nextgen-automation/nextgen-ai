@@ -210,7 +210,17 @@ const FAQsContactUs: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 relative">
               {/* Contact Form - Left side */}
               <div>
-                <form className="space-y-6">
+                <form 
+                  name="contact" 
+                  method="POST" 
+                  data-netlify="true" 
+                  action="/success"
+                  className="space-y-6"
+                >
+                  {/* Hidden fields for Netlify form processing */}
+                  <input type="hidden" name="form-name" value="contact" />
+                  <input type="hidden" name="bot-field" />
+                  
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
@@ -219,6 +229,7 @@ const FAQsContactUs: React.FC = () => {
                       <input
                         type="text"
                         id="firstName"
+                        name="firstName"
                         name="firstName"
                         required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
@@ -232,6 +243,7 @@ const FAQsContactUs: React.FC = () => {
                       <input
                         type="text"
                         id="lastName"
+                        name="lastName"
                         name="lastName"
                         required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
@@ -248,6 +260,7 @@ const FAQsContactUs: React.FC = () => {
                       type="email"
                       id="email"
                       name="email"
+                      name="email"
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                       placeholder="john@example.com"
@@ -262,6 +275,7 @@ const FAQsContactUs: React.FC = () => {
                       type="text"
                       id="company"
                       name="company"
+                      name="company"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                       placeholder="Your Company"
                     />
@@ -273,6 +287,7 @@ const FAQsContactUs: React.FC = () => {
                     </label>
                     <select
                       id="service"
+                      name="service"
                       name="service"
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
@@ -291,6 +306,7 @@ const FAQsContactUs: React.FC = () => {
                     </label>
                     <textarea
                       id="message"
+                      name="message"
                       name="message"
                       rows={5}
                       required
