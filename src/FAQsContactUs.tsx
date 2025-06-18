@@ -214,6 +214,7 @@ const FAQsContactUs: React.FC = () => {
                   name="contact" 
                   method="POST" 
                   data-netlify="true" 
+                  netlify-honeypot="bot-field"
                   action="/success"
                   className="space-y-6"
                 >
@@ -230,7 +231,6 @@ const FAQsContactUs: React.FC = () => {
                         type="text"
                         id="firstName"
                         name="firstName"
-                        name="firstName"
                         required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                         placeholder="John"
@@ -243,7 +243,6 @@ const FAQsContactUs: React.FC = () => {
                       <input
                         type="text"
                         id="lastName"
-                        name="lastName"
                         name="lastName"
                         required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
@@ -260,7 +259,6 @@ const FAQsContactUs: React.FC = () => {
                       type="email"
                       id="email"
                       name="email"
-                      name="email"
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                       placeholder="john@example.com"
@@ -275,7 +273,6 @@ const FAQsContactUs: React.FC = () => {
                       type="text"
                       id="company"
                       name="company"
-                      name="company"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                       placeholder="Your Company"
                     />
@@ -287,7 +284,6 @@ const FAQsContactUs: React.FC = () => {
                     </label>
                     <select
                       id="service"
-                      name="service"
                       name="service"
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
@@ -306,7 +302,6 @@ const FAQsContactUs: React.FC = () => {
                     </label>
                     <textarea
                       id="message"
-                      name="message"
                       name="message"
                       rows={5}
                       required
