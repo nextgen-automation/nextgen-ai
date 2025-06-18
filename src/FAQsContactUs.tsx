@@ -269,7 +269,7 @@ const FAQsContactUs: React.FC = () => {
 
                   <div>
                     <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                      Service Interest *
+                      Service of Interest *
                     </label>
                     <select
                       id="service"
@@ -281,8 +281,7 @@ const FAQsContactUs: React.FC = () => {
                       <option value="ai-chat-agents">AI Chat Agents</option>
                       <option value="ai-voice-agents">AI Voice Agents</option>
                       <option value="ai-automations">AI-Powered Automations</option>
-                      <option value="custom-solution">Custom AI Solution</option>
-                      <option value="consultation">General Consultation</option>
+                      <option value="custom-solution">Custom AI Solutions</option>
                     </select>
                   </div>
 
@@ -308,7 +307,7 @@ const FAQsContactUs: React.FC = () => {
                   </button>
 
                   <p className="text-sm text-gray-500 text-center">
-                    * Required fields. We'll get back to you within 24 hours.
+                    * Required fields. We'll get back to you within 12 hours.
                   </p>
                 </form>
               </div>
