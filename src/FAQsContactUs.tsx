@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Mail, Phone, MapPin } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Header from './components/Header';
-import ContactUsButton from './components/ContactUsButton';
+import BookMeetingButton from './components/BookMeetingButton';
 import { scrollToElement } from './utils/scrollUtils';
 
 const FAQsContactUs: React.FC = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    // Check if we should scroll to the contact form
+    if (location.state?.scrollToContactForm) {
+      scrollToElement('contact-form', 90);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
 
   const scrollToContactForm = () => {
     scrollToElement('contact-form', 90);
@@ -320,7 +326,7 @@ const FAQsContactUs: React.FC = () => {
                   <p className="text-gray-600 mb-4">
                     Book a free consultation to discuss your AI needs directly with our experts.
                   </p>
-                  <ContactUsButton scrollToForm={false} />
+                  <BookMeetingButton />
                 </div>
               </div>
             </div>
