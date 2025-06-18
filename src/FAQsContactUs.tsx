@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Mail, Phone, MapPin } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import BookMeetingButton from './components/BookMeetingButton';
 import { scrollToElement } from './utils/scrollUtils';
 
 const FAQsContactUs: React.FC = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const location = useLocation();
 
   useEffect(() => {
     if (location.state?.scrollToContactForm) {
@@ -15,7 +16,7 @@ const FAQsContactUs: React.FC = () => {
     } else {
       window.scrollTo(0, 0);
     }
-  }, []);
+  }, [location]);
 
   const scrollToContactForm = () => {
     scrollToElement('contact-form', 90);
