@@ -215,7 +215,6 @@ const FAQsContactUs: React.FC = () => {
                   method="POST" 
                   data-netlify="true" 
                   netlify-honeypot="bot-field"
-                  action="/success"
                   className="space-y-6"
                 >
                   {/* Hidden fields for Netlify form processing */}
