@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ChevronLeft, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from './components/Header';
-import ContactUsButton from './components/ContactUsButton';
+import BookMeetingButton from './components/BookMeetingButton';
 
 const ExamplesAIVoice: React.FC = () => {
   useEffect(() => {
@@ -85,7 +85,7 @@ const ExamplesAIVoice: React.FC = () => {
               <span className="text-gray-700">
                 Feeling excited to get your business a personal AI voice agent? →
               </span>
-              <ContactUsButton scrollToForm={true} />
+              <BookMeetingButton />
               <div className="flex items-center gap-2">
                 <span className="text-gray-700">Still in doubt? Talk to Nemo →</span>
                 <div className="w-12 h-12 bg-transparent">
