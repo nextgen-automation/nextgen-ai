@@ -20,8 +20,8 @@ const ExamplesAIChat: React.FC = () => {
 
   const agentTitles = [
     'Lead Generation Agent – Still hunting leads manually?',
-    'Customer Support Agent - Have a shopify store?',
-    'Appointment setter Agent - Still booking appointments yourself?',
+    'Customer Support Agent - Have a Shopify store?',
+    'Appointment Setting Agent - Still booking appointments yourself?',
     'Shopping assistant Agent - Too many products, confused customers? Give them a shopping assistant.',
     'Quote Generation - Still giving out estimations yourself?'
   ];

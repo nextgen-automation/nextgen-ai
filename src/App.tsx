@@ -140,8 +140,6 @@ function App() {
                   </h2>
                   <p className="text-white text-sm mb-4 leading-relaxed">
                     See how you can integrate the most powerful tools ever created. Right into your business.
-                    <br />
-                    Now!
                   </p>
                   <div className="flex flex-col sm:flex-row justify-start gap-2 sm:space-x-2 sm:gap-0">
                     <button 
@@ -228,7 +226,7 @@ function App() {
                     <h3 className="text-xl font-bold">AI-Powered Automations</h3>
                   </div>
                   <p className="text-gray-200 mt-4 mb-4">
-                    Let AI handle the repetitive. Focus on what only you can do.
+                    Let AI handle repetitive tasks. Focus on what only you can do.
                   </p>
                   <ul className="space-y-2 text-gray-400">
                     <li>• Automate admin tasks with intelligent automations tailored to your workflow</li>
@@ -236,8 +234,8 @@ function App() {
                   </ul>
                 </motion.div>
                 <Link to="/demos" className="block w-full">
-                  <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm" aria-label="Explore AI Powered Automations examples">
-                    Explore AI Powered Automations
+                  <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm" aria-label="Explore AI-Powered Automations examples">
+                    Explore AI-Powered Automations
                   </button>
                 </Link>
               </article>

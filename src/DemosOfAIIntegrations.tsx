@@ -88,7 +88,7 @@ const ExOfAIIntegrations: React.FC = () => {
             >
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold text-teal-600">
-                  AI Powered Automations Demos
+                  AI-Powered Automations Demos
                 </h2>
                 <ChevronRight className="w-6 h-6 text-teal-500 transform transition-transform group-hover:translate-x-2" aria-hidden="true" />
               </div>

@@ -11,7 +11,7 @@ const ExamplesAIAutomations: React.FC = () => {
   }, []);
 
   const automationTitles = [
-    'AI Powered Lead Qualification - No need to qualify leads on your own. Set the criteria with AI.',
+    'AI-Powered Lead Qualification - No need to qualify leads on your own. Set the criteria with AI.',
     'PDF Forms Handler - Wasting multiple hours manually filing up the same forms?',
     'Report Generator - Want to see how your business did without crunching numbers yourself?',
     'Social Media Engagement - Want to post a picture everywhere? You don\'t even have to think of a caption - everything automated.',
@@ -39,8 +39,10 @@ const ExamplesAIAutomations: React.FC = () => {
           >
             <div className="flex items-center">
               <ChevronLeft className="w-6 h-6 text-teal-500 transform transition-transform group-hover:-translate-x-2 mr-4" aria-hidden="true" />
-              <h1 className="text-2xl font-bold text-teal-600">
-                AI Powered Automations Demos
+              <h1 className="text-2xl font-bold text-teal-600 flex items-center gap-2">
+                AI-Powered Automations Demos
+                <Wrench className="w-5 h-5 text-teal-600" aria-hidden="true" />
+                <span className="text-sm text-teal-600">[Under construction]</span>
               </h1>
             </div>
             <div className="mt-4 ml-10 flex items-center gap-x-8">
@@ -90,7 +92,7 @@ const ExamplesAIAutomations: React.FC = () => {
           <div className="mt-16 pl-6">
             <div className="flex items-center gap-4 flex-wrap">
               <span className="text-gray-700">
-                Feeling excited to get your business AI powered automations? →
+                Feeling excited to get your business AI-Powered Automations? →
               </span>
               <ContactFormButton />
               <div className="flex items-center gap-2">

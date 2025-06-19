@@ -11,11 +11,11 @@ const ExamplesAIVoice: React.FC = () => {
   }, []);
 
   const voiceAgentTitles = [
-    'Business Receptionist Agent - Spending a lot of money and time to manage your receptionist? What if we cut cost by 80%.',
-    'Outreach Agent - Need to call 1000s of leads?',
+    'Business Receptionist Agent - Spending a lot of money and time to manage your receptionist? What if we cut costs by 80%?',
+    'Outreach Agent - Need to call thousands of leads?',
     'Personal Assistant Agent - Need someone available 24/7 to consistently update your calendar?',
     'Information Hotline Agent - Press "1" to hear about the houses close to your current address.',
-    'Appointment Reminders Via Call - Tired of no-shows?'
+    'Appointment Reminders - Tired of no-shows?'
   ];
 
   return (
