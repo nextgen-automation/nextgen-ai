@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import App from './App'
-import ExOfAIIntegrations from './ExOfAIIntegrations'
-import ExamplesAIChat from './ExamplesAIChat'
-import ExamplesAIVoice from './ExamplesAIVoice'
-import ExamplesAIAutomations from './ExamplesAIAutomations'
+import DemosOfAIIntegrations from './DemosOfAIIntegrations'
+import DemosAIChat from './DemosAIChat'
+import DemosAIVoice from './DemosAIVoice'
+import DemosAIAutomations from './DemosAIAutomations'
 import FAQsContactUs from './FAQsContactUs'
 import NotFound from './NotFound'
 import './index.css'
@@ -18,10 +18,10 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<App />} />
-        <Route path="/demos" element={<ExOfAIIntegrations />} />
-        <Route path="/ai-chat-demos" element={<ExamplesAIChat />} />
-        <Route path="/ai-voice-demos" element={<ExamplesAIVoice />} />
-        <Route path="/ai-automation-demos" element={<ExamplesAIAutomations />} />
+        <Route path="/demos" element={<DemosOfAIIntegrations />} />
+        <Route path="/ai-chat-demos" element={<DemosAIChat />} />
+        <Route path="/ai-voice-demos" element={<DemosAIVoice />} />
+        <Route path="/ai-automation-demos" element={<DemosAIAutomations />} />
         <Route path="/faqs-contact-us" element={<FAQsContactUs />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
