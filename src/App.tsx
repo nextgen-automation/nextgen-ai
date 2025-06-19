@@ -52,7 +52,7 @@ function App() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.1 }}
       className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white pt-16"
     >
       <Header />
@@ -87,7 +87,7 @@ function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ 
                 duration: 0.8,
-                delay: 0.5,
+                delay: 0.1,
                 ease: "easeOut"
               }}
               className="absolute top-[50%] inset-x-0 mx-auto w-[90vw] max-w-md bg-black/70 rounded-2xl overflow-hidden md:top-32 md:left-0 md:inset-x-auto md:mx-0 md:w-auto"
@@ -99,7 +99,7 @@ function App() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ 
                     duration: 0.8,
-                    delay: 0.7,
+                    delay: 0.2,
                     ease: "easeOut"
                   }}
                   className="-mb-1 md:-mb-2"
@@ -115,7 +115,7 @@ function App() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ 
                     duration: 0.8,
-                    delay: 0.9,
+                    delay: 0.3,
                     ease: "easeOut"
                   }}
                   className="mb-1 md:-mb-1"
@@ -131,7 +131,7 @@ function App() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ 
                     duration: 0.8,
-                    delay: 1.1,
+                    delay: 0.4,
                     ease: "easeOut"
                   }}
                 >
