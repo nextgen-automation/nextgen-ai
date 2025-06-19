@@ -10,7 +10,7 @@
   
   <!-- Examples/Demos Page -->
   <url>
-    <loc>https://nextgen-ai.ca/examples</loc>
+    <loc>https://nextgen-ai.ca/demos</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -18,7 +18,7 @@
   
   <!-- AI Chat Agents Demos -->
   <url>
-    <loc>https://nextgen-ai.ca/ai-chat-agents</loc>
+    <loc>https://nextgen-ai.ca/ai-chat-demos</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -26,7 +26,7 @@
   
   <!-- AI Voice Agents Demos -->
   <url>
-    <loc>https://nextgen-ai.ca/ai-voice-agents</loc>
+    <loc>https://nextgen-ai.ca/ai-voice-demos</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -34,7 +34,7 @@
   
   <!-- AI Powered Automations Demos -->
   <url>
-    <loc>https://nextgen-ai.ca/ai-powered-automations</loc>
+    <loc>https://nextgen-ai.ca/ai-automation-demos</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

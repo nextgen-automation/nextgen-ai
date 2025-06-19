@@ -84,12 +84,12 @@ const Header: React.FC = () => {
             Our Services
           </button>
           <Link 
-            to="/examples" 
+            to="/demos" 
             onClick={handleDemosClick}
             className={`transition-colors ${
               isHomePage 
-                ? `text-gray-300 hover:text-white ${location.pathname === '/examples' || location.pathname.startsWith('/ai-') ? 'text-white font-medium' : ''}`
-                : `text-gray-700 hover:text-gray-900 ${location.pathname === '/examples' || location.pathname.startsWith('/ai-') ? 'text-gray-900 font-medium' : ''}`
+                ? `text-gray-300 hover:text-white ${location.pathname === '/demos' || location.pathname.startsWith('/ai-') ? 'text-white font-medium' : ''}`
+                : `text-gray-700 hover:text-gray-900 ${location.pathname === '/demos' || location.pathname.startsWith('/ai-') ? 'text-gray-900 font-medium' : ''}`
             }`}
             aria-label="View AI solution demos"
           >
@@ -161,12 +161,12 @@ const Header: React.FC = () => {
               Our Services
             </button>
             <Link 
-              to="/examples" 
+              to="/demos" 
               onClick={handleDemosClick}
               className={`block w-full text-left transition-colors py-2 ${
                 isHomePage 
-                  ? `text-gray-300 hover:text-white ${location.pathname === '/examples' || location.pathname.startsWith('/ai-') ? 'text-white font-medium' : ''}`
-                  : `text-gray-700 hover:text-gray-900 ${location.pathname === '/examples' || location.pathname.startsWith('/ai-') ? 'text-gray-900 font-medium' : ''}`
+                  ? `text-gray-300 hover:text-white ${location.pathname === '/demos' || location.pathname.startsWith('/ai-') ? 'text-white font-medium' : ''}`
+                  : `text-gray-700 hover:text-gray-900 ${location.pathname === '/demos' || location.pathname.startsWith('/ai-') ? 'text-gray-900 font-medium' : ''}`
               }`}
               aria-label="View AI solution demos"
             >

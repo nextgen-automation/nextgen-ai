@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronRight, Wrench } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from './components/Header';
 
@@ -20,11 +20,11 @@ const ExOfAIIntegrations: React.FC = () => {
       <Header />
 
       <main className="container mx-auto px-6 pt-12">
-        <h1 className="text-4xl font-bold text-center mb-16">Demos of AI Integrations</h1>
+        <h1 className="text-4xl font-bold text-center mb-16">AI Integration Demos</h1>
         
         <div className="space-y-8">
           {/* AI Chat Agents Section */}
-          <Link to="/ai-chat-agents" className="block">
+          <Link to="/ai-chat-demos" className="block">
             <motion.article
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ const ExOfAIIntegrations: React.FC = () => {
           </Link>
 
           {/* AI Voice Agents Section */}
-          <Link to="/ai-voice-agents" className="block">
+          <Link to="/ai-voice-demos" className="block">
             <motion.article
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -59,10 +59,8 @@ const ExOfAIIntegrations: React.FC = () => {
               className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group"
             >
               <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-bold text-purple-600 flex items-center gap-2">
+                <h2 className="text-2xl font-bold text-purple-600">
                   AI Voice Agents Demos
-                  <Wrench className="w-5 h-5 text-purple-600" aria-hidden="true" />
-                  <span className="text-sm text-purple-600">[Under construction]</span>
                 </h2>
                 <ChevronRight className="w-6 h-6 text-purple-500 transform transition-transform group-hover:translate-x-2" aria-hidden="true" />
               </div>
@@ -80,7 +78,7 @@ const ExOfAIIntegrations: React.FC = () => {
           </Link>
 
           {/* AI Powered Automations Section */}
-          <Link to="/ai-powered-automations" className="block">
+          <Link to="/ai-automation-demos" className="block">
             <motion.article
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -89,10 +87,8 @@ const ExOfAIIntegrations: React.FC = () => {
               className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group"
             >
               <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-bold text-teal-600 flex items-center gap-2">
+                <h2 className="text-2xl font-bold text-teal-600">
                   AI Powered Automations Demos
-                  <Wrench className="w-5 h-5 text-teal-600" aria-hidden="true" />
-                  <span className="text-sm text-teal-600">[Under construction]</span>
                 </h2>
                 <ChevronRight className="w-6 h-6 text-teal-500 transform transition-transform group-hover:translate-x-2" aria-hidden="true" />
               </div>

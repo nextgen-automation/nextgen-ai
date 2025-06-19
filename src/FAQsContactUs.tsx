@@ -48,9 +48,9 @@ const FAQsContactUs: React.FC = () => {
       answer: (
         <>
           <div className="space-y-2">
-            <div>- See some examples of chat agents <Link to="/ai-chat-agents" className="text-blue-600 hover:text-blue-700 underline">here</Link>.</div>
-            <div>- See some examples of AI voice agents <Link to="/ai-voice-agents" className="text-blue-600 hover:text-blue-700 underline">here</Link>.</div>
-            <div>- See some examples of AI-powered automations <Link to="/ai-powered-automations" className="text-blue-600 hover:text-blue-700 underline">here</Link>.</div>
+            <div>- See some examples of chat agents <Link to="/ai-chat-demos" className="text-blue-600 hover:text-blue-700 underline">here</Link>.</div>
+            <div>- See some examples of AI voice agents <Link to="/ai-voice-demos" className="text-blue-600 hover:text-blue-700 underline">here</Link>.</div>
+            <div>- See some examples of AI-powered automations <Link to="/ai-automation-demos" className="text-blue-600 hover:text-blue-700 underline">here</Link>.</div>
           </div>
           <div className="mt-4 text-sm text-gray-600 italic">
             These examples are only demos and do not represent production-level functionality.

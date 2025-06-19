@@ -18,10 +18,10 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<App />} />
-        <Route path="/examples" element={<ExOfAIIntegrations />} />
-        <Route path="/ai-chat-agents" element={<ExamplesAIChat />} />
-        <Route path="/ai-voice-agents" element={<ExamplesAIVoice />} />
-        <Route path="/ai-powered-automations" element={<ExamplesAIAutomations />} />
+        <Route path="/demos" element={<ExOfAIIntegrations />} />
+        <Route path="/ai-chat-demos" element={<ExamplesAIChat />} />
+        <Route path="/ai-voice-demos" element={<ExamplesAIVoice />} />
+        <Route path="/ai-automation-demos" element={<ExamplesAIAutomations />} />
         <Route path="/faqs-contact-us" element={<FAQsContactUs />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

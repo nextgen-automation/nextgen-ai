@@ -69,12 +69,12 @@ const NotFound: React.FC = () => {
             </Link>
             
             <Link 
-              to="/examples"
+              to="/demos"
               className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-900 px-6 py-3 rounded-full transition-colors font-medium"
-              aria-label="Explore our AI services"
+              aria-label="Explore our AI demos"
             >
               <Search className="w-5 h-5" aria-hidden="true" />
-              Explore Our Services
+              Explore Our Demos
             </Link>
           </motion.div>
 

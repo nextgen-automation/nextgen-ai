@@ -29,7 +29,7 @@ const ExamplesAIAutomations: React.FC = () => {
       <Header />
 
       <main className="container mx-auto px-6 pt-12">
-        <Link to="/examples" className="block">
+        <Link to="/demos" className="block">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -39,10 +39,8 @@ const ExamplesAIAutomations: React.FC = () => {
           >
             <div className="flex items-center">
               <ChevronLeft className="w-6 h-6 text-teal-500 transform transition-transform group-hover:-translate-x-2 mr-4" aria-hidden="true" />
-              <h1 className="text-2xl font-bold text-teal-600 flex items-center gap-2">
+              <h1 className="text-2xl font-bold text-teal-600">
                 AI Powered Automations Demos
-                <Wrench className="w-5 h-5 text-teal-600" aria-hidden="true" />
-                <span className="text-sm text-teal-600">[Under construction]</span>
               </h1>
             </div>
             <div className="mt-4 ml-10 flex items-center gap-x-8">
@@ -74,7 +72,16 @@ const ExamplesAIAutomations: React.FC = () => {
                   aria-label={`Learn about ${title}`}
                 >
                   <span className="text-teal-600 text-2xl" aria-hidden="true">•</span>
-                  <span className="text-teal-600 text-lg">{title}</span>
+                 <span className="text-teal-600 text-lg">
+                   {title}
+                   {index >= 2 && (
+                     <>
+                       {' '}
+                       <Wrench className="w-4 h-4 inline mx-1" aria-hidden="true" />
+                       [Under construction]
+                     </>
+                   )}
+                 </span>
                 </Link>
               </li>
             ))}

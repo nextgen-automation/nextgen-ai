@@ -183,7 +183,7 @@ function App() {
                     <li>• Never miss an inquiry—even outside business hours</li>
                   </ul>
                 </motion.div>
-                <Link to="/examples" className="block w-full">
+                <Link to="/demos" className="block w-full">
                   <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm" aria-label="See AI Chat Agents examples">
                     See AI Chat Agents in Action
                   </button>
@@ -209,7 +209,7 @@ function App() {
                     <li>• Natural-sounding voices that feel truly human</li>
                   </ul>
                 </motion.div>
-                <Link to="/examples" className="block w-full">
+                <Link to="/demos" className="block w-full">
                   <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm" aria-label="See AI Voice Agents examples">
                     See AI Voice Agents in Action
                   </button>
@@ -235,7 +235,7 @@ function App() {
                     <li>• Automatically fill forms, update calendars, and more</li>
                   </ul>
                 </motion.div>
-                <Link to="/examples" className="block w-full">
+                <Link to="/demos" className="block w-full">
                   <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm" aria-label="Explore AI Powered Automations examples">
                     Explore AI Powered Automations
                   </button>

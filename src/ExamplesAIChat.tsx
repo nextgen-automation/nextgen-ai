@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft } from 'lucide-react';
+import { ChevronLeft, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from './components/Header';
 import ContactFormButton from './components/ContactFormButton';
@@ -21,9 +21,9 @@ const ExamplesAIChat: React.FC = () => {
   const agentTitles = [
     'Lead Generation Agent – Still hunting leads manually?',
     'Customer Support Agent - Have a shopify store?',
-    'Appointment setter Agent - Still booking appointments yourself? [Demo under construction]',
-    'Shopping assistant Agent - Too many products, confused customers? Give them a shopping assistant. [Demo under construction]',
-    'Quote Generation - Still giving out estimations yourself? [Demo under construction]'
+    'Appointment setter Agent - Still booking appointments yourself?',
+    'Shopping assistant Agent - Too many products, confused customers? Give them a shopping assistant.',
+    'Quote Generation - Still giving out estimations yourself?'
   ];
 
   return (
@@ -37,7 +37,7 @@ const ExamplesAIChat: React.FC = () => {
       <Header />
 
       <main className="container mx-auto px-6 pt-12">
-        <Link to="/examples" className="block">
+        <Link to="/demos" className="block">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -92,7 +92,16 @@ const ExamplesAIChat: React.FC = () => {
                     aria-label={`Learn about ${title}`}
                   >
                     <span className="text-blue-600 text-2xl" aria-hidden="true">•</span>
-                    <span className="text-blue-600 text-lg">{title}</span>
+                    <span className="text-blue-600 text-lg">
+                      {title}
+                      {index >= 2 && (
+                        <>
+                          {' '}
+                          <Wrench className="w-4 h-4 inline mx-1" aria-hidden="true" />
+                          [Under construction]
+                        </>
+                      )}
+                    </span>
                   </Link>
                 )}
               </li>
