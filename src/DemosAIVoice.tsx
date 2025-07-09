@@ -23,7 +23,9 @@ const ExamplesAIVoice: React.FC = () => {
     const initializeVoiceflow = async () => {
       try {
         const factory = new RuntimeClientFactory({
-          versionID: '686e83961b77fd494630d6e4',
+          projectID: '686e87825ecbc2a7a7136848',
+          versionID: 'production',
+          apiKey: 'VF.DM.686e87825ecbc2a7a7136848.hzb98PW2zxyo2DyY',
           apiEndpoint: 'https://general-runtime.voiceflow.com',
         });
 
