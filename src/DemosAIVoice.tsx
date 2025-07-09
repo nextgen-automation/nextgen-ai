@@ -309,11 +309,26 @@ const ExamplesAIVoice: React.FC = () => {
   };
 
   const voiceAgentTitles = [
-    'Business Receptionist Agent - Spending a lot of money and time to manage your receptionist? What if we cut cost by 80%.',
-    'Outreach Agent - Need to call 1000s of leads?',
-    'Personal Assistant Agent - Need someone available 24/7 to consistently update your calendar?',
-    'Information Hotline Agent - Press "1" to hear about the houses close to your current address.',
-    'Appointment Reminders Via Call - Tired of no-shows?'
+    {
+      title: 'Business Receptionist Agent',
+      description: 'Spending a lot of money and time to manage your receptionist? What if we cut cost by 80%.'
+    },
+    {
+      title: 'Outreach Agent',
+      description: 'Need to call 1000s of leads?'
+    },
+    {
+      title: 'Personal Assistant Agent',
+      description: 'Need someone available 24/7 to consistently update your calendar?'
+    },
+    {
+      title: 'Information Hotline Agent',
+      description: 'Press "1" to hear about the houses close to your current address.'
+    },
+    {
+      title: 'Appointment Reminders Via Call',
+      description: 'Tired of no-shows?'
+    }
   ];
 
   return (
@@ -362,23 +377,25 @@ const ExamplesAIVoice: React.FC = () => {
           aria-label="AI Voice Agent examples"
         >
           <ul className="space-y-6">
-            {voiceAgentTitles.map((title, index) => (
+            {voiceAgentTitles.map((agent, index) => (
               <li key={index}>
                 {index === 0 ? (
                   // First item - Business Receptionist Agent with interactive demo
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-2">
-                      <span className="text-purple-600 text-2xl" aria-hidden="true">•</span>
-                      <span className="text-purple-600 text-lg">{title}</span>
-                    </div>
+                  <div className="p-6 bg-gray-50 rounded-xl border border-gray-200">
+                    <h4 className="text-xl font-bold text-purple-600 mb-2">
+                      {agent.title}
+                    </h4>
+                    <p className="text-gray-600 mb-6">
+                      {agent.description}
+                    </p>
                     
                     {/* Voice Agent Demo Controls */}
-                    <div className="ml-6 p-6 bg-gray-50 rounded-xl border border-gray-200">
+                    <div className="p-4 bg-white rounded-lg border border-gray-200">
                       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                         <div className="flex-1">
-                          <h4 className="font-semibold text-gray-900 mb-2">
+                          <h5 className="font-semibold text-gray-900 mb-2">
                             Try the Business Receptionist Agent
-                          </h4>
+                          </h5>
                           <p className="text-sm text-gray-600 mb-4">
                             Experience our AI voice agent that can handle calls, schedule appointments, and answer common questions - just like a human receptionist.
                           </p>
@@ -453,18 +470,15 @@ const ExamplesAIVoice: React.FC = () => {
                   </div>
                 ) : (
                   // Other items - regular display with construction notice
-                  <div className="flex items-center gap-2">
-                    <span className="text-purple-600 text-2xl" aria-hidden="true">•</span>
-                    <span className="text-purple-600 text-lg">
-                      {title}
-                      {index >= 1 && (
-                        <>
-                          {' '}
-                          <Wrench className="w-4 h-4 inline mx-1" aria-hidden="true" />
-                          [Under construction]
-                        </>
-                      )}
-                    </span>
+                  <div className="p-6 bg-gray-50 rounded-xl border border-gray-200">
+                    <h4 className="text-xl font-bold text-purple-600 mb-2 flex items-center gap-2">
+                      {agent.title}
+                      <Wrench className="w-5 h-5" aria-hidden="true" />
+                      <span className="text-sm font-normal">[Under construction]</span>
+                    </h4>
+                    <p className="text-gray-600">
+                      {agent.description}
+                    </p>
                   </div>
                 )}
               </li>
