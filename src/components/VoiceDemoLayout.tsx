@@ -146,6 +146,8 @@ const VoiceDemoLayout: React.FC<VoiceDemoLayoutProps> = ({
       console.error('Speech recognition error:', event.error);
       if (event.error === 'not-allowed') {
         setError('Microphone access denied. Please allow microphone access and try again.');
+      } else if (event.error === 'network') {
+        setError('Speech recognition service encountered a network error. Please check your internet connection and try again.');
       }
     };
 
