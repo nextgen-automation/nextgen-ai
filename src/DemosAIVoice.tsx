@@ -2,55 +2,92 @@ import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, Wrench, Phone, PhoneOff, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { RuntimeClientFactory } from '@voiceflow/runtime-client-js';
 import Header from './components/Header';
 import ContactFormButton from './components/ContactFormButton';
+
+declare global {
+  interface Window {
+    voiceflow: {
+      chat: {
+        load: (config: any) => void;
+        open: () => void;
+        close: () => void;
+        interact: (request: any) => Promise<any>;
+      };
+    };
+  }
+}
 
 const ExamplesAIVoice: React.FC = () => {
   const [isCallActive, setIsCallActive] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isConnecting, setIsConnecting] = useState(false);
-  const [voiceflowClient, setVoiceflowClient] = useState<any>(null);
+  const [voiceflowLoaded, setVoiceflowLoaded] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const currentAudioSourceRef = useRef<AudioBufferSourceNode | null>(null);
+  const recognitionRef = useRef<any>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
-    // Initialize Voiceflow client
-    const initializeVoiceflow = async () => {
-      try {
-        const factory = new RuntimeClientFactory({
-          projectID: '686e87825ecbc2a7a7136848',
-          versionID: 'production',
-          apiKey: 'VF.DM.686e87825ecbc2a7a7136848.hzb98PW2zxyo2DyY',
-          apiEndpoint: 'https://general-runtime.voiceflow.com',
-        });
-
-        const client = factory.createClient();
-        setVoiceflowClient(client);
-
-        // Set up event listeners
-        client.on('speak', async (event: any) => {
-          if (event.payload?.src) {
-            await playAudio(event.payload.src);
+    // Load Voiceflow widget script
+    const loadVoiceflowScript = () => {
+      return new Promise<void>((resolve, reject) => {
+        // Check if script already exists
+        if (document.querySelector('script[src*="voiceflow.com/widget"]')) {
+          if (window.voiceflow) {
+            setVoiceflowLoaded(true);
+            resolve();
+          } else {
+            reject(new Error('Voiceflow script loaded but API not available'));
           }
-        });
+          return;
+        }
 
-        client.on('end', () => {
-          setIsCallActive(false);
-          setIsSpeaking(false);
-          setIsConnecting(false);
-        });
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs';
+        
+        script.onload = () => {
+          // Initialize Voiceflow widget
+          if (window.voiceflow) {
+            try {
+              window.voiceflow.chat.load({
+                verify: { projectID: '686e83961b77fd494630d6e3' },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: '686e83961b77fd494630d6e4',
+                assistant: {
+                  stylesheet: 'https://cdn.voiceflow.com/widget-next/bundle.mjs'
+                }
+              });
+              setVoiceflowLoaded(true);
+              resolve();
+            } catch (err) {
+              console.error('Error initializing Voiceflow:', err);
+              setError('Failed to initialize Voiceflow widget');
+              reject(err);
+            }
+          } else {
+            const error = new Error('Voiceflow API not available after script load');
+            setError('Voiceflow API not available');
+            reject(error);
+          }
+        };
 
-      } catch (error) {
-        console.error('Failed to initialize Voiceflow client:', error);
-      }
+        script.onerror = () => {
+          const error = new Error('Failed to load Voiceflow script');
+          setError('Failed to load Voiceflow script');
+          reject(error);
+        };
+
+        document.head.appendChild(script);
+      });
     };
 
-    initializeVoiceflow();
+    loadVoiceflowScript().catch(console.error);
 
     // Cleanup function
     return () => {
@@ -60,100 +97,170 @@ const ExamplesAIVoice: React.FC = () => {
       if (audioContextRef.current) {
         audioContextRef.current.close();
       }
+      if (recognitionRef.current) {
+        recognitionRef.current.stop();
+      }
     };
   }, []);
 
-  const playAudio = async (audioUrl: string) => {
-    try {
-      setIsSpeaking(true);
-
-      // Initialize AudioContext if not already done
-      if (!audioContextRef.current) {
-        audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
-      }
-
-      const audioContext = audioContextRef.current;
-
-      // Resume AudioContext if suspended (required by some browsers)
-      if (audioContext.state === 'suspended') {
-        await audioContext.resume();
-      }
-
-      // Fetch and decode audio
-      const response = await fetch(audioUrl);
-      const arrayBuffer = await response.arrayBuffer();
-      const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-
-      // Stop any currently playing audio
-      if (currentAudioSourceRef.current) {
-        currentAudioSourceRef.current.stop();
-      }
-
-      // Create and play new audio source
-      const source = audioContext.createBufferSource();
-      source.buffer = audioBuffer;
-      source.connect(audioContext.destination);
-
-      source.onended = () => {
-        setIsSpeaking(false);
-        currentAudioSourceRef.current = null;
-      };
-
-      currentAudioSourceRef.current = source;
-      source.start();
-
-    } catch (error) {
-      console.error('Error playing audio:', error);
-      setIsSpeaking(false);
+  const initializeSpeechRecognition = () => {
+    if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+      throw new Error('Speech recognition not supported in this browser');
     }
+
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    
+    recognition.continuous = true;
+    recognition.interimResults = true;
+    recognition.lang = 'en-US';
+
+    recognition.onresult = async (event: any) => {
+      const transcript = Array.from(event.results)
+        .map((result: any) => result[0])
+        .map((result: any) => result.transcript)
+        .join('');
+
+      if (event.results[event.results.length - 1].isFinal) {
+        await sendMessageToVoiceflow(transcript);
+      }
+    };
+
+    recognition.onerror = (event: any) => {
+      console.error('Speech recognition error:', event.error);
+      if (event.error === 'not-allowed') {
+        setError('Microphone access denied. Please allow microphone access and try again.');
+      }
+    };
+
+    recognition.onend = () => {
+      if (isCallActive) {
+        // Restart recognition if call is still active
+        setTimeout(() => {
+          if (isCallActive && recognitionRef.current) {
+            recognitionRef.current.start();
+          }
+        }, 100);
+      }
+    };
+
+    return recognition;
   };
 
-  const startCall = async () => {
-    if (!voiceflowClient) {
-      console.error('Voiceflow client not initialized');
+  const sendMessageToVoiceflow = async (message: string) => {
+    if (!voiceflowLoaded || !window.voiceflow) {
+      console.error('Voiceflow not loaded');
       return;
     }
 
     try {
-      setIsConnecting(true);
+      setIsSpeaking(true);
       
-      // Start the conversation
-      const response = await voiceflowClient.start();
-      
-      setIsCallActive(true);
-      setIsConnecting(false);
+      // Send message to Voiceflow
+      const response = await window.voiceflow.chat.interact({
+        type: 'text',
+        payload: message
+      });
 
-      // Handle initial response if it contains audio
-      if (response?.trace) {
-        for (const trace of response.trace) {
-          if (trace.type === 'speak' && trace.payload?.src) {
-            await playAudio(trace.payload.src);
+      // Handle response - look for speak traces
+      if (response && response.length > 0) {
+        for (const trace of response) {
+          if (trace.type === 'speak' && trace.payload) {
+            // Use text-to-speech for the response
+            await speakText(trace.payload.message || trace.payload);
           }
         }
       }
 
     } catch (error) {
+      console.error('Error sending message to Voiceflow:', error);
+      setError('Failed to communicate with AI agent');
+    } finally {
+      setIsSpeaking(false);
+    }
+  };
+
+  const speakText = async (text: string) => {
+    return new Promise<void>((resolve) => {
+      if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = 0.9;
+        utterance.pitch = 1;
+        utterance.volume = 1;
+
+        utterance.onend = () => {
+          setIsSpeaking(false);
+          resolve();
+        };
+
+        utterance.onerror = () => {
+          setIsSpeaking(false);
+          resolve();
+        };
+
+        setIsSpeaking(true);
+        speechSynthesis.speak(utterance);
+      } else {
+        setIsSpeaking(false);
+        resolve();
+      }
+    });
+  };
+
+  const startCall = async () => {
+    if (!voiceflowLoaded) {
+      setError('Voiceflow not loaded yet. Please wait and try again.');
+      return;
+    }
+
+    try {
+      setIsConnecting(true);
+      setError(null);
+
+      // Initialize speech recognition
+      const recognition = initializeSpeechRecognition();
+      recognitionRef.current = recognition;
+
+      // Request microphone permission and start recognition
+      await navigator.mediaDevices.getUserMedia({ audio: true });
+      
+      recognition.start();
+      
+      setIsCallActive(true);
+      setIsConnecting(false);
+
+      // Send initial message to start conversation
+      await sendMessageToVoiceflow('Hello');
+
+    } catch (error) {
       console.error('Error starting call:', error);
+      setError('Failed to start call. Please check microphone permissions.');
       setIsConnecting(false);
     }
   };
 
   const endCall = async () => {
-    if (!voiceflowClient) return;
-
     try {
-      // Stop any currently playing audio
-      if (currentAudioSourceRef.current) {
-        currentAudioSourceRef.current.stop();
-        currentAudioSourceRef.current = null;
+      // Stop speech recognition
+      if (recognitionRef.current) {
+        recognitionRef.current.stop();
+        recognitionRef.current = null;
       }
 
-      // Send goodbye message to gracefully end conversation
-      await voiceflowClient.sendText('goodbye');
+      // Stop any ongoing speech synthesis
+      if ('speechSynthesis' in window) {
+        speechSynthesis.cancel();
+      }
+
+      // Send goodbye message
+      if (voiceflowLoaded && window.voiceflow) {
+        await sendMessageToVoiceflow('goodbye');
+      }
       
       setIsCallActive(false);
       setIsSpeaking(false);
       setIsConnecting(false);
+      setError(null);
 
     } catch (error) {
       console.error('Error ending call:', error);
@@ -281,14 +388,20 @@ const ExamplesAIVoice: React.FC = () => {
                               💡 Try saying: "I'd like to schedule an appointment" or "What are your business hours?"
                             </div>
                           )}
+
+                          {error && (
+                            <div className="text-sm text-red-600 mb-2 p-2 bg-red-50 rounded">
+                              {error}
+                            </div>
+                          )}
                         </div>
                         
                         <div className="flex gap-3">
                           <button
                             onClick={startCall}
-                            disabled={isCallActive || isConnecting}
+                            disabled={isCallActive || isConnecting || !voiceflowLoaded}
                             className={`flex items-center px-6 py-3 rounded-full font-medium transition-all duration-200 ${
-                              isCallActive || isConnecting
+                              isCallActive || isConnecting || !voiceflowLoaded
                                 ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
                                 : 'bg-purple-600 hover:bg-purple-700 text-white hover:shadow-lg transform hover:scale-105'
                             }`}
@@ -324,6 +437,15 @@ const ExamplesAIVoice: React.FC = () => {
                                isSpeaking ? 'AI agent is speaking' :
                                'Ready to listen - speak now'}
                             </span>
+                          </div>
+                        </div>
+                      )}
+
+                      {!voiceflowLoaded && (
+                        <div className="mt-4 pt-4 border-t border-gray-200">
+                          <div className="flex items-center gap-2 text-sm text-gray-500">
+                            <Loader2 className="w-4 h-4 animate-spin" />
+                            Loading AI voice agent...
                           </div>
                         </div>
                       )}
