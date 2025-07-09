@@ -1,333 +1,40 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, Wrench, Phone, PhoneOff, Loader2 } from 'lucide-react';
+import { ChevronLeft, Wrench, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from './components/Header';
 import ContactFormButton from './components/ContactFormButton';
 
-declare global {
-  interface Window {
-    voiceflow: {
-      chat: {
-        load: (config: any) => void;
-        open: () => void;
-        close: () => void;
-        interact: (request: any) => Promise<any>;
-      };
-    };
-  }
-}
-
 const ExamplesAIVoice: React.FC = () => {
-  const [isCallActive, setIsCallActive] = useState(false);
-  const [isSpeaking, setIsSpeaking] = useState(false);
-  const [isConnecting, setIsConnecting] = useState(false);
-  const [voiceflowLoaded, setVoiceflowLoaded] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const audioContextRef = useRef<AudioContext | null>(null);
-  const currentAudioSourceRef = useRef<AudioBufferSourceNode | null>(null);
-  const recognitionRef = useRef<any>(null);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  useEffect(() => {
-    // Load Voiceflow widget script
-    const loadVoiceflowScript = () => {
-      return new Promise<void>((resolve, reject) => {
-        // Check if script already exists
-        if (document.querySelector('script[src*="voiceflow.com/widget"]')) {
-          if (window.voiceflow) {
-            setVoiceflowLoaded(true);
-            resolve();
-          } else {
-            reject(new Error('Voiceflow script loaded but API not available'));
-          }
-          return;
-        }
-
-        const script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs';
-        
-        script.onload = () => {
-          // Initialize Voiceflow widget
-          if (window.voiceflow) {
-            try {
-              window.voiceflow.chat.load({
-                verify: { projectID: '686e83961b77fd494630d6e3' },
-                url: 'https://general-runtime.voiceflow.com',
-                versionID: '686e83961b77fd494630d6e4',
-                assistant: {
-                  stylesheet: 'https://cdn.voiceflow.com/widget-next/bundle.mjs'
-                }
-              });
-              setVoiceflowLoaded(true);
-              resolve();
-            } catch (err) {
-              console.error('Error initializing Voiceflow:', err);
-              setError('Failed to initialize Voiceflow widget');
-              reject(err);
-            }
-          } else {
-            const error = new Error('Voiceflow API not available after script load');
-            setError('Voiceflow API not available');
-            reject(error);
-          }
-        };
-
-        script.onerror = () => {
-          const error = new Error('Failed to load Voiceflow script');
-          setError('Failed to load Voiceflow script');
-          reject(error);
-        };
-
-        document.head.appendChild(script);
-      });
-    };
-
-    loadVoiceflowScript().catch(console.error);
-
-    // Cleanup function
-    return () => {
-      if (currentAudioSourceRef.current) {
-        currentAudioSourceRef.current.stop();
-      }
-      if (audioContextRef.current) {
-        audioContextRef.current.close();
-      }
-      if (recognitionRef.current) {
-        recognitionRef.current.stop();
-      }
-    };
-  }, []);
-
-  const initializeSpeechRecognition = () => {
-    if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-      throw new Error('Speech recognition not supported in this browser');
-    }
-
-    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-    const recognition = new SpeechRecognition();
-    
-    recognition.continuous = true;
-    recognition.interimResults = true;
-    recognition.lang = 'en-US';
-
-    recognition.onresult = async (event: any) => {
-      const transcript = Array.from(event.results)
-        .map((result: any) => result[0])
-        .map((result: any) => result.transcript)
-        .join('');
-
-      if (event.results[event.results.length - 1].isFinal) {
-        await sendMessageToVoiceflow(transcript);
-      }
-    };
-
-    recognition.onerror = (event: any) => {
-      console.error('Speech recognition error:', event.error);
-      if (event.error === 'not-allowed') {
-        setError('Microphone access denied. Please allow microphone access and try again.');
-      }
-    };
-
-    recognition.onend = () => {
-      if (isCallActive) {
-        // Restart recognition if call is still active
-        setTimeout(() => {
-          if (isCallActive && recognitionRef.current) {
-            recognitionRef.current.start();
-          }
-        }, 100);
-      }
-    };
-
-    return recognition;
-  };
-
-  const sendMessageToVoiceflow = async (message: string) => {
-    if (!voiceflowLoaded || !window.voiceflow) {
-      console.error('Voiceflow not loaded');
-      return;
-    }
-
-    try {
-      setIsSpeaking(true);
-      
-      // Send message to Voiceflow
-      const response = await window.voiceflow.chat.interact({
-        type: 'text',
-        payload: message
-      });
-
-      // Handle response - look for speak traces
-      if (response && response.length > 0) {
-        for (const trace of response) {
-          if (trace.type === 'speak' && trace.payload) {
-            // Use text-to-speech for the response
-            await speakText(trace.payload.message || trace.payload);
-          }
-        }
-      }
-
-    } catch (error) {
-      console.error('Error sending message to Voiceflow:', error);
-      setError('Failed to communicate with AI agent');
-    } finally {
-      setIsSpeaking(false);
-    }
-  };
-
-  const speakText = async (text: string) => {
-    return new Promise<void>((resolve) => {
-      if ('speechSynthesis' in window) {
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.rate = 0.9;
-        utterance.pitch = 1;
-        utterance.volume = 1;
-
-        utterance.onend = () => {
-          setIsSpeaking(false);
-          resolve();
-        };
-
-        utterance.onerror = () => {
-          setIsSpeaking(false);
-          resolve();
-        };
-
-        setIsSpeaking(true);
-        speechSynthesis.speak(utterance);
-      } else {
-        setIsSpeaking(false);
-        resolve();
-      }
-    });
-  };
-
-  const startCall = async () => {
-    if (!voiceflowLoaded) {
-      setError('Voiceflow not loaded yet. Please wait and try again.');
-      return;
-    }
-
-    try {
-      setIsConnecting(true);
-      setError(null);
-
-      // Initialize speech recognition
-      const recognition = initializeSpeechRecognition();
-      recognitionRef.current = recognition;
-
-      // Request microphone permission and start recognition
-      await navigator.mediaDevices.getUserMedia({ audio: true });
-      
-      recognition.start();
-      
-      setIsCallActive(true);
-      setIsConnecting(false);
-
-      // Send initial message to start conversation
-      await sendMessageToVoiceflow('Hello');
-
-    } catch (error) {
-      console.error('Error starting call:', error);
-      setError('Failed to start call. Please check microphone permissions.');
-      setIsConnecting(false);
-    }
-  };
-
-  const endCall = async () => {
-    try {
-      // Stop speech recognition
-      if (recognitionRef.current) {
-        recognitionRef.current.stop();
-        recognitionRef.current = null;
-      }
-
-      // Stop any ongoing speech synthesis
-      if ('speechSynthesis' in window) {
-        speechSynthesis.cancel();
-      }
-
-      // Send goodbye message
-      if (voiceflowLoaded && window.voiceflow) {
-        await sendMessageToVoiceflow('goodbye');
-      }
-      
-      setIsCallActive(false);
-      setIsSpeaking(false);
-      setIsConnecting(false);
-      setError(null);
-
-    } catch (error) {
-      console.error('Error ending call:', error);
-      // Force end the call even if there's an error
-      setIsCallActive(false);
-      setIsSpeaking(false);
-      setIsConnecting(false);
-    }
-  };
-
-  const getCallButtonContent = () => {
-    if (isConnecting) {
-      return (
-        <>
-          <Loader2 className="w-4 h-4 animate-spin mr-2" />
-          Connecting...
-        </>
-      );
-    }
-    
-    if (isCallActive) {
-      if (isSpeaking) {
-        return (
-          <>
-            <div className="w-4 h-4 mr-2 flex items-center justify-center">
-              <div className="w-2 h-2 bg-current rounded-full animate-pulse"></div>
-            </div>
-            AI Speaking...
-          </>
-        );
-      }
-      return (
-        <>
-          <Phone className="w-4 h-4 mr-2" />
-          Call Active
-        </>
-      );
-    }
-    
-    return (
-      <>
-        <Phone className="w-4 h-4 mr-2" />
-        Start Call
-      </>
-    );
-  };
-
   const voiceAgentTitles = [
     {
       title: 'Business Receptionist Agent',
-      description: 'Spending a lot of money and time to manage your receptionist? What if we cut cost by 80%.'
+      description: 'Spending a lot of money and time to manage your receptionist? What if we cut cost by 80%.',
+      path: '/voice-demo/receptionist'
     },
     {
       title: 'Outreach Agent',
-      description: 'Need to call 1000s of leads?'
+      description: 'This type of agent will outbound calls to potential prospects with custom scripts needed and demanded by the business. When the start call button is pressed the user will talk to an agent which will talk to them as if they are calling a potential prospect to offer real estate services.',
+      path: '/voice-demo/outreach'
     },
     {
       title: 'Personal Assistant Agent',
-      description: 'Need someone available 24/7 to consistently update your calendar?'
+      description: 'Need someone available 24/7 to consistently update your calendar?',
+      path: '/voice-demo/assistant'
     },
     {
       title: 'Information Hotline Agent',
-      description: 'Press "1" to hear about the houses close to your current address.'
+      description: 'Press "1" to hear about the houses close to your current address.',
+      path: '/voice-demo/hotline'
     },
     {
       title: 'Appointment Reminders Via Call',
-      description: 'Tired of no-shows?'
+      description: 'Tired of no-shows?',
+      path: '/voice-demo/reminders'
     }
   ];
 
@@ -379,8 +86,8 @@ const ExamplesAIVoice: React.FC = () => {
           <ul className="space-y-6">
             {voiceAgentTitles.map((agent, index) => (
               <li key={index}>
-                {index === 0 ? (
-                  // First item - Business Receptionist Agent with interactive demo
+                {index === 0 || index === 1 ? (
+                  // First two items - Business Receptionist Agent and Outreach Agent with working demos
                   <div className="p-6 bg-gray-50 rounded-xl border border-gray-200">
                     <h4 className="text-xl font-bold text-purple-600 mb-2">
                       {agent.title}
@@ -389,83 +96,32 @@ const ExamplesAIVoice: React.FC = () => {
                       {agent.description}
                     </p>
                     
-                    {/* Voice Agent Demo Controls */}
+                    {/* Voice Agent Demo Link */}
                     <div className="p-4 bg-white rounded-lg border border-gray-200">
                       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                         <div className="flex-1">
                           <h5 className="font-semibold text-gray-900 mb-2">
-                            Try the Business Receptionist Agent
+                            Try the {agent.title}
                           </h5>
                           <p className="text-sm text-gray-600 mb-4">
-                            Experience our AI voice agent that can handle calls, schedule appointments, and answer common questions - just like a human receptionist.
+                            {index === 0 
+                              ? 'Experience our AI voice agent that can handle calls, schedule appointments, and answer common questions - just like a human receptionist.'
+                              : 'Experience our AI outreach agent that can make professional sales calls to potential prospects with custom scripts tailored to your business needs.'
+                            }
                           </p>
-                          
-                          {isCallActive && (
-                            <div className="text-sm text-gray-500 mb-2">
-                              💡 Try saying: "I'd like to schedule an appointment" or "What are your business hours?"
-                            </div>
-                          )}
-
-                          {error && (
-                            <div className="text-sm text-red-600 mb-2 p-2 bg-red-50 rounded">
-                              {error}
-                            </div>
-                          )}
                         </div>
                         
                         <div className="flex gap-3">
-                          <button
-                            onClick={startCall}
-                            disabled={isCallActive || isConnecting || !voiceflowLoaded}
-                            className={`flex items-center px-6 py-3 rounded-full font-medium transition-all duration-200 ${
-                              isCallActive || isConnecting || !voiceflowLoaded
-                                ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                                : 'bg-purple-600 hover:bg-purple-700 text-white hover:shadow-lg transform hover:scale-105'
-                            }`}
-                            aria-label={isCallActive ? 'Call in progress' : 'Start voice call with AI agent'}
+                          <Link 
+                            to={agent.path}
+                            className="flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-full font-medium transition-all duration-200 hover:shadow-lg transform hover:scale-105"
+                            aria-label={`Start demo for ${agent.title}`}
                           >
-                            {getCallButtonContent()}
-                          </button>
-                          
-                          {isCallActive && (
-                            <button
-                              onClick={endCall}
-                              className="flex items-center px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-full font-medium transition-all duration-200 hover:shadow-lg transform hover:scale-105"
-                              aria-label="End voice call"
-                            >
-                              <PhoneOff className="w-4 h-4 mr-2" />
-                              End Call
-                            </button>
-                          )}
+                            Start Demo
+                            <ArrowUpRight className="w-4 h-4 ml-2" />
+                          </Link>
                         </div>
                       </div>
-                      
-                      {/* Call Status Indicator */}
-                      {(isCallActive || isConnecting) && (
-                        <div className="mt-4 pt-4 border-t border-gray-200">
-                          <div className="flex items-center gap-2 text-sm">
-                            <div className={`w-2 h-2 rounded-full ${
-                              isConnecting ? 'bg-yellow-500 animate-pulse' :
-                              isSpeaking ? 'bg-green-500 animate-pulse' : 
-                              'bg-blue-500'
-                            }`}></div>
-                            <span className="text-gray-600">
-                              {isConnecting ? 'Connecting to AI agent...' :
-                               isSpeaking ? 'AI agent is speaking' :
-                               'Ready to listen - speak now'}
-                            </span>
-                          </div>
-                        </div>
-                      )}
-
-                      {!voiceflowLoaded && (
-                        <div className="mt-4 pt-4 border-t border-gray-200">
-                          <div className="flex items-center gap-2 text-sm text-gray-500">
-                            <Loader2 className="w-4 h-4 animate-spin" />
-                            Loading AI voice agent...
-                          </div>
-                        </div>
-                      )}
                     </div>
                   </div>
                 ) : (
