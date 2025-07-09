@@ -18,7 +18,7 @@ const ExamplesAIVoice: React.FC = () => {
     },
     {
       title: 'Outreach Agent',
-      description: 'This type of agent will outbound calls to potential prospects with custom scripts needed and demanded by the business. When the start call button is pressed the user will talk to an agent which will talk to them as if they are calling a potential prospect to offer real estate services.',
+      description: 'Need to call 1000s of leads?',
       path: '/voice-demo/outreach'
     },
     {
