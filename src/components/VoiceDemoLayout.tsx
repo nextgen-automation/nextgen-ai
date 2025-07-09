@@ -72,6 +72,9 @@ const VoiceDemoLayout: React.FC<VoiceDemoLayoutProps> = ({
                 verify: { projectID: projectId },
                 url: 'https://general-runtime.voiceflow.com',
                 versionID: versionId,
+               voice: {
+                 url: "https://runtime-api.voiceflow.com"
+               },
                 assistant: {
                   stylesheet: 'https://cdn.voiceflow.com/widget-next/bundle.mjs'
                 }
@@ -295,16 +298,6 @@ const VoiceDemoLayout: React.FC<VoiceDemoLayoutProps> = ({
     }
     
     if (isCallActive) {
-      if (isSpeaking) {
-        return (
-          <>
-            <div className="w-4 h-4 mr-2 flex items-center justify-center">
-              <div className="w-2 h-2 bg-current rounded-full animate-pulse"></div>
-            </div>
-            AI Speaking...
-          </>
-        );
-      }
       return (
         <>
           <Phone className="w-4 h-4 mr-2" />
@@ -422,8 +415,7 @@ const VoiceDemoLayout: React.FC<VoiceDemoLayoutProps> = ({
                   }`}></div>
                   <span className="text-gray-600">
                     {isConnecting ? 'Connecting to AI agent...' :
-                     isSpeaking ? 'AI agent is speaking' :
-                     'Ready to listen - speak now'}
+                     'Call Active'}
                   </span>
                 </div>
               </div>
