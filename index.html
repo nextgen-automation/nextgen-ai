@@ -60,28 +60,25 @@
     
     <script type="module" src="/src/main.tsx"></script>
     <script type="text/javascript">
-      // Only load Voiceflow chat widget if not on voice demo pages
-      if (!window.location.pathname.startsWith('/voice-demo/')) {
-        (function(d, t) {
-            var v = d.createElement(t);
-            v.onload = function() {
-              window.voiceflow.chat.load({
-                verify: { projectID: '6835f01106ddb99ff491f24d' },
-                url: 'https://general-runtime.voiceflow.com',
-                versionID: 'production',
-                voice: {
-                  url: "https://runtime-api.voiceflow.com"
-                }
-              });
-            }
-            v.onerror = function() {
-              console.warn('Voiceflow widget failed to load');
-            }
-            v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
-            v.type = "text/javascript"; 
-            d.body.appendChild(v);
-        })(document, 'script');
-      }
+      (function(d, t) {
+          var v = d.createElement(t);
+          v.onload = function() {
+            window.voiceflow.chat.load({
+              verify: { projectID: '6835f01106ddb99ff491f24d' },
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production',
+              voice: {
+                url: "https://runtime-api.voiceflow.com"
+              }
+            });
+          }
+          v.onerror = function() {
+            console.warn('Voiceflow widget failed to load');
+          }
+          v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
+          v.type = "text/javascript"; 
+          d.body.appendChild(v);
+      })(document, 'script');
     </script>
   </body>
 </html>
