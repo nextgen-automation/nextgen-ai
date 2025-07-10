@@ -4,7 +4,6 @@ import { Bot, Phone, Zap } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import FAQsContactButton from './components/FAQsContactButton';
-import VoiceflowChatWidget from './components/VoiceflowChatWidget';
 import { scrollToElement } from './utils/scrollUtils';
 
 function App() {
@@ -244,8 +243,6 @@ function App() {
           </div>
         </section>
       </main>
-      
-      <VoiceflowChatWidget />
     </motion.div>
   );
 }

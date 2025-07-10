@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from './components/Header';
-import VoiceflowChatWidget from './components/VoiceflowChatWidget';
 
 const ExOfAIIntegrations: React.FC = () => {
   useEffect(() => {
@@ -107,8 +106,6 @@ const ExOfAIIntegrations: React.FC = () => {
           </Link>
         </div>
       </main>
-      
-      <VoiceflowChatWidget />
     </motion.div>
   );
 };
