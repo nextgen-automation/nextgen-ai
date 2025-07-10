@@ -6,14 +6,7 @@ const VoiceDemoAssistant: React.FC = () => {
     <VoiceDemoLayout
       title="Personal Assistant Agent"
       description="Experience our AI personal assistant that's available 24/7 to manage your calendar, handle scheduling, and assist with various administrative tasks. This agent never sleeps and is always ready to help."
-      projectId="placeholder-project-id"
-      versionId="placeholder-version-id"
-      suggestions={[
-        "What's on my schedule today?",
-        "Schedule a meeting for tomorrow",
-        "Cancel my 3 PM appointment",
-        "What's my availability next week?"
-      ]}
+      instructions="What's on my schedule today?, Schedule a meeting for tomorrow, Cancel my 3 PM appointment, What's my availability next week?"
     />
   );
 };

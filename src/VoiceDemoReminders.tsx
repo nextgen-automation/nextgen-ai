@@ -6,14 +6,7 @@ const VoiceDemoReminders: React.FC = () => {
     <VoiceDemoLayout
       title="Appointment Reminders Via Call"
       description="Experience our AI appointment reminder agent that can automatically call clients to remind them of upcoming appointments, reducing no-shows and improving your business efficiency."
-      projectId="placeholder-project-id"
-      versionId="placeholder-version-id"
-      suggestions={[
-        "Yes, I'll be there",
-        "I need to reschedule",
-        "What time was my appointment?",
-        "Can you confirm the location?"
-      ]}
+      instructions="Yes, I'll be there, I need to reschedule, What time was my appointment?, Can you confirm the location?"
     />
   );
 };

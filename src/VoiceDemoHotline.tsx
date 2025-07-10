@@ -6,14 +6,7 @@ const VoiceDemoHotline: React.FC = () => {
     <VoiceDemoLayout
       title="Information Hotline Agent"
       description="Experience our AI information hotline agent that can provide automated information services. This demo simulates a real estate information hotline where callers can get property information based on their location."
-      projectId="placeholder-project-id"
-      versionId="placeholder-version-id"
-      suggestions={[
-        "Press 1 for property information",
-        "What houses are available near me?",
-        "Tell me about properties in downtown",
-        "What's the average price in this area?"
-      ]}
+      instructions="Press 1 for property information, What houses are available near me?, Tell me about properties in downtown, What's the average price in this area?"
     />
   );
 };
