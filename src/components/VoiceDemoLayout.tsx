@@ -19,6 +19,21 @@ const VoiceDemoLayout: React.FC<VoiceDemoLayoutProps> = ({
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    // Cleanup function to ensure widget is removed when navigating away
+    return () => {
+      // Additional cleanup in case the parent component's cleanup didn't work
+      setTimeout(() => {
+        const widgetElements = document.querySelectorAll('[data-voiceflow], .vfrc-widget, .vfrc-chat, .voiceflow-chat');
+        widgetElements.forEach(element => {
+          if (element.parentNode) {
+            element.parentNode.removeChild(element);
+          }
+        });
+      }, 100);
+    };
+  }, []);
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
