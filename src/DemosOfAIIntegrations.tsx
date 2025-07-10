@@ -9,41 +9,6 @@ const ExOfAIIntegrations: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  useEffect(() => {
-    // Load Voiceflow widget
-    const voiceflowScript = document.createElement('script');
-    voiceflowScript.type = 'text/javascript';
-    voiceflowScript.innerHTML = `
-      (function(d, t) {
-          var v = d.createElement(t);
-          v.onload = function() {
-            window.voiceflow.chat.load({
-              verify: { projectID: '6835f01106ddb99ff491f24d' },
-              url: 'https://general-runtime.voiceflow.com',
-              versionID: 'production',
-              voice: {
-                url: "https://runtime-api.voiceflow.com"
-              }
-            });
-          }
-          v.onerror = function() {
-            console.warn('Voiceflow widget failed to load');
-          }
-          v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
-          v.type = "text/javascript"; 
-          d.body.appendChild(v);
-      })(document, 'script');
-    `;
-    document.body.appendChild(voiceflowScript);
-
-    return () => {
-      // Cleanup: remove the script when component unmounts
-      if (document.body.contains(voiceflowScript)) {
-        document.body.removeChild(voiceflowScript);
-      }
-    };
-  }, []);
-
   return (
     <motion.div 
       initial={{ opacity: 0 }}
