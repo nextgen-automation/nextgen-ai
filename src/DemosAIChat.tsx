@@ -4,6 +4,7 @@ import { ChevronLeft, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from './components/Header';
 import ContactFormButton from './components/ContactFormButton';
+import VoiceflowChatWidget from './components/VoiceflowChatWidget';
 
 const ExamplesAIChat: React.FC = () => {
   useEffect(() => {
@@ -124,6 +125,8 @@ const ExamplesAIChat: React.FC = () => {
           </div>
         </motion.section>
       </main>
+      
+      <VoiceflowChatWidget />
     </motion.div>
   );
 };

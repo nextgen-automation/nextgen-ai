@@ -4,6 +4,7 @@ import { Home, Search, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from './components/Header';
 import BookMeetingButton from './components/BookMeetingButton';
+import VoiceflowChatWidget from './components/VoiceflowChatWidget';
 
 const NotFound: React.FC = () => {
   useEffect(() => {
@@ -122,6 +123,8 @@ const NotFound: React.FC = () => {
           </motion.div>
         </div>
       </main>
+      
+      <VoiceflowChatWidget />
     </motion.div>
   );
 };

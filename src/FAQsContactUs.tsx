@@ -4,6 +4,7 @@ import { ChevronDown, Mail, Phone, MapPin } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import BookMeetingButton from './components/BookMeetingButton';
+import VoiceflowChatWidget from './components/VoiceflowChatWidget';
 import { scrollToElement } from './utils/scrollUtils';
 
 const FAQsContactUs: React.FC = () => {
@@ -341,6 +342,8 @@ const FAQsContactUs: React.FC = () => {
           </div>
         </motion.section>
       </main>
+      
+      <VoiceflowChatWidget />
     </motion.div>
   );
 };
