@@ -117,12 +117,7 @@ const FAQsContactUs: React.FC = () => {
 
       <main className="container mx-auto px-6 pt-12">
         {/* Page Title */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             FAQs / 
             <button 
@@ -136,16 +131,10 @@ const FAQsContactUs: React.FC = () => {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Find answers to common questions about our AI solutions, or get in touch with us directly.
           </p>
-        </motion.div>
+        </div>
 
         {/* FAQs Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-20"
-          aria-label="Frequently Asked Questions"
-        >
+        <section className="mb-20" aria-label="Frequently Asked Questions">
           <div className="space-y-4">
             {faqs.map((faq, index) => (
               <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
@@ -184,17 +173,10 @@ const FAQsContactUs: React.FC = () => {
               </div>
             ))}
           </div>
-        </motion.section>
+        </section>
 
         {/* Contact Us Section */}
-        <motion.section
-          id="contact-form"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-gray-50 rounded-2xl p-8 md:p-12"
-          aria-label="Contact Us Form"
-        >
+        <section id="contact-form" className="bg-gray-50 rounded-2xl p-8 md:p-12" aria-label="Contact Us Form">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -337,7 +319,7 @@ const FAQsContactUs: React.FC = () => {
               </div>
             </div>
           </div>
-        </motion.section>
+        </section>
       </main>
     </motion.div>
   );

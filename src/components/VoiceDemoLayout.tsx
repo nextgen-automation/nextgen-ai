@@ -28,25 +28,14 @@ const VoiceDemoLayout: React.FC<VoiceDemoLayoutProps> = ({
       <main className="container mx-auto px-6 pt-12 pb-24">
         {/* Back to Voice Demos */}
         <Link to="/ai-voice-demos" className="block mb-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-            className="inline-flex items-center gap-2 text-purple-600 hover:text-purple-700 transition-colors"
-          >
+          <div className="inline-flex items-center gap-2 text-purple-600 hover:text-purple-700 transition-colors">
             <ArrowLeft className="w-5 h-5" />
             Back to AI Voice Demos
-          </motion.div>
+          </div>
         </Link>
 
         {/* Hero Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <section className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             {title}
           </h1>
@@ -122,7 +111,7 @@ const VoiceDemoLayout: React.FC<VoiceDemoLayoutProps> = ({
               </div>
             </div>
           </div>
-        </motion.section>
+        </section>
       </main>
     </motion.div>
   );

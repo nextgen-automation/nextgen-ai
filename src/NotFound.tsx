@@ -19,24 +19,14 @@ const NotFound: React.FC = () => {
       <main className="container mx-auto px-6 pt-20 pb-24">
         <div className="max-w-2xl mx-auto text-center">
           {/* 404 Number */}
-          <motion.div
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-8"
-          >
+          <div className="mb-8">
             <h1 className="text-8xl md:text-9xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
               404
             </h1>
-          </motion.div>
+          </div>
 
           {/* Error Message */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mb-8"
-          >
+          <div className="mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Page Not Found
             </h2>
@@ -46,15 +36,10 @@ const NotFound: React.FC = () => {
             <p className="text-gray-500">
               It might have been moved, deleted, or you entered the wrong URL.
             </p>
-          </motion.div>
+          </div>
 
           {/* Action Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
-          >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Link 
               to="/"
               className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full transition-colors font-medium"
@@ -72,16 +57,10 @@ const NotFound: React.FC = () => {
               <Search className="w-5 h-5" aria-hidden="true" />
               Explore Our Demos
             </Link>
-          </motion.div>
+          </div>
 
           {/* Additional Help Section */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="bg-gray-50 rounded-xl p-8 border border-gray-200"
-            aria-label="Need help section"
-          >
+          <section className="bg-gray-50 rounded-xl p-8 border border-gray-200" aria-label="Need help section">
             <h3 className="text-xl font-bold text-gray-900 mb-4">
               Need Help Finding What You're Looking For?
             </h3>
@@ -98,15 +77,10 @@ const NotFound: React.FC = () => {
                 </div>
               </div>
             </div>
-          </motion.section>
+          </section>
 
           {/* Back Button */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-            className="mt-8"
-          >
+          <div className="mt-8">
             <button 
               onClick={() => window.history.back()}
               className="flex items-center gap-2 text-gray-500 hover:text-gray-700 transition-colors mx-auto"
@@ -115,7 +89,7 @@ const NotFound: React.FC = () => {
               <ArrowLeft className="w-4 h-4" aria-hidden="true" />
               Go back to previous page
             </button>
-          </motion.div>
+          </div>
         </div>
       </main>
     </motion.div>

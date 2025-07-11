@@ -46,13 +46,7 @@ const ExamplesAIVoice: React.FC = () => {
 
       <main className="container mx-auto px-6 pt-12">
         <Link to="/demos" className="block">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-            className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group"
-          >
+          <div className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group">
             <div className="flex items-center">
               <ChevronLeft className="w-6 h-6 text-purple-500 transform transition-transform group-hover:-translate-x-2 mr-4" aria-hidden="true" />
               <h1 className="text-2xl font-bold text-purple-600">
@@ -69,16 +63,10 @@ const ExamplesAIVoice: React.FC = () => {
                 <p className="text-gray-600">No more stress over absent staff -- no unanswered clients</p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </Link>
 
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: 0.2 }}
-          className="mt-12 px-6"
-          aria-label="AI Voice Agent examples"
-        >
+        <section className="mt-12 px-6" aria-label="AI Voice Agent examples">
           <ul className="space-y-6">
             {voiceAgentTitles.map((agent, index) => (
               <li key={index}>
@@ -151,7 +139,7 @@ const ExamplesAIVoice: React.FC = () => {
               </div>
             </div>
           </div>
-        </motion.section>
+        </section>
       </main>
     </motion.div>
   );

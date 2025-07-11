@@ -53,6 +53,7 @@ function App() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.1 }}
+      transition={{ duration: 0.3 }}
       className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white pt-16"
     >
       <Header />
@@ -82,59 +83,24 @@ function App() {
 
           <div className="container mx-auto px-6 relative z-10 min-h-screen">
             {/* Top-Left Overlay Box with all text */}
-            <motion.div
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 0.8,
-                delay: 0.1,
-                ease: "easeOut"
-              }}
-              className="absolute top-[50%] inset-x-0 mx-auto w-[90vw] max-w-md bg-black/70 rounded-2xl overflow-hidden md:top-32 md:left-0 md:inset-x-auto md:mx-0 md:w-auto"
-            >
+            <div className="absolute top-[50%] inset-x-0 mx-auto w-[90vw] max-w-md bg-black/70 rounded-2xl overflow-hidden md:top-32 md:left-0 md:inset-x-auto md:mx-0 md:w-auto">
               <div className="px-8 md:px-10 py-6 text-left">
                 {/* Increasing Profit */}
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ 
-                    duration: 0.8,
-                    delay: 0.2,
-                    ease: "easeOut"
-                  }}
-                  className="-mb-1 md:-mb-2"
-                >
+                <div className="-mb-1 md:-mb-2">
                   <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-tight md:leading-normal pb-1 md:pb-1">
                     Increasing Profit.
                   </h1>
-                </motion.div>
+                </div>
 
                 {/* Reducing Costs */}
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ 
-                    duration: 0.8,
-                    delay: 0.3,
-                    ease: "easeOut"
-                  }}
-                  className="mb-1 md:-mb-1"
-                >
+                <div className="mb-1 md:-mb-1">
                   <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent leading-tight md:leading-normal pb-1 md:pb-1">
                     Reducing Costs.
                   </h2>
-                </motion.div>
+                </div>
 
                 {/* Powered by AI */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ 
-                    duration: 0.8,
-                    delay: 0.4,
-                    ease: "easeOut"
-                  }}
-                >
+                <div>
                   <h2 className="text-lg md:text-2xl font-bold text-white mb-1 leading-tight md:leading-normal">
                     Powered by AI
                   </h2>
@@ -151,9 +117,9 @@ function App() {
                     </button>
                     <FAQsContactButton />
                   </div>
-                </motion.div>
+                </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
@@ -163,12 +129,7 @@ function App() {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Our Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <article className="space-y-4">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
-                >
+                <div className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm">
                   <div className="flex items-center gap-4">
                     <Bot className="w-12 h-12 text-blue-500" aria-hidden="true" />
                     <h3 className="text-xl font-bold">AI Chat Agents</h3>
@@ -180,7 +141,7 @@ function App() {
                     <li>• Your 24/7 AI Agent That Never Sleeps</li>
                     <li>• Never miss an inquiry—even outside business hours</li>
                   </ul>
-                </motion.div>
+                </div>
                 <Link to="/demos" className="block w-full">
                   <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm" aria-label="See AI Chat Agents examples">
                     See AI Chat Agents in Action
@@ -189,12 +150,7 @@ function App() {
               </article>
 
               <article className="space-y-4">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
-                >
+                <div className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm">
                   <div className="flex items-center gap-4">
                     <Phone className="w-12 h-12 text-blue-500" aria-hidden="true" />
                     <h3 className="text-xl font-bold">AI Voice Agents</h3>
@@ -206,7 +162,7 @@ function App() {
                     <li>• Handle scheduling, appointment confirmations, and routine questions — all in natural conversation</li>
                     <li>• Natural-sounding voices that feel truly human</li>
                   </ul>
-                </motion.div>
+                </div>
                 <Link to="/demos" className="block w-full">
                   <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm" aria-label="See AI Voice Agents examples">
                     See AI Voice Agents in Action
@@ -215,12 +171,7 @@ function App() {
               </article>
 
               <article className="space-y-4">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm"
-                >
+                <div className="p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm">
                   <div className="flex items-center gap-4">
                     <Zap className="w-12 h-12 text-blue-500" aria-hidden="true" />
                     <h3 className="text-xl font-bold">AI-Powered Automations</h3>
@@ -232,7 +183,7 @@ function App() {
                     <li>• Automate admin tasks with intelligent automations tailored to your workflow</li>
                     <li>• Automatically fill forms, update calendars, and more</li>
                   </ul>
-                </motion.div>
+                </div>
                 <Link to="/demos" className="block w-full">
                   <button className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-colors text-sm" aria-label="Explore AI-Powered Automations examples">
                     Explore AI-Powered Automations

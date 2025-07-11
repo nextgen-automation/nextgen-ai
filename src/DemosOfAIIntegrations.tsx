@@ -16,18 +16,14 @@ const ExOfAIIntegrations: React.FC = () => {
       <Header />
 
       <main className="container mx-auto px-6 pt-12">
-        <h1 className="text-4xl font-bold text-center mb-16">AI Integration Demos</h1>
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold">AI Integration Demos</h1>
+        </div>
         
         <div className="space-y-8">
           {/* AI Chat Agents Section */}
           <Link to="/ai-chat-demos" className="block">
-            <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-              className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group"
-            >
+            <article className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group">
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold text-blue-600">AI Chat Agents Demos</h2>
                 <ChevronRight className="w-6 h-6 text-blue-500 transform transition-transform group-hover:translate-x-2" aria-hidden="true" />
@@ -42,18 +38,12 @@ const ExOfAIIntegrations: React.FC = () => {
                   <p className="text-gray-600">Works when you're in court, in a meeting or asleep</p>
                 </div>
               </div>
-            </motion.article>
+            </article>
           </Link>
 
           {/* AI Voice Agents Section */}
           <Link to="/ai-voice-demos" className="block">
-            <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3, delay: 0.2 }}
-              className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group"
-            >
+            <article className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group">
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold text-purple-600">
                   AI Voice Agents Demos
@@ -70,18 +60,12 @@ const ExOfAIIntegrations: React.FC = () => {
                   <p className="text-gray-600">No more stress over absent staff -- no unanswered clients</p>
                 </div>
               </div>
-            </motion.article>
+            </article>
           </Link>
 
           {/* AI Powered Automations Section */}
           <Link to="/ai-automation-demos" className="block">
-            <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3, delay: 0.4 }}
-              className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group"
-            >
+            <article className="w-full py-8 px-6 bg-gray-50 hover:bg-gray-100 transition-all duration-300 rounded-xl border border-gray-200 cursor-pointer group">
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold text-teal-600">
                   AI-Powered Automations Demos
@@ -98,7 +82,7 @@ const ExOfAIIntegrations: React.FC = () => {
                   <p className="text-gray-600">Auto-generate invoices or summaries after appointments</p>
                 </div>
               </div>
-            </motion.article>
+            </article>
           </Link>
         </div>
       </main>
