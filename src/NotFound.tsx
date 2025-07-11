@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Home, Search, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -6,10 +6,6 @@ import Header from './components/Header';
 import BookMeetingButton from './components/BookMeetingButton';
 
 const NotFound: React.FC = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <motion.div 
       initial={{ opacity: 0 }}

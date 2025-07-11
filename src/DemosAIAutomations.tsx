@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -6,10 +6,6 @@ import Header from './components/Header';
 import ContactFormButton from './components/ContactFormButton';
 
 const ExamplesAIAutomations: React.FC = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   const automationTitles = [
     'AI-Powered Lead Qualification - No need to qualify leads on your own. Set the criteria with AI.',
     'PDF Forms Handler - Wasting multiple hours manually filing up the same forms?',

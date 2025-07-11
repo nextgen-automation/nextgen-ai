@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, Wrench, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -6,10 +6,6 @@ import Header from './components/Header';
 import ContactFormButton from './components/ContactFormButton';
 
 const ExamplesAIVoice: React.FC = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   const voiceAgentTitles = [
     {
       title: 'Business Receptionist Agent',

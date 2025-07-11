@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation, useEffect } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import App from './App'
 import DemosOfAIIntegrations from './DemosOfAIIntegrations'
@@ -18,6 +18,14 @@ import './index.css'
 
 function AnimatedRoutes() {
   const location = useLocation();
+  
+  // Centralized scroll-to-top on route change
+  useEffect(() => {
+    // Only scroll to top if we're not handling special scroll behavior
+    if (!location.state?.scrollToServices && !location.state?.scrollToContactForm) {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname, location.state]);
   
   return (
     <AnimatePresence mode="wait">

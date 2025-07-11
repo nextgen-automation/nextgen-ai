@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -6,10 +6,6 @@ import Header from './components/Header';
 import ContactFormButton from './components/ContactFormButton';
 
 const ExamplesAIChat: React.FC = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   const prototypeLinks = [
     'https://creator.voiceflow.com/prototype/683656b828ea50513a429275',
     'https://creator.voiceflow.com/prototype/683760e525f48f411e989f73', // Customer Support Agent

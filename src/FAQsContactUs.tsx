@@ -13,8 +13,6 @@ const FAQsContactUs: React.FC = () => {
   useEffect(() => {
     if (location.state?.scrollToContactForm) {
       scrollToElement('contact-form', 90);
-    } else {
-      window.scrollTo(0, 0);
     }
   }, [location]);
 

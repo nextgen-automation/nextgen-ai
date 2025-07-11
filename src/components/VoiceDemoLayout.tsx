@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -15,10 +15,6 @@ const VoiceDemoLayout: React.FC<VoiceDemoLayoutProps> = ({
   description,
   instructions
 }) => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <motion.div 
       initial={{ opacity: 0 }}
